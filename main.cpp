@@ -26,11 +26,10 @@ class Word {
 public:
     Word(const std::string& word, const std::vector<std::string>& validWords)
         : word(word), validWords(validWords) {
-        std::cout<<"constructor Word\n";
-
+        std::cout << "constructor Word\n";
     }
 
-    std::string getWord() const { return word; }
+    const std::string& getWord() const { return word; }
 
     bool isValid(const std::string& guess) const {
         if (std::find(validWords.begin(), validWords.end(), guess) == validWords.end()) {
@@ -49,36 +48,31 @@ public:
     std::string getHint(const std::string& guess) const {
         std::string hint;
         for (size_t i = 0; i < word.size(); ++i) {
-
             if (i < guess.size() && guess[i] == word[i]) {
-                //std::cout<<"The letter"<<" "<<guess[i]<<" "<<"is on the right position\n";
                 hint += guess[i];
-            }
-            else if(word.find(guess[i]) != std::string::npos) {
-                //std::cout<<"The letter"<<" "<<guess[i]<<" "<<"is in the word but not on the right position\n";
+            } else if (i < guess.size() && word.find(guess[i]) != std::string::npos) {
                 hint += '+';
-            }
-            else {
-                //std::cout<<"The letter"<<" "<<guess[i]<<" "<<"is not in the word\n";
+            } else {
                 hint += '_';
-
             }
         }
         return hint;
     }
+
     std::string verifyLetters(const std::string& guess) const {
         std::string result;
         for (size_t i = 0; i < word.size(); ++i) {
             if (i < guess.size() && guess[i] == word[i]) {
                 result += "The letter " + std::string(1, guess[i]) + " is on the right position\n";
-            } else if (word.find(guess[i]) != std::string::npos) {
+            } else if (i < guess.size() && word.find(guess[i]) != std::string::npos) {
                 result += "The letter " + std::string(1, guess[i]) + " is in the word but not on the right position\n";
-            } else {
+            } else if (i < guess.size()) {
                 result += "The letter " + std::string(1, guess[i]) + " is not in the word\n";
             }
         }
         return result;
     }
+
     std::string getLitere(const std::string& guess) const {
         std::string litere = "abcdefghijklmnopqrstuvwxyz";
         for (size_t i = 0; i < guess.size(); ++i) {
