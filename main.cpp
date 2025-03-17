@@ -1,8 +1,11 @@
 #include <iostream>
-#include <array>
 #include <chrono>
 #include <thread>
-
+#include <fstream>
+#include <vector>
+#include <string>
+#include <cstdlib>
+#include <ctime>
 #include <SFML/Graphics.hpp>
 
 #include <Helper.h>
@@ -19,58 +22,148 @@ SomeClass *getC() {
 }
 //////////////////////////////////////////////////////////////////////
 
+class Word {
+public:
+    Word(const std::string& word, const std::vector<std::string>& validWords)
+        : word(word), validWords(validWords) {
+        std::cout<<"constructor Word\n";
+
+    }
+
+    std::string getWord() const { return word; }
+
+    bool isValid(const std::string& guess) const {
+        if (std::find(validWords.begin(), validWords.end(), guess) == validWords.end()) {
+            return false;
+        }
+        for (char c : guess) {
+            if (!std::isalpha(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    bool correctLength(const std::string& guess) const { return guess.size() == word.size(); }
+    bool isCorrect(const std::string& guess) const { return guess == word; }
+    std::string getHint(const std::string& guess) const {
+        std::string hint;
+        for (size_t i = 0; i < word.size(); ++i) {
+
+            if (i < guess.size() && guess[i] == word[i]) {
+                //std::cout<<"The letter"<<" "<<guess[i]<<" "<<"is on the right position\n";
+                hint += guess[i];
+            }
+            else if(word.find(guess[i]) != std::string::npos) {
+                //std::cout<<"The letter"<<" "<<guess[i]<<" "<<"is in the word but not on the right position\n";
+                hint += '+';
+            }
+            else {
+                //std::cout<<"The letter"<<" "<<guess[i]<<" "<<"is not in the word\n";
+                hint += '_';
+
+            }
+        }
+        return hint;
+    }
+    std::string verifyLetters(const std::string& guess) const {
+        std::string result;
+        for (size_t i = 0; i < word.size(); ++i) {
+            if (i < guess.size() && guess[i] == word[i]) {
+                result += "The letter " + std::string(1, guess[i]) + " is on the right position\n";
+            } else if (word.find(guess[i]) != std::string::npos) {
+                result += "The letter " + std::string(1, guess[i]) + " is in the word but not on the right position\n";
+            } else {
+                result += "The letter " + std::string(1, guess[i]) + " is not in the word\n";
+            }
+        }
+        return result;
+    }
+    std::string getLitere(const std::string& guess) const {
+        std::string litere = "abcdefghijklmnopqrstuvwxyz";
+        for (size_t i = 0; i < guess.size(); ++i) {
+            if (word.find(guess[i]) == std::string::npos) {
+                litere[litere.find(guess[i])] = '-';
+            }
+        }
+        return litere;
+    }
+
+    ~Word() = default;
+
+private:
+    std::string word;
+    std::vector<std::string> validWords;
+};
+
+class Game {
+public:
+    Game(const std::string& word, const std::vector<std::string>& validWords)
+        : word(word, validWords), attempts(6) {}
+
+    void play() {
+        std::string guess;
+        while (attempts > 0) {
+            std::cout << "Enter your guess: ";
+            std::cin >> guess;
+            if (!word.isValid(guess)) {
+                std::cout << "Invalid guess! Please enter a valid word from the list." << std::endl;
+                continue;
+            }
+            if (!word.correctLength(guess)) {
+                std::cout << "Invalid guess! The word has " << word.getWord().size() << " letters." << std::endl;
+                continue;
+            }
+            if (word.isCorrect(guess)) {
+                std::cout << "Congratulations! You've guessed the word: " << word.getWord() << std::endl;
+                return;
+            } else {
+                std::cout<<word.verifyLetters(guess)<<std::endl;
+                std::cout << "Hint: " << word.getHint(guess) << std::endl;
+                --attempts;
+                std::cout << "Attempts remaining: " << attempts << std::endl;
+                std::cout<<"Literele folosite sunt: "<<" "<<word.getLitere(guess)<<"\n";
+            }
+        }
+        std::cout << "Game over! The word was: " << word.getWord() << std::endl;
+    }
+
+private:
+    Word word;
+    int attempts;
+};
+
+std::vector<std::string> loadWords(const std::string& filename) {
+    std::vector<std::string> words;
+    std::string path = "../";
+    path+=filename;
+    std::ifstream file(path);
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open file " << filename << std::endl;
+        return words;
+    }
+    std::string word;
+    while (file >> word) {
+        words.push_back(word);
+    }
+    return words;
+}
 
 int main() {
-    ///
-    std::cout << "Hello, world!\n";
-    std::array<int, 100> v{};
-    int nr;
-    std::cout << "Introduceți nr: ";
-    /////////////////////////////////////////////////////////////////////////
-    /// Observație: dacă aveți nevoie să citiți date de intrare de la tastatură,
-    /// dați exemple de date de intrare folosind fișierul tastatura.txt
-    /// Trebuie să aveți în fișierul tastatura.txt suficiente date de intrare
-    /// (în formatul impus de voi) astfel încât execuția programului să se încheie.
-    /// De asemenea, trebuie să adăugați în acest fișier date de intrare
-    /// pentru cât mai multe ramuri de execuție.
-    /// Dorim să facem acest lucru pentru a automatiza testarea codului, fără să
-    /// mai pierdem timp de fiecare dată să introducem de la zero aceleași date de intrare.
-    ///
-    /// Pe GitHub Actions (bife), fișierul tastatura.txt este folosit
-    /// pentru a simula date introduse de la tastatură.
-    /// Bifele verifică dacă programul are erori de compilare, erori de memorie și memory leaks.
-    ///
-    /// Dacă nu puneți în tastatura.txt suficiente date de intrare, îmi rezerv dreptul să vă
-    /// testez codul cu ce date de intrare am chef și să nu pun notă dacă găsesc vreun bug.
-    /// Impun această cerință ca să învățați să faceți un demo și să arătați părțile din
-    /// program care merg (și să le evitați pe cele care nu merg).
-    ///
-    /////////////////////////////////////////////////////////////////////////
-    std::cin >> nr;
-    /////////////////////////////////////////////////////////////////////////
-    for(int i = 0; i < nr; ++i) {
-        std::cout << "v[" << i << "] = ";
-        std::cin >> v[i];
+    std::vector<std::string> words = loadWords("words.txt");
+    if (words.empty()) {
+        std::cerr << "Failed to load words from file." << std::endl;
+        return 1;
     }
-    std::cout << "\n\n";
-    std::cout << "Am citit de la tastatură " << nr << " elemente:\n";
-    for(int i = 0; i < nr; ++i) {
-        std::cout << "- " << v[i] << "\n";
-    }
-    ///////////////////////////////////////////////////////////////////////////
-    /// Pentru date citite din fișier, NU folosiți tastatura.txt. Creați-vă voi
-    /// alt fișier propriu cu ce alt nume doriți.
-    /// Exemplu:
-    /// std::ifstream fis("date.txt");
-    /// for(int i = 0; i < nr2; ++i)
-    ///     fis >> v2[i];
-    ///
-    ///////////////////////////////////////////////////////////////////////////
-    ///                Exemplu de utilizare cod generat                     ///
-    ///////////////////////////////////////////////////////////////////////////
+
+    std::srand(std::time(0));
+    std::string randomWord = words[std::rand() % words.size()];
+
+    Game game(randomWord, words);
+    game.play();
+
     Helper helper;
     helper.help();
-    ///////////////////////////////////////////////////////////////////////////
 
     SomeClass *c = getC();
     std::cout << c << "\n";
