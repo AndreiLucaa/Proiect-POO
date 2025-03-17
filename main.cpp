@@ -22,7 +22,7 @@ std::unique_ptr<SomeClass> getC() {
 
 class Player {
 public:
-    Player(const std::string& name)
+    explicit Player(const std::string& name)
         : name(name), streak(0), attempts(0), totalTime(0) {
         std::cout << "constructor Player\n";
     }
@@ -37,19 +37,7 @@ public:
     int getAttempts() const { return attempts; }
     double getTotalTime() const { return totalTime; }
 
-    void saveStatistics() const {
-        std::ofstream file("player_stats.txt", std::ios::app);
-        if (file.is_open()) {
-            file << "Player: " << name << "\n";
-            file << "Streak: " << streak << "\n";
-            file << "Attempts: " << attempts << "\n";
-            file << "Total Time: " << totalTime << " seconds\n";
-            file << "--------------------------\n";
-            file.close();
-        } else {
-            std::cerr << "Error: Could not open file to save statistics.\n";
-        }
-    }
+
 
     ~Player() = default;
 
@@ -59,7 +47,6 @@ private:
     int attempts;
     double totalTime;
 };
-
 class Word {
 public:
     Word(const std::string& word, const std::vector<std::string>& validWords)
@@ -169,7 +156,6 @@ public:
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = end - start;
         player.addTime(elapsed.count());
-        player.saveStatistics();
         showStatistics();
     }
 
