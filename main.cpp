@@ -20,6 +20,8 @@ std::unique_ptr<SomeClass> getC() {
     return std::make_unique<SomeClass>(2);
 }
 
+
+
 class Player {
 public:
     explicit Player(const std::string& name)
@@ -27,17 +29,63 @@ public:
         std::cout << "constructor Player\n";
     }
 
-    void incrementStreak() { ++streak; }
-    void resetStreak() { streak = 0; }
-    void addAttempt() { ++attempts; }
-    void addTime(double time) { totalTime += time; }
+    Player(const Player &other)
+        : name(other.name),
+          streak(other.streak),
+          attempts(other.attempts),
+          totalTime(other.totalTime) {
+    }
+
+    Player(Player &&other) noexcept
+        : name(std::move(other.name)),
+          streak(other.streak),
+          attempts(other.attempts),
+          totalTime(other.totalTime) {
+    }
+
+    Player & operator=(const Player &other) {
+        if (this == &other)
+            return *this;
+        name = other.name;
+        streak = other.streak;
+        attempts = other.attempts;
+        totalTime = other.totalTime;
+        return *this;
+    }
+
+    Player & operator=(Player &&other) noexcept {
+        if (this == &other)
+            return *this;
+        name = std::move(other.name);
+        streak = other.streak;
+        attempts = other.attempts;
+        totalTime = other.totalTime;
+        return *this;
+    }
+
+    void incrementStreak() { privateIncrementStreak(); }
+    void resetStreak() { privateResetStreak(); }
+    void addAttempt() { privateAddAttempt(); }
+    void addTime(double time) { privateAddTime(time); }
 
     const std::string& getName() const { return name; }
     int getStreak() const { return streak; }
     int getAttempts() const { return attempts; }
     double getTotalTime() const { return totalTime; }
 
-
+    void saveStatistics() const {
+        std::ofstream file("player_stats.txt", std::ios::app);
+        if (file.is_open()) {
+            file << "Player: " << name << "\n";
+            file << "Streak: " << streak << "\n";
+            file << "Attempts: " << attempts << "\n";
+            file << "Total Time: " << totalTime << " seconds\n";
+            file << "--------------------------\n";
+            file.close();
+        } else {
+            std::cerr << "Error: Could not open file to save statistics.\n";
+        }
+    }
 
     ~Player() = default;
 
@@ -46,7 +94,22 @@ private:
     int streak;
     int attempts;
     double totalTime;
+
+    void privateIncrementStreak() { ++streak; }
+    void privateResetStreak() { streak = 0; }
+    void privateAddAttempt() { ++attempts; }
+    void privateAddTime(double time) { totalTime += time; }
+
+    friend std::ostream& operator<<(std::ostream& os, const Player& player) {
+        os << "Player: " << player.name << "\n"
+           << "Streak: " << player.streak << "\n"
+           << "Attempts: " << player.attempts << "\n"
+           << "Total Time: " << player.totalTime << " seconds\n";
+        return os;
+    }
 };
+
+
 class Word {
 public:
     Word(const std::string& word, const std::vector<std::string>& validWords)
@@ -54,9 +117,53 @@ public:
         std::cout << "constructor Word\n";
     }
 
+    Word(const Word &other)
+        : word(other.word),
+          validWords(other.validWords),
+          litere(other.litere) {
+    }
+
+    Word(Word &&other) noexcept
+        : word(std::move(other.word)),
+          validWords(std::move(other.validWords)),
+          litere(std::move(other.litere)) {
+    }
+
+    Word & operator=(const Word &other) {
+        if (this == &other)
+            return *this;
+        word = other.word;
+        validWords = other.validWords;
+        litere = other.litere;
+        return *this;
+    }
+
+    Word & operator=(Word &&other) noexcept {
+        if (this == &other)
+            return *this;
+        word = std::move(other.word);
+        validWords = std::move(other.validWords);
+        litere = std::move(other.litere);
+        return *this;
+    }
+
     const std::string& getWord() const { return word; }
 
-    bool isValid(const std::string& guess) const {
+    bool isValid(const std::string& guess) const { return privateIsValid(guess); }
+    bool correctLength(const std::string& guess) const { return privateCorrectLength(guess); }
+    bool isCorrect(const std::string& guess) const { return privateIsCorrect(guess); }
+    std::string getHint(const std::string& guess) const { return privateGetHint(guess); }
+    std::string verifyLetters(const std::string& guess) const { return privateVerifyLetters(guess); }
+    std::string getLetters(const std::string& guess) { return privateGetLetters(guess); }
+
+    ~Word() = default;
+
+private:
+    std::string word;
+    std::vector<std::string> validWords;
+    std::string litere;
+
+    bool privateIsValid(const std::string& guess) const {
         if (std::find(validWords.begin(), validWords.end(), guess) == validWords.end()) {
             return false;
         }
@@ -68,9 +175,9 @@ public:
         return true;
     }
 
-    bool correctLength(const std::string& guess) const { return guess.size() == word.size(); }
-    bool isCorrect(const std::string& guess) const { return guess == word; }
-    std::string getHint(const std::string& guess) const {
+    bool privateCorrectLength(const std::string& guess) const { return guess.size() == word.size(); }
+    bool privateIsCorrect(const std::string& guess) const { return guess == word; }
+    std::string privateGetHint(const std::string& guess) const {
         std::string hint;
         for (size_t i = 0; i < word.size(); ++i) {
             if (i < guess.size() && guess[i] == word[i]) {
@@ -84,7 +191,7 @@ public:
         return hint;
     }
 
-    std::string verifyLetters(const std::string& guess) const {
+    std::string privateVerifyLetters(const std::string& guess) const {
         std::string result;
         for (size_t i = 0; i < word.size(); ++i) {
             if (i < guess.size() && guess[i] == word[i]) {
@@ -98,7 +205,7 @@ public:
         return result;
     }
 
-    std::string getLitere(const std::string& guess) {
+    std::string privateGetLetters(const std::string& guess) {
         for (size_t i = 0; i < guess.size(); ++i) {
             if (word.find(guess[i]) == std::string::npos) {
                 litere[litere.find(guess[i])] = '-';
@@ -107,12 +214,15 @@ public:
         return litere;
     }
 
-    ~Word() = default;
-
-private:
-    std::string word;
-    std::vector<std::string> validWords;
-    std::string litere;
+    friend std::ostream& operator<<(std::ostream& os, const Word& word) {
+        os << "Word: " << word.word << "\n"
+           << "Valid Words: ";
+        for (const auto& validWord : word.validWords) {
+            os << validWord << " ";
+        }
+        os << "\n";
+        return os;
+    }
 };
 
 class Game {
@@ -120,6 +230,36 @@ public:
     Game(const std::string& word, const std::vector<std::string>& validWords, Player& player)
         : word(word, validWords), attempts(6), player(player) {
         std::cout << "constructor Game\n";
+    }
+
+    Game(const Game &other)
+        : word(other.word),
+          attempts(other.attempts),
+          player(other.player) {
+    }
+
+    Game(Game &&other) noexcept
+        : word(std::move(other.word)),
+          attempts(other.attempts),
+          player(other.player) {
+    }
+
+    Game & operator=(const Game &other) {
+        if (this == &other)
+            return *this;
+        word = other.word;
+        attempts = other.attempts;
+        player = other.player;
+        return *this;
+    }
+
+    Game & operator=(Game &&other) noexcept {
+        if (this == &other)
+            return *this;
+        word = std::move(other.word);
+        attempts = other.attempts;
+        player = other.player;
+        return *this;
     }
 
     void play() {
@@ -146,7 +286,7 @@ public:
                 std::cout << "Hint: " << word.getHint(guess) << std::endl;
                 --attempts;
                 std::cout << "Attempts remaining: " << attempts << std::endl;
-                std::cout << "Used letters are: " << word.getLitere(guess) << "\n";
+                std::cout << "Used letters are: " << word.getLetters(guess) << "\n";
             }
         }
         if (attempts == 0) {
@@ -156,14 +296,11 @@ public:
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = end - start;
         player.addTime(elapsed.count());
-        showStatistics();
+        showStats();
     }
 
-    void showStatistics() const {
-        std::cout << "Player: " << player.getName() << "\n";
-        std::cout << "Streak: " << player.getStreak() << "\n";
-        std::cout << "Attempts: " << player.getAttempts() << "\n";
-        std::cout << "Total Time: " << player.getTotalTime() << " seconds\n";
+    void showStats() const {
+        privateShowStats();
     }
 
     ~Game() = default;
@@ -172,6 +309,20 @@ private:
     Word word;
     int attempts;
     Player& player;
+
+    void privateShowStats() const {
+        std::cout << "Player: " << player.getName() << "\n";
+        std::cout << "Streak: " << player.getStreak() << "\n";
+        std::cout << "Attempts: " << player.getAttempts() << "\n";
+        std::cout << "Total Time: " << player.getTotalTime() << " seconds\n";
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const Game& game) {
+        os << "Game with word: " << game.word.getWord() << "\n"
+           << "Attempts remaining: " << game.attempts << "\n"
+           << "Player: " << game.player.getName() << "\n";
+        return os;
+    }
 };
 
 std::vector<std::string> loadWords(const std::string& filename) {
@@ -207,10 +358,14 @@ int main() {
     do {
         std::string randomWord = words[std::rand() % words.size()];
         Game game(randomWord, words, player);
+        std::cout << player << std::endl;
+        std::cout<< game << std::endl;
         game.play();
         std::cout << "Do you want to play another game? (y/n): ";
         std::cin >> playAgain;
     } while (playAgain == 'y' || playAgain == 'Y');
+
+    std::cout<< "Thank you for playing!\n";
 
     Helper helper;
     helper.help();
