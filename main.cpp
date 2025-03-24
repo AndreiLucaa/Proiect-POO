@@ -73,19 +73,19 @@ public:
     int getAttempts() const { return attempts; }
     double getTotalTime() const { return totalTime; }
 
-    void saveStatistics() const {
-        std::ofstream file("player_stats.txt", std::ios::app);
-        if (file.is_open()) {
-            file << "Player: " << name << "\n";
-            file << "Streak: " << streak << "\n";
-            file << "Attempts: " << attempts << "\n";
-            file << "Total Time: " << totalTime << " seconds\n";
-            file << "--------------------------\n";
-            file.close();
-        } else {
-            std::cerr << "Error: Could not open file to save statistics.\n";
-        }
-    }
+    // void saveStatistics() const {
+    //     std::ofstream file("player_stats.txt", std::ios::app);
+    //     if (file.is_open()) {
+    //         file << "Player: " << name << "\n";
+    //         file << "Streak: " << streak << "\n";
+    //         file << "Attempts: " << attempts << "\n";
+    //         file << "Total Time: " << totalTime << " seconds\n";
+    //         file << "--------------------------\n";
+    //         file.close();
+    //     } else {
+    //         std::cerr << "Error: Could not open file to save statistics.\n";
+    //     }
+    // }
 
     ~Player() = default;
 
