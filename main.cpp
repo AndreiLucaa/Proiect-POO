@@ -113,7 +113,7 @@ private:
 class Word {
 public:
     Word(const std::string& word, const std::vector<std::string>& validWords)
-        : word(word), validWords(validWords), litere("abcdefghijklmnopqrstuvwxyz") {
+        : word(word), validWords(validWords), litere("ABCDEFGHIJKLMNOPQRSTUVWXYZ") {
         std::cout << "constructor Word\n";
     }
 
@@ -225,41 +225,23 @@ private:
     }
 };
 
-class Game {
+class Wordle {
 public:
-    Game(const std::string& word, const std::vector<std::string>& validWords, Player& player)
+    Wordle(const std::string& word, const std::vector<std::string>& validWords, Player& player)
         : word(word, validWords), attempts(6), player(player) {
-        std::cout << "constructor Game\n";
-    }
+        std::cout << "====================================\n";
+        std::cout << "       Welcome to Wordle++!        \n";
+        std::cout << "====================================\n";
+        std::cout << "Get ready to test your word-guessing skills!\n";
+        std::cout << "Your goal is to find the hidden word by making guesses.\n";
+        std::cout << "Each guess must be a valid word of the correct length.\n\n";
 
-    Game(const Game &other)
-        : word(other.word),
-          attempts(other.attempts),
-          player(other.player) {
-    }
+        std::cout << "How to Play:\n";
+        std::cout << "✅ '+' → The letter is in the word but in the wrong position.\n";
+        std::cout << "❌ '_' → The letter is not in the word at all.\n\n";
 
-    Game(Game &&other) noexcept
-        : word(std::move(other.word)),
-          attempts(other.attempts),
-          player(other.player) {
-    }
-
-    Game & operator=(const Game &other) {
-        if (this == &other)
-            return *this;
-        word = other.word;
-        attempts = other.attempts;
-        player = other.player;
-        return *this;
-    }
-
-    Game & operator=(Game &&other) noexcept {
-        if (this == &other)
-            return *this;
-        word = std::move(other.word);
-        attempts = other.attempts;
-        player = other.player;
-        return *this;
+        std::cout << "Use these hints to refine your guesses and crack the code!\n";
+        std::cout << "Good luck and have fun! 🎉\n";
     }
 
     void play() {
@@ -268,6 +250,7 @@ public:
         while (attempts > 0) {
             std::cout << "Enter your guess: ";
             std::cin >> guess;
+            std::transform(guess.begin(), guess.end(), guess.begin(), ::toupper);
             player.addAttempt();
             if (!word.isValid(guess)) {
                 std::cout << "Invalid guess! Please enter a valid word from the list." << std::endl;
@@ -296,50 +279,159 @@ public:
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = end - start;
         player.addTime(elapsed.count());
-        showStats();
     }
 
-    void showStats() const {
-        privateShowStats();
+    Wordle(const Wordle &other)
+        : word(other.word),
+          attempts(other.attempts),
+          player(other.player) {
     }
 
-    ~Game() = default;
+    Wordle(Wordle &&other) noexcept
+        : word(std::move(other.word)),
+          attempts(other.attempts),
+          player(other.player) {
+    }
+
+    Wordle & operator=(const Wordle &other) {
+        if (this == &other)
+            return *this;
+        word = other.word;
+        attempts = other.attempts;
+        player = other.player;
+        return *this;
+    }
+
+    Wordle & operator=(Wordle &&other) noexcept {
+        if (this == &other)
+            return *this;
+        word = std::move(other.word);
+        attempts = other.attempts;
+        player = other.player;
+        return *this;
+    }
+
+    friend std::ostream& operator<<(std::ostream& os, const Wordle& game) {
+        os << "Wordle Game\n" << game.word << "\n"
+        << "Attempts: " << game.attempts << "\n"
+        << "Player:" << game.player << "\n";
+        return os;
+    }
+
+    ~Wordle() = default;
 
 private:
     Word word;
     int attempts;
     Player& player;
-
-    void privateShowStats() const {
-        std::cout << "Player: " << player.getName() << "\n";
-        std::cout << "Streak: " << player.getStreak() << "\n";
-        std::cout << "Attempts: " << player.getAttempts() << "\n";
-        std::cout << "Total Time: " << player.getTotalTime() << " seconds\n";
-    }
-
-    friend std::ostream& operator<<(std::ostream& os, const Game& game) {
-        os << "Game with word: " << game.word.getWord() << "\n"
-           << "Attempts remaining: " << game.attempts << "\n"
-           << "Player: " << game.player.getName() << "\n";
-        return os;
-    }
 };
 
-std::vector<std::string> loadWords(const std::string& filename) {
-    std::vector<std::string> words;
-    std::string path = "../";
-    path += filename;
-    std::ifstream file(path);
-    if (!file.is_open()) {
-        std::cerr << "Error: Could not open file " << filename << std::endl;
+class Game {
+public:
+    Game(Player& player) : player(player) {
+        std::cout << "constructor Game\n";
+        std::cout << "====================================\n";
+        std::cout << "       Welcome to Offline Games     \n";
+        std::cout << "====================================\n";
+        std::cout << "Choose a game mode:\n";
+        std::cout << "1. Wordle++\n";
+        std::cout << "2. Option 2 (coming soon...)\n";
+        std::cout << "3. Option 3 (coming soon...)\n";
+        std::cout << "0. Exit :(\n";
+    }
+
+    Game(const Game &other)
+        : player(other.player) {
+    }
+
+    Game(Game &&other) noexcept
+        : player(other.player) {
+    }
+
+    Game & operator=(const Game &other) {
+        if (this == &other)
+            return *this;
+        player = other.player;
+        return *this;
+    }
+
+    Game & operator=(Game &&other) noexcept {
+        if (this == &other)
+            return *this;
+        player = other.player;
+        return *this;
+    }
+
+    void playWordle(const std::string& word, const std::vector<std::string>& validWords) {
+        Wordle wordleGame(word, validWords, player);
+        wordleGame.play();
+    }
+
+    // Placeholder functions for other games
+    void playOption2() {
+        std::cout << "Option 2 is coming soon...\n";
+    }
+
+    void playOption3() {
+        std::cout << "Option 3 is coming soon...\n";
+    }
+
+    void privateChoice() {
+        std::string choice;
+        std::cout<<"Enter your choice: ";
+        std::cin >> choice;
+        if (choice == "1") {
+            std::cout << "You've chosen Wordle++\n";
+            int wordLength = getUserChoice();
+            std::vector<std::string> words = loadWords(wordLength);
+            if (words.empty()) {
+                std::cerr << "Failed to load words from file." << std::endl;
+                return;
+            }
+            std::string randomWord = words[std::rand() % words.size()];
+            playWordle(randomWord, words);
+        } else if (choice == "2") {
+            playOption2();
+        } else if (choice == "3") {
+            playOption3();
+        } else if (choice == "0") {
+            std::cout << "Goodbye!\n";
+            exit(0);
+        } else {
+            std::cout << "Invalid choice! Please enter a valid choice.\n";
+        }
+    }
+
+    ~Game() {
+        std::cout<<"Thank you for playing!\n";
+    };
+
+private:
+    Player& player;
+
+    int getUserChoice() {
+        int choice;
+        std::cout << "Enter the word length you want to play with: ";
+        std::cin >> choice;
+        return choice;
+    }
+
+    std::vector<std::string> loadWords(int wordLength) {
+        std::vector<std::string> words;
+        std::string filename = "../words" + std::to_string(wordLength) + ".txt";
+        std::ifstream file(filename);
+        if (!file.is_open()) {
+            std::cerr << "Error: Could not open file " << filename << std::endl;
+            return words;
+        }
+        std::string word;
+        while (file >> word) {
+            std::transform(word.begin(), word.end(), word.begin(), ::toupper);
+            words.push_back(word);
+        }
         return words;
     }
-    std::string word;
-    while (file >> word) {
-        words.push_back(word);
-    }
-    return words;
-}
+};
 
 int main() {
     std::string playerName;
@@ -347,25 +439,15 @@ int main() {
     std::cin >> playerName;
     Player player(playerName);
 
-    std::vector<std::string> words = loadWords("words.txt");
-    if (words.empty()) {
-        std::cerr << "Failed to load words from file." << std::endl;
-        return 1;
-    }
+    Game game(player);
 
-    std::srand(std::time(0));
     char playAgain;
     do {
-        std::string randomWord = words[std::rand() % words.size()];
-        Game game(randomWord, words, player);
         std::cout << player << std::endl;
-        std::cout<< game << std::endl;
-        game.play();
+        game.privateChoice();
         std::cout << "Do you want to play another game? (y/n): ";
         std::cin >> playAgain;
     } while (playAgain == 'y' || playAgain == 'Y');
-
-    std::cout<< "Thank you for playing!\n";
 
     Helper helper;
     helper.help();
