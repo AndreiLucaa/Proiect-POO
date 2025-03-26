@@ -87,7 +87,9 @@ public:
     //     }
     // }
 
-    ~Player() = default;
+    ~Player() {
+        std::cout << "destructor Player\n";
+    };
 
 private:
     std::string name;
@@ -101,10 +103,10 @@ private:
     void privateAddTime(double time) { totalTime += time; }
 
     friend std::ostream& operator<<(std::ostream& os, const Player& player) {
-        os << "Player: " << player.name << "\n"
-           << "Streak: " << player.streak << "\n"
-           << "Attempts: " << player.attempts << "\n"
-           << "Total Time: " << player.totalTime << " seconds\n";
+        os << "Player: " << player.getName() << "\n"
+           << "Streak: " << player.getStreak() << "\n"
+           << "Attempts: " << player.getAttempts() << "\n"
+           << "Total Time: " << player.getTotalTime() << " seconds\n";
         return os;
     }
 };
