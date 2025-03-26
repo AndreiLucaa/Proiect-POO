@@ -330,7 +330,7 @@ private:
 
 class Game {
 public:
-    Game(Player& player) : player(player) {
+    explicit Game(Player& player) : player(player) {
         std::cout << "constructor Game\n";
         std::cout << "====================================\n";
         std::cout << "       Welcome to Offline Games     \n";
