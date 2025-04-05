@@ -25,7 +25,7 @@ std::unique_ptr<SomeClass> getC() {
 class Player {
 public:
     explicit Player(const std::string& name)
-        : name(name), streak(0), attempts(0), totalTime(0) {
+        : name(name), streak(0), attempts(0), totalTime(0), gamesPlayed(0), gamesWon(0) {
         std::cout << "constructor Player\n";
     }
 
@@ -33,14 +33,18 @@ public:
         : name(other.name),
           streak(other.streak),
           attempts(other.attempts),
-          totalTime(other.totalTime) {
+          totalTime(other.totalTime),
+          gamesPlayed(other.gamesPlayed),
+          gamesWon(other.gamesWon) {
     }
 
     Player(Player &&other) noexcept
         : name(std::move(other.name)),
           streak(other.streak),
           attempts(other.attempts),
-          totalTime(other.totalTime) {
+          totalTime(other.totalTime),
+          gamesPlayed(other.gamesPlayed),
+          gamesWon(other.gamesWon) {
     }
 
     Player & operator=(const Player &other) {
@@ -50,6 +54,8 @@ public:
         streak = other.streak;
         attempts = other.attempts;
         totalTime = other.totalTime;
+        gamesPlayed = other.gamesPlayed;
+        gamesWon = other.gamesWon;
         return *this;
     }
 
@@ -60,6 +66,8 @@ public:
         streak = other.streak;
         attempts = other.attempts;
         totalTime = other.totalTime;
+        gamesPlayed = other.gamesPlayed;
+        gamesWon = other.gamesWon;
         return *this;
     }
 
@@ -67,25 +75,16 @@ public:
     void resetStreak() { privateResetStreak(); }
     void addAttempt() { privateAddAttempt(); }
     void addTime(double time) { privateAddTime(time); }
+    void incrementGamesPlayed() { ++gamesPlayed; }
+    void incrementGamesWon() { ++gamesWon; }
 
     const std::string& getName() const { return name; }
     int getStreak() const { return streak; }
     int getAttempts() const { return attempts; }
     double getTotalTime() const { return totalTime; }
-
-    // void saveStatistics() const {
-    //     std::ofstream file("player_stats.txt", std::ios::app);
-    //     if (file.is_open()) {
-    //         file << "Player: " << name << "\n";
-    //         file << "Streak: " << streak << "\n";
-    //         file << "Attempts: " << attempts << "\n";
-    //         file << "Total Time: " << totalTime << " seconds\n";
-    //         file << "--------------------------\n";
-    //         file.close();
-    //     } else {
-    //         std::cerr << "Error: Could not open file to save statistics.\n";
-    //     }
-    // }
+    int getGamesPlayed() const { return gamesPlayed; }
+    int getGamesWon() const { return gamesWon; }
+    double getWinRate() const { return gamesPlayed > 0 ? static_cast<double>(gamesWon) / gamesPlayed * 100.0 : 0.0; }
 
     ~Player() {
         std::cout << "destructor Player\n";
@@ -96,6 +95,8 @@ private:
     int streak;
     int attempts;
     double totalTime;
+    int gamesPlayed;
+    int gamesWon;
 
     void privateIncrementStreak() { ++streak; }
     void privateResetStreak() { streak = 0; }
@@ -106,7 +107,10 @@ private:
         os << "Player: " << player.getName() << "\n"
            << "Streak: " << player.getStreak() << "\n"
            << "Attempts: " << player.getAttempts() << "\n"
-           << "Total Time: " << player.getTotalTime() << " seconds\n";
+           << "Total Time: " << player.getTotalTime() << " seconds\n"
+           << "Games Played: " << player.getGamesPlayed() << "\n"
+           << "Games Won: " << player.getGamesWon() << "\n"
+           << "Win Rate: " << player.getWinRate() << "%\n";
         return os;
     }
 };
@@ -244,6 +248,7 @@ public:
 
         std::cout << "Use these hints to refine your guesses and crack the code!\n";
         std::cout << "Good luck and have fun! 🎉\n";
+        player.incrementGamesPlayed();
     }
 
     void play() {
@@ -264,7 +269,10 @@ public:
             }
             if (word.isCorrect(guess)) {
                 std::cout << "Congratulations! You've guessed the word: " << word.getWord() << std::endl;
+                std::cout << player << std::endl;
                 player.incrementStreak();
+                player.incrementGamesWon();
+
                 break;
             } else {
                 std::cout << word.verifyLetters(guess) << std::endl;
@@ -276,6 +284,7 @@ public:
         }
         if (attempts == 0) {
             std::cout << "Game over! The word was: " << word.getWord() << std::endl;
+            std::cout << player << std::endl;
             player.resetStreak();
         }
         auto end = std::chrono::high_resolution_clock::now();
@@ -438,14 +447,14 @@ private:
 int main() {
     std::string playerName;
     std::cout << "Enter your name: ";
-    std::cin >> playerName;
+    // std::cin.ignore();
+    std::getline(std::cin, playerName);
     Player player(playerName);
 
     Game game(player);
 
     char playAgain;
     do {
-        std::cout << player << std::endl;
         game.privateChoice();
         std::cout << "Do you want to play another game? (y/n): ";
         std::cin >> playAgain;
