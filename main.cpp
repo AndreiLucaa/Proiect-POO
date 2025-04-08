@@ -422,8 +422,18 @@ private:
 
     int getUserChoice() {
         int choice;
+        std::cout << "🧠 Word Challenge Time!\n";
+        std::cout << "Pick your difficulty\n";
+        std::cout<<"🔹 4-letter words – Easy start\n";
+        std::cout<<"🔸 5-letter words – Classic mode\n";
+        std::cout << "🔺 6-letter words – For the pros!\n";
         std::cout << "Enter the word length you want to play with: ";
         std::cin >> choice;
+        while (choice < 4 || choice > 6) {
+            std::cout << "🚫 Oops! That’s not a valid option.\n";
+            std::cout<<"You can only choose 4, 5, or 6 letter words. Try again!\n";
+            std::cin >> choice;
+        }
         return choice;
     }
 
