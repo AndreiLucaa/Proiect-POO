@@ -75,8 +75,8 @@ public:
     void resetStreak() { privateResetStreak(); }
     void addAttempt() { privateAddAttempt(); }
     void addTime(double time) { privateAddTime(time); }
-    void incrementGamesPlayed() { ++gamesPlayed; }
-    void incrementGamesWon() { ++gamesWon; }
+    void incrementGamesPlayed() { privateIncrementGamesPlayed(); }
+    void incrementGamesWon() { privateIncrementGamesWon(); }
 
     const std::string& getName() const { return name; }
     int getStreak() const { return streak; }
