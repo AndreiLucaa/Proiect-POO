@@ -441,7 +441,7 @@ private:
 
     std::vector<std::string> loadWords(int wordLength) {
         std::vector<std::string> words;
-        std::string filename = "../words" + std::to_string(wordLength) + ".txt";
+        std::string filename = "words" + std::to_string(wordLength) + ".txt";
         std::ifstream file(filename);
         if (!file.is_open()) {
             std::cerr << "Error: Could not open file " << filename << std::endl;
