@@ -102,6 +102,8 @@ private:
     void privateResetStreak() { streak = 0; }
     void privateAddAttempt() { ++attempts; }
     void privateAddTime(double time) { totalTime += time; }
+    void privateIncrementGamesPlayed() { ++gamesPlayed; }
+    void privateIncrementGamesWon() { ++gamesWon; }
 
     friend std::ostream& operator<<(std::ostream& os, const Player& player) {
         os << "Player: " << player.getName() << "\n"
@@ -269,9 +271,9 @@ public:
             }
             if (word.isCorrect(guess)) {
                 std::cout << "Congratulations! You've guessed the word: " << word.getWord() << std::endl;
-                std::cout << player << std::endl;
                 player.incrementStreak();
                 player.incrementGamesWon();
+                std::cout << player << std::endl;
 
                 break;
             } else {
@@ -455,9 +457,10 @@ private:
 };
 
 int main() {
+    std::srand(static_cast<unsigned>(std::time(nullptr))); // Initialize random seed
+
     std::string playerName;
     std::cout << "Enter your name: ";
-    // std::cin.ignore();
     std::getline(std::cin, playerName);
     Player player(playerName);
 
