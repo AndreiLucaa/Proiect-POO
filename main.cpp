@@ -215,8 +215,9 @@ private:
 
     std::string privateGetLetters(const std::string& guess) {
         for (size_t i = 0; i < guess.size(); ++i) {
-            if (word.find(guess[i]) == std::string::npos) {
-                litere[litere.find(guess[i])] = '-';
+            size_t pos = litere.find(guess[i]);
+            if (pos != std::string::npos) {
+                litere[pos] = '-';
             }
         }
         return litere;
