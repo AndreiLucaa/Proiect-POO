@@ -12,6 +12,8 @@
 #include <string>
 #include <thread>
 
+#include "Wordle.h"
+
 Game::Game(Player &player): player(player) {
     std::cout << "constructor Game\n";
     std::cout << "====================================\n";
