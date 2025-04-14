@@ -5,10 +5,9 @@
 #ifndef GAME_H
 #define GAME_H
 #include <iostream>
-
+#include <vector>
+#include <string>
 #include "Player.h"
-#include "Wordle.h"
-
 
 class Game {
 public:

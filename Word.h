@@ -1,7 +1,9 @@
 #ifndef WORD_H
 #define WORD_H
 #include <iostream>
+#include <vector>
 #include <string>
+
 
 
 class Word {

@@ -3,6 +3,13 @@
 //
 
 #include "Word.h"
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cctype>
+#include <string>
+#include <chrono>
+#include <thread>
 
 Word::Word(const std::string &word, const std::vector<std::string> &validWords): word(word), validWords(validWords), litere("ABCDEFGHIJKLMNOPQRSTUVWXYZ") {
     std::cout << "constructor Word\n";

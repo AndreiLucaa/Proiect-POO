@@ -3,6 +3,13 @@
 //
 
 #include "Wordle.h"
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cctype>
+#include <string>
+#include <chrono>
+#include <thread>
 
 Wordle::Wordle(const std::string &word, const std::vector<std::string> &validWords, Player &player): word(word, validWords), attempts(6), player(player) {
     std::cout << "====================================\n";

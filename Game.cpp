@@ -5,6 +5,12 @@
 #include "Game.h"
 
 #include <fstream>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cctype>
+#include <string>
+#include <thread>
 
 Game::Game(Player &player): player(player) {
     std::cout << "constructor Game\n";

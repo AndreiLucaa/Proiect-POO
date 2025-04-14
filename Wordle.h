@@ -6,7 +6,9 @@
 #define WORDLE_H
 #include <chrono>
 #include <iostream>
+#include <vector>
 #include <string>
+#include <thread>
 
 #include "Player.h"
 #include "Word.h"

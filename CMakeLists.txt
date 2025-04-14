@@ -67,6 +67,8 @@ add_executable(${MAIN_EXECUTABLE_NAME}
         Wordle.h
         Game.cpp
         Game.h
+        Globle.cpp
+        Globle.h
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )
