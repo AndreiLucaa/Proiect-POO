@@ -59,6 +59,14 @@ endif()
 add_executable(${MAIN_EXECUTABLE_NAME}
     main.cpp
     generated/src/Helper.cpp
+        Player.cpp
+        Player.h
+        Word.cpp
+        Word.h
+        Wordle.cpp
+        Wordle.h
+        Game.cpp
+        Game.h
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )
