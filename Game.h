@@ -24,7 +24,7 @@ public:
     void playWordle(const std::string& word, const std::vector<std::string>& validWords);
 
     // Placeholder functions for other games
-    void playOption2();
+    void playGloble(const std::string &country, const std::vector<std::string> &validCountries);
 
     void playOption3();
 
@@ -38,6 +38,7 @@ private:
     int getUserChoice();
 
     std::vector<std::string> loadWords(int wordLength);
+    std::vector<std::string> loadCountries();
 };
 
 

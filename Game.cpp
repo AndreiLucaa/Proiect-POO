@@ -12,6 +12,7 @@
 #include <string>
 #include <thread>
 
+#include "Globle.h"
 #include "Wordle.h"
 
 Game::Game(Player &player): player(player) {
@@ -21,7 +22,7 @@ Game::Game(Player &player): player(player) {
     std::cout << "====================================\n";
     std::cout << "Choose a game mode:\n";
     std::cout << "1. Wordle++\n";
-    std::cout << "2. Option 2 (coming soon...)\n";
+    std::cout << "2. Globle++\n";
     std::cout << "3. Option 3 (coming soon...)\n";
     std::cout << "0. Exit :(\n";
 }
@@ -51,8 +52,11 @@ void Game::playWordle(const std::string &word, const std::vector<std::string> &v
     wordleGame.play();
 }
 
-void Game::playOption2() {
-    std::cout << "Option 2 is coming soon...\n";
+void Game::playGloble(const std::string &country, const std::vector<std::string> &validCountries) {
+    // std::cout << "Option 2 is coming soon...\n";
+    Globle globleGame(country, validCountries, player);
+    globleGame.play();
+
 }
 
 void Game::playOption3() {
@@ -74,7 +78,14 @@ void Game::privateChoice() {
         std::string randomWord = words[std::rand() % words.size()];
         playWordle(randomWord, words);
     } else if (choice == "2") {
-        playOption2();
+        std::cout<<"You've chosen Globle++\n";
+        std::vector<std::string> countries = loadCountries();
+        if (countries.empty()) {
+            std::cerr << "Failed to load countries from file." << std::endl;
+            return;
+        }
+        std::string randomCountry = countries[std::rand() % countries.size()];
+        playGloble(randomCountry, countries);
     } else if (choice == "3") {
         playOption3();
     } else if (choice == "0") {
@@ -120,4 +131,18 @@ std::vector<std::string> Game::loadWords(int wordLength) {
         words.push_back(word);
     }
     return words;
+}
+
+std::vector<std::string> Game::loadCountries() {
+    std::vector<std::string> countries;
+    std::ifstream file("countries.txt");
+    if (!file.is_open()) {
+        std::cerr << "Error: Could not open file countries.txt" << std::endl;
+        return countries;
+    }
+    std::string country;
+    while (file >> country) {
+        countries.push_back(country);
+    }
+    return countries;
 }
