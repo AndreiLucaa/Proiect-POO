@@ -51,9 +51,9 @@ bool Word::correctLength(const std::string &guess) const { return privateCorrect
 
 bool Word::isCorrect(const std::string &guess) const { return privateIsCorrect(guess); }
 
-std::string Word::getHint(const std::string &guess) const { return privateGetHint(guess); }
+// std::string Word::getHint(const std::string &guess) const { return privateGetHint(guess); }
 
-std::string Word::verifyLetters(const std::string &guess) const { return privateVerifyLetters(guess); }
+std::pair<std::string, std::string> Word::verifyLetters(const std::string &guess) const { return privateVerifyLetters(guess); }
 
 std::string Word::getLetters(const std::string &guess) { return privateGetLetters(guess); }
 
@@ -75,33 +75,39 @@ bool Word::privateCorrectLength(const std::string &guess) const { return guess.s
 
 bool Word::privateIsCorrect(const std::string &guess) const { return guess == word; }
 
-std::string Word::privateGetHint(const std::string &guess) const {
+// std::string Word::privateGetHint(const std::string &guess) const {
+//     std::string hint;
+//     for (size_t i = 0; i < word.size(); ++i) {
+//         if (i < guess.size() && guess[i] == word[i]) {
+//             hint += guess[i];
+//         } else if (i < guess.size() && word.find(guess[i]) != std::string::npos) {
+//             hint += '+';
+//         } else {
+//             hint += '_';
+//         }
+//     }
+//     return hint;
+// }
+//
+std::pair<std::string, std::string> Word::privateVerifyLetters(const std::string &guess) const {
     std::string hint;
-    for (size_t i = 0; i < word.size(); ++i) {
-        if (i < guess.size() && guess[i] == word[i]) {
-            hint += guess[i];
-        } else if (i < guess.size() && word.find(guess[i]) != std::string::npos) {
-            hint += '+';
-        } else {
-            hint += '_';
-        }
-    }
-    return hint;
-}
-
-std::string Word::privateVerifyLetters(const std::string &guess) const {
     std::string result;
     for (size_t i = 0; i < word.size(); ++i) {
         if (i < guess.size() && guess[i] == word[i]) {
+            hint += guess[i];
             result += "The letter " + std::string(1, guess[i]) + " is on the right position\n";
         } else if (i < guess.size() && word.find(guess[i]) != std::string::npos) {
+            hint += "+";
             result += "The letter " + std::string(1, guess[i]) + " is in the word but not on the right position\n";
         } else if (i < guess.size()) {
+            hint += "-";
             result += "The letter " + std::string(1, guess[i]) + " is not in the word\n";
         }
     }
-    return result;
+    return {hint, result};
 }
+
+
 
 std::string Word::privateGetLetters(const std::string &guess) {
     for (size_t i = 0; i < guess.size(); ++i) {

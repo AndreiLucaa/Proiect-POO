@@ -28,7 +28,7 @@ public:
 
     std::string getHint(const std::string& guess) const;
 
-    std::string verifyLetters(const std::string& guess) const;
+    std::pair<std::string, std::string> verifyLetters(const std::string &guess) const;
 
     std::string getLetters(const std::string& guess);
 
@@ -45,9 +45,9 @@ private:
 
     bool privateIsCorrect(const std::string& guess) const;
 
-    std::string privateGetHint(const std::string& guess) const;
+    // std::string privateGetHint(const std::string& guess) const;
 
-    std::string privateVerifyLetters(const std::string& guess) const;
+    std::pair<std::string, std::string> privateVerifyLetters(const std::string &guess) const;
 
     std::string privateGetLetters(const std::string& guess);
 

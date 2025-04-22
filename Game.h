@@ -38,6 +38,7 @@ private:
     int getUserChoice();
 
     std::vector<std::string> loadWords(int wordLength);
+
     std::vector<std::string> loadCountries();
 };
 

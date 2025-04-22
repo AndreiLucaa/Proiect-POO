@@ -135,9 +135,9 @@ std::vector<std::string> Game::loadWords(int wordLength) {
 
 std::vector<std::string> Game::loadCountries() {
     std::vector<std::string> countries;
-    std::ifstream file("countries.txt");
+    std::ifstream file("countries.json");
     if (!file.is_open()) {
-        std::cerr << "Error: Could not open file countries.txt" << std::endl;
+        std::cerr << "Error: Could not open file countries.json" << std::endl;
         return countries;
     }
     std::string country;

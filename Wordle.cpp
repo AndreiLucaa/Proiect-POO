@@ -10,6 +10,7 @@
 #include <string>
 #include <chrono>
 #include <thread>
+#include <utility>
 
 Wordle::Wordle(const std::string &word, const std::vector<std::string> &validWords, Player &player): word(word, validWords), attempts(6), player(player) {
     std::cout << "====================================\n";
@@ -52,8 +53,8 @@ void Wordle::play() {
 
             break;
         } else {
-            std::cout << word.verifyLetters(guess) << std::endl;
-            std::cout << "Hint: " << word.getHint(guess) << std::endl;
+            std::pair<std::string, std::string> result = word.verifyLetters(guess);
+            std::cout << result << std::endl;            // std::cout << "Hint: " << word.getHint(guess) << std::endl;
             --attempts;
             std::cout << "Attempts remaining: " << attempts << std::endl;
             std::cout << "Used letters are: " << word.getLetters(guess) << "\n";
@@ -66,6 +67,7 @@ void Wordle::play() {
     }
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
+
     player.addTime(elapsed.count());
 }
 
@@ -98,3 +100,8 @@ Wordle & Wordle::operator=(Wordle &&other) noexcept {
 }
 
 Wordle::~Wordle() = default;
+
+std::ostream & operator<<(std::ostream &os, const std::pair<std::string, std::string> &p) {
+    os << "Hint: "<<" "<< p.first << "\n" << p.second;
+    return os;
+}

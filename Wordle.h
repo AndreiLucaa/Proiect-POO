@@ -35,6 +35,7 @@ public:
         return os;
     }
 
+
     ~Wordle();
 
 private:
@@ -42,7 +43,7 @@ private:
     int attempts;
     Player& player;
 };
-
+std::ostream &operator<<(std::ostream &os, const std::pair<std::string, std::string> &p);
 
 
 #endif //WORDLE_H
