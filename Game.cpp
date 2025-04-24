@@ -13,7 +13,7 @@
 #include <thread>
 #include "Country.h"
 #include "Globle.h"
-#include "json.hpp"
+#include "ext/include/json/json.hpp"
 #include "Wordle.h"
 
 Game::Game(Player &player): player(player) {
