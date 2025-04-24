@@ -11,8 +11,9 @@
 #include <cctype>
 #include <string>
 #include <thread>
-
+#include "Country.h"
 #include "Globle.h"
+#include "json.hpp"
 #include "Wordle.h"
 
 Game::Game(Player &player): player(player) {
@@ -52,9 +53,9 @@ void Game::playWordle(const std::string &word, const std::vector<std::string> &v
     wordleGame.play();
 }
 
-void Game::playGloble(const std::string &country, const std::vector<std::string> &validCountries) {
+void Game::playGloble(const std::string &country, const std::vector<std::pair<std::string, std::pair<double, double>>> &validCountries, double latitude, double longitude) {
     // std::cout << "Option 2 is coming soon...\n";
-    Globle globleGame(country, validCountries, player);
+    Globle globleGame(country, validCountries, player, latitude, longitude);
     globleGame.play();
 
 }
@@ -79,13 +80,20 @@ void Game::privateChoice() {
         playWordle(randomWord, words);
     } else if (choice == "2") {
         std::cout<<"You've chosen Globle++\n";
-        std::vector<std::string> countries = loadCountries();
+        std::vector<std::pair<std::string, std::pair<double, double>>> countries = loadCountries();
+        // std::cout << countries;
         if (countries.empty()) {
             std::cerr << "Failed to load countries from file." << std::endl;
             return;
         }
-        std::string randomCountry = countries[std::rand() % countries.size()];
-        playGloble(randomCountry, countries);
+        int countryIndex = std::rand() % countries.size();
+        std::string randomCountry = countries[countryIndex].first;
+        double latitude = countries[countryIndex].second.first;
+        double longitude = countries[countryIndex].second.second;
+        std::cout << "Random country: " << randomCountry << "\n";
+        std::cout << "Coordinates: (" << latitude << ", " << longitude << ")\n";
+        playGloble(randomCountry, countries, latitude, longitude);
+
     } else if (choice == "3") {
         playOption3();
     } else if (choice == "0") {
@@ -133,16 +141,37 @@ std::vector<std::string> Game::loadWords(int wordLength) {
     return words;
 }
 
-std::vector<std::string> Game::loadCountries() {
-    std::vector<std::string> countries;
+std::vector<std::pair<std::string, std::pair<double, double>>> Game::loadCountries() {
+    std::vector<std::pair<std::string, std::pair<double, double>>> countries;
     std::ifstream file("countries.json");
     if (!file.is_open()) {
         std::cerr << "Error: Could not open file countries.json" << std::endl;
         return countries;
     }
-    std::string country;
-    while (file >> country) {
-        countries.push_back(country);
+
+    nlohmann::json jsonData;
+    file >> jsonData;
+
+    for (const auto &item : jsonData) {
+        std::string country = item["country"];
+        double latitude = item["latitude"];
+        double longitude = item["longitude"];
+        countries.emplace_back(country, std::make_pair(latitude, longitude));
     }
+
     return countries;
 }
+std::ostream& operator<<(std::ostream& os, const std::pair<std::string, std::pair<double, double>>& country) {
+    os << "Country: " << country.first << ", Coordinates: (" << country.second.first << ", " << country.second.second << ")";
+    return os;
+}
+
+std::ostream & operator<<(std::ostream &os,
+    const std::vector<std::pair<std::string, std::pair<double, double>>> &countries) {
+    for (const auto& country : countries) {
+        os << country << "\n";
+    }
+    return os;
+}
+
+

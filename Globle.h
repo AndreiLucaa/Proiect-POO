@@ -11,7 +11,10 @@
 
 class Globle {
 public:
-    Globle(const std::string &country, const std::vector<std::string> &validCounrties, Player &player);
+
+    Globle(const std::string &country,
+           const std::vector<std::pair<std::string, std::pair<double, double>>> &validCountries,
+           Player &player, double latitude, double longitude);
 
     void play();
 
@@ -21,6 +24,7 @@ private:
     int attempts;
 
 };
+std::ostream & operator<<(std::ostream & os, const std::pair<double, double> & rhs);
 
 
 #endif //GLOBLE_H

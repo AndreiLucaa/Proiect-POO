@@ -24,7 +24,8 @@ public:
     void playWordle(const std::string& word, const std::vector<std::string>& validWords);
 
     // Placeholder functions for other games
-    void playGloble(const std::string &country, const std::vector<std::string> &validCountries);
+    void playGloble(const std::string &country, const std::vector<std::pair<std::string, std::pair<double, double>>> &validCountries, double
+                    latitude, double longitude);
 
     void playOption3();
 
@@ -39,9 +40,10 @@ private:
 
     std::vector<std::string> loadWords(int wordLength);
 
-    std::vector<std::string> loadCountries();
+    std::vector<std::pair<std::string, std::pair<double, double>>> loadCountries();
 };
 
+std::ostream& operator<<(std::ostream& os, const std::pair<std::string, std::pair<double, double>>& country);
 
-
+std::ostream& operator<<(std::ostream& os, const std::vector<std::pair<std::string, std::pair<double, double>>>& countries);
 #endif //GAME_H
