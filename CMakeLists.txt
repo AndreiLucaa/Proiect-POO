@@ -71,7 +71,6 @@ add_executable(${MAIN_EXECUTABLE_NAME}
         Globle.h
         Country.cpp
         Country.h
-        ext/include/json/json.hpp
         HaversineResult.cpp
         HaversineResult.h
 )
