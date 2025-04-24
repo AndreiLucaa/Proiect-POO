@@ -18,14 +18,11 @@ public:
                     const std::vector<std::pair<std::string, std::pair<double, double>>> &validCountries,
                     double latitude, double longitude);
 
-    void displayHaversineResult(double lat1, double lon1, double lat2, double lon2);
-
-    std::pair<double, double> haversine(double lat1, double lon1, double lat2, double lon2);
-
-    std::string bearingToCompass(double bearing);
+    void displayHaversineResult(double lat1, double lon1, double lat2, double lon2) const override;
+    std::pair<double, double> haversine(double lat1, double lon1, double lat2, double lon2) const;
+    std::string bearingToCompass(double bearing) const;
 
 private:
     std::pair<double, double> result;
 };
-
 #endif // HAVERSINERESULT_H

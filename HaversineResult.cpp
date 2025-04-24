@@ -15,13 +15,15 @@ HaversineResult::HaversineResult(const std::string &name,
                                  double latitude, double longitude)
     : Country(name, validCountries, latitude, longitude) {}
 
-void HaversineResult::displayHaversineResult(double lat1, double lon1, double lat2, double lon2) {
-    result = haversine(lat1, lon1, lat2, lon2);
-    std::cout << "Haversine Distance: " << ceil(result.first) << " km\n";
-    std::cout << "Bearing: " << bearingToCompass(result.second) << "\n";
+
+
+void HaversineResult::displayHaversineResult(double lat1, double lon1, double lat2, double lon2) const {
+    std::pair<double, double> result_ = haversine(lat1, lon1, lat2, lon2);
+    std::cout << "Haversine Distance: " << ceil(result_.first) << " km\n";
+    std::cout << "Bearing: " << bearingToCompass(result_.second) << "\n";
 }
 
-std::pair<double, double> HaversineResult::haversine(double lat1, double lon1, double lat2, double lon2) {
+std::pair<double, double> HaversineResult::haversine(double lat1, double lon1, double lat2, double lon2) const {
     // Convert degrees to radians
     lat1 *= DEG_TO_RAD;
     lon1 *= DEG_TO_RAD;
@@ -51,7 +53,7 @@ std::pair<double, double> HaversineResult::haversine(double lat1, double lon1, d
     return {distance, bearing};
 }
 
-std::string HaversineResult::bearingToCompass(double bearing) {
+std::string HaversineResult::bearingToCompass(double bearing) const {
     // Normalize the bearing to 0-360 degrees
     bearing = std::fmod((bearing + 360.0), 360.0);
 

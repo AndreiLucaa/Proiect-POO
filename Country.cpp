@@ -20,7 +20,7 @@ Country::Country(const std::string &name,
     std::cout << "constructor Country\n";
 }
 
-void Country::displayHaversineResult(double lat1, double lon1, double lat2, double lon2) const {
+void Country::displayHaversineResult(double /*lat1*/, double /*lon1*/, double /*lat2*/, double /*lon2*/) const {
     std::cout << "here the func from other class will be overridden" << std::endl;
 }
 
