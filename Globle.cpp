@@ -37,7 +37,6 @@ void Globle::play() {
         std::cout << "Enter your guess: ";
         std::getline(std::cin, guessCountry);
 
-        player.addAttempt();
         if (!country.isValidCountry(guessCountry)) {
             std::cout << "Oops! That country doesn’t exist. Give it another shot!" << std::endl;
             continue;
@@ -57,9 +56,14 @@ void Globle::play() {
 
             HaversineResult haversineResult(country.getName(), country.getValidCountries(), targetLat, targetLon);
             haversineResult.displayHaversineResult(guessLat, guessLon, targetLat, targetLon);
-
+            player.addAttempt();
             --attempts;
             std::cout << "Attempts remaining: " << attempts << std::endl;
+        }
+        if (attempts == 0) {
+            std::cout << "Sorry! You've run out of attempts. The correct country was: " << country.getName() << std::endl;
+            player.resetStreak();
+            std::cout << player << std::endl;
         }
     }
     auto end = std::chrono::high_resolution_clock::now();
