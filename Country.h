@@ -38,6 +38,12 @@ public:
 
     double getLongitude() const;
 
+    bool isValidCountry(const std::string &countryName) const;
+
+    bool isCorrectCountry(const std::string &guessCountry) const;
+
+    std::pair<double, double> getCoordinates(const std::string &countryName) const;
+
 private:
     std::string name;
     std::vector<std::pair<std::string, std::pair<double, double>>> validCountries;

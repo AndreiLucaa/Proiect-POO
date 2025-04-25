@@ -11,6 +11,8 @@
 
 class Game {
 public:
+    void displayMenu() const;
+
     explicit Game(Player& player);
 
     Game(const Game &other);

@@ -7,12 +7,9 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <thread>
-#include <cmath>
+
 #include <utility>
-// std::string Country::getName() const {
-//     return name;
-// }
+
 
 Country::Country(const std::string &name,
     const std::vector<std::pair<std::string, std::pair<double, double>>> &validCountries, double latitude,
@@ -38,6 +35,27 @@ double Country::getLatitude() const {
 
 double Country::getLongitude() const {
     return longitude;
+}
+
+bool Country::isValidCountry(const std::string &countryName) const {
+    return std::any_of(validCountries.begin(), validCountries.end(),
+                       [&countryName](const std::pair<std::string, std::pair<double, double>> &entry) {
+                           return entry.first == countryName;
+                       });
+}
+bool Country::isCorrectCountry(const std::string &guessCountry) const {
+    return name == guessCountry;
+}
+
+std::pair<double, double> Country::getCoordinates(const std::string &countryName) const {
+    auto it = std::find_if(validCountries.begin(), validCountries.end(),
+                           [&countryName](const std::pair<std::string, std::pair<double, double>> &entry) {
+                               return entry.first == countryName;
+                           });
+    if (it != validCountries.end()) {
+        return it->second;
+    }
+    return {0.0, 0.0}; // Return default coordinates if the country is not found
 }
 
 // std::pair<double, double> Country::haversine(double lat1, double lon1, double lat2, double lon2) {

@@ -7,7 +7,6 @@
 #include <cctype>
 #include <string>
 #include <thread>
-
 #include "HaversineResult.h"
 
 Globle::Globle(const std::string &country, const std::vector<std::pair<std::string, std::pair<double, double>>> &validCountries, Player &player, double latitude, double longitude)
@@ -26,28 +25,45 @@ Globle::Globle(const std::string &country, const std::vector<std::pair<std::stri
     std::cout << "Use these clues to narrow down the correct country!\n";
     std::cout << "Can you guess the mystery country in as few tries as possible?\n";
     std::cout << "Good luck and have fun exploring the globe! 🌐\n";
+    player.incrementGamesPlayed();
 }
 
 
 
 void Globle::play() {
+    std::string guessCountry;
+    auto start = std::chrono::high_resolution_clock::now();
+    while (attempts > 0) {
+        std::cout << "Enter your guess: ";
+        std::getline(std::cin, guessCountry);
 
-    HaversineResult haversineResult(
-        country.getName(),
-        country.getValidCountries(),
-        country.getLatitude(),
-        country.getLongitude()
-    );
+        player.addAttempt();
+        if (!country.isValidCountry(guessCountry)) {
+            std::cout << "Oops! That country doesn’t exist. Give it another shot!" << std::endl;
+            continue;
+        }
 
-    double lat1 = 41.3275;  // Albania latitude
-    double lon1 = 19.8189;  // Albania longitude
-    double lat2 = 44.4268;  // Romania latitude
-    double lon2 = 26.1025;  // Romania longitude
+        if (country.isCorrectCountry(guessCountry)) {
+            std::cout << "Congratulations! You've guessed the country: " << country.getName() << std::endl;
+            player.incrementStreak();
+            player.incrementGamesWon();
+            std::cout << player << std::endl;
+            break;
+        }
+        else {
+            auto [guessLat, guessLon] = country.getCoordinates(guessCountry);
+            double targetLat = country.getLatitude();
+            double targetLon = country.getLongitude();
 
-    haversineResult.displayHaversineResult(lat1, lon1, lat2, lon2);
-}
+            HaversineResult haversineResult(country.getName(), country.getValidCountries(), targetLat, targetLon);
+            haversineResult.displayHaversineResult(guessLat, guessLon, targetLat, targetLon);
 
-std::ostream & operator<<(std::ostream &os, const std::pair<double, double> &rhs) {
-    os << "Distance: " << rhs.first << ", Bearing: " << rhs.second;
-    return os;
+            --attempts;
+            std::cout << "Attempts remaining: " << attempts << std::endl;
+        }
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+
+    player.addTime(elapsed.count());
 }

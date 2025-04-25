@@ -1,16 +1,11 @@
-//
-// Created by Andrei Luca on 24.04.2025.
-//
-
 #ifndef HAVERSINERESULT_H
 #define HAVERSINERESULT_H
 
 #include "Country.h"
-#include <iostream>
 #include <string>
-#include <utility>
 #include <vector>
-
+#include <cmath>
+#include <iostream>
 
 class HaversineResult : public Country {
 public:
@@ -19,10 +14,10 @@ public:
                     double latitude, double longitude);
 
     void displayHaversineResult(double lat1, double lon1, double lat2, double lon2) const override;
-    std::pair<double, double> haversine(double lat1, double lon1, double lat2, double lon2) const;
-    std::string bearingToCompass(double bearing) const;
 
 private:
-    std::pair<double, double> result;
+    std::pair<double, double> haversine(double lat1, double lon1, double lat2, double lon2) const;
+    std::string bearingToCompass(double bearing) const;
 };
+
 #endif // HAVERSINERESULT_H

@@ -16,17 +16,21 @@
 #include "json.hpp"
 #include "Wordle.h"
 
-Game::Game(Player &player): player(player) {
-    std::cout << "constructor Game\n";
-    std::cout << "====================================\n";
-    std::cout << "       Welcome to Offline Games     \n";
-    std::cout << "====================================\n";
+void Game::displayMenu() const {
     std::cout << "Choose a game mode:\n";
     std::cout << "1. Wordle++\n";
     std::cout << "2. Globle++\n";
     std::cout << "3. Option 3 (coming soon...)\n";
     std::cout << "0. Exit :(\n";
 }
+
+Game::Game(Player &player): player(player) {
+    std::cout << "constructor Game\n";
+    std::cout << "====================================\n";
+    std::cout << "       Welcome to Offline Games     \n";
+    std::cout << "====================================\n";
+}
+
 
 Game::Game(const Game &other): player(other.player) {
 }
@@ -65,8 +69,9 @@ void Game::playOption3() {
 }
 
 void Game::privateChoice() {
+    displayMenu(); // Display the menu again before taking input
     std::string choice;
-    std::cout<<"Enter your choice: ";
+    std::cout << "Enter your choice: ";
     std::cin >> choice;
     if (choice == "1") {
         std::cout << "You've chosen Wordle++\n";
@@ -79,9 +84,8 @@ void Game::privateChoice() {
         std::string randomWord = words[std::rand() % words.size()];
         playWordle(randomWord, words);
     } else if (choice == "2") {
-        std::cout<<"You've chosen Globle++\n";
+        std::cout << "You've chosen Globle++\n";
         std::vector<std::pair<std::string, std::pair<double, double>>> countries = loadCountries();
-        // std::cout << countries;
         if (countries.empty()) {
             std::cerr << "Failed to load countries from file." << std::endl;
             return;
@@ -90,10 +94,7 @@ void Game::privateChoice() {
         std::string randomCountry = countries[countryIndex].first;
         double latitude = countries[countryIndex].second.first;
         double longitude = countries[countryIndex].second.second;
-        std::cout << "Random country: " << randomCountry << "\n";
-        std::cout << "Coordinates: (" << latitude << ", " << longitude << ")\n";
         playGloble(randomCountry, countries, latitude, longitude);
-
     } else if (choice == "3") {
         playOption3();
     } else if (choice == "0") {
