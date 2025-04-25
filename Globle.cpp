@@ -56,7 +56,7 @@ void Globle::play() {
 
             HaversineResult haversineResult(country.getName(), country.getValidCountries(), targetLat, targetLon);
             haversineResult.displayHaversineResult(guessLat, guessLon, targetLat, targetLon);
-            player.addAttempt();
+
             --attempts;
             std::cout << "Attempts remaining: " << attempts << std::endl;
         }
