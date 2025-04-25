@@ -30,10 +30,8 @@ public:
 
     virtual ~Country() = default;
 
-    std::string getName() const;
-
-    std::vector<std::pair<std::string, std::pair<double, double>>> getValidCountries() const;
-
+    std::string const& getName() const;
+    std::vector<std::pair<std::string, std::pair<double, double>>> const& getValidCountries() const;
     double getLatitude() const;
 
     double getLongitude() const;

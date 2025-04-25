@@ -21,11 +21,11 @@ void Country::displayHaversineResult(double /*lat1*/, double /*lon1*/, double /*
     std::cout << "here the func from other class will be overridden" << std::endl;
 }
 
-std::string Country::getName() const {
+std::string const& Country::getName() const {
     return name;
 }
 
-std::vector<std::pair<std::string, std::pair<double, double>>> Country::getValidCountries() const {
+std::vector<std::pair<std::string, std::pair<double, double>>> const& Country::getValidCountries() const {
     return validCountries;
 }
 
