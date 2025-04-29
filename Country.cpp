@@ -38,19 +38,30 @@ double Country::getLongitude() const {
 }
 
 bool Country::isValidCountry(const std::string &countryName) const {
+    std::string upperCountryName = countryName;
+    std::transform(upperCountryName.begin(), upperCountryName.end(), upperCountryName.begin(), ::toupper);
+
     return std::any_of(validCountries.begin(), validCountries.end(),
-                       [&countryName](const std::pair<std::string, std::pair<double, double>> &entry) {
-                           return entry.first == countryName;
+                       [&upperCountryName](const std::pair<std::string, std::pair<double, double>> &entry) {
+                           std::string upperEntryName = entry.first;
+                           std::transform(upperEntryName.begin(), upperEntryName.end(), upperEntryName.begin(), ::toupper);
+                           return upperEntryName == upperCountryName;
                        });
 }
 bool Country::isCorrectCountry(const std::string &guessCountry) const {
-    return name == guessCountry;
+    std::string upperGuessCountry = guessCountry;
+    std::transform(upperGuessCountry.begin(), upperGuessCountry.end(), upperGuessCountry.begin(), ::toupper);
+    return name == upperGuessCountry;
 }
 
 std::pair<double, double> Country::getCoordinates(const std::string &countryName) const {
+    std::string upperCountryName = countryName;
+    std::transform(upperCountryName.begin(), upperCountryName.end(), upperCountryName.begin(), ::toupper);
     auto it = std::find_if(validCountries.begin(), validCountries.end(),
-                           [&countryName](const std::pair<std::string, std::pair<double, double>> &entry) {
-                               return entry.first == countryName;
+                           [&upperCountryName](const std::pair<std::string, std::pair<double, double>> &entry) {
+                               std::string upperEntryName = entry.first;
+                               std::transform(upperEntryName.begin(), upperEntryName.end(), upperEntryName.begin(), ::toupper);
+                               return upperEntryName == upperCountryName;
                            });
     if (it != validCountries.end()) {
         return it->second;

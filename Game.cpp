@@ -155,6 +155,7 @@ std::vector<std::pair<std::string, std::pair<double, double>>> Game::loadCountri
 
     for (const auto &item : jsonData) {
         std::string country = item["country"];
+        std::transform(country.begin(), country.end(), country.begin(), ::toupper);
         double latitude = item["latitude"];
         double longitude = item["longitude"];
         countries.emplace_back(country, std::make_pair(latitude, longitude));
