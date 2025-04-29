@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <cctype>
+#include <chrono>
 #include <string>
 #include <thread>
 #include "HaversineResult.h"
@@ -32,8 +33,7 @@ Globle::Globle(const std::string &country, const std::vector<std::pair<std::stri
 
 void Globle::play() {
     std::string guessCountry;
-    auto start = std::chrono::high_resolution_clock::now();
-    while (attempts > 0) {
+    auto start = std::chrono::high_resolution_clock::now();    while (attempts > 0) {
         std::cout << "Enter your guess: ";
         std::getline(std::cin, guessCountry);
 
@@ -69,7 +69,6 @@ void Globle::play() {
         }
     }
     auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> elapsed = end - start;
-
-    player.addTime(elapsed.count());
+    auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    player.addTime(elapsed);
 }
