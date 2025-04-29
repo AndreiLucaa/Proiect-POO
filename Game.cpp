@@ -13,7 +13,7 @@
 #include <thread>
 #include "Country.h"
 #include "Globle.h"
-#include "json.hpp"
+#include <json.hpp>
 #include "Wordle.h"
 
 void Game::displayMenu() const {
