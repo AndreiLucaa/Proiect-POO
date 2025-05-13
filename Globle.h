@@ -13,12 +13,15 @@ class Globle {
 public:
 
     Globle(const std::string &country,
-           const std::vector<std::pair<std::string, std::pair<double, double>>> &validCountries,
-           Player &player, double latitude, double longitude);
+           const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> &
+           validCountries, Player &player, double latitude, double longitude, const std::string &capital,
+           long population,
+           const std::string &currency);
 
-    void play();
+    virtual void play();
 
-private:
+
+protected:
     Country country;
     Player &player;
     int attempts;

@@ -11,6 +11,11 @@
 #include <chrono>
 #include <thread>
 
+#include "InvalidCharacterException.h"
+#include "InvalidGuessException.h"
+#include "InvalidWordLengthException.h"
+#include "WordExceptions.h"
+
 Word::Word(const std::string &word, const std::vector<std::string> &validWords): word(word), validWords(validWords), litere("ABCDEFGHIJKLMNOPQRSTUVWXYZ") {
     std::cout << "constructor Word\n";
 }
@@ -61,18 +66,23 @@ Word::~Word() = default;
 
 bool Word::privateIsValid(const std::string &guess) const {
     if (std::find(validWords.begin(), validWords.end(), guess) == validWords.end()) {
-        return false;
+        throw InvalidGuessException("The word '" + guess + "' is not in the valid words list.");
     }
     for (char c : guess) {
         if (!std::isalpha(c)) {
-            return false;
+            throw InvalidCharacterException("The word '" + guess + "' contains non-alphabetic characters.");
         }
     }
     return true;
 }
 
-bool Word::privateCorrectLength(const std::string &guess) const { return guess.size() == word.size(); }
-
+bool Word::privateCorrectLength(const std::string &guess) const {
+    if (guess.size() != word.size()) {
+        throw InvalidWordLengthException("Expected length " + std::to_string(word.size()) +
+                                         ", but got " + std::to_string(guess.size()) + ".");
+    }
+    return true;
+}
 bool Word::privateIsCorrect(const std::string &guess) const { return guess == word; }
 
 // std::string Word::privateGetHint(const std::string &guess) const {

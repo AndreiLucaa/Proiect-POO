@@ -2,966 +2,1547 @@
   {
     "country": "Afghanistan",
     "latitude": 33.9391,
-    "longitude": 67.71
+    "longitude": 67.71,
+    "capital": "Kabul",
+    "population": 38928346,
+    "currency": "Afghan afghani"
   },
   {
     "country": "Albania",
     "latitude": 41.1533,
-    "longitude": 20.1683
+    "longitude": 20.1683,
+    "capital": "Tirana",
+    "population": 2877797,
+    "currency": "Albanian lek"
   },
   {
     "country": "Algeria",
     "latitude": 28.0339,
-    "longitude": 1.6596
+    "longitude": 1.6596,
+    "capital": "Algiers",
+    "population": 43851044,
+    "currency": "Algerian dinar"
   },
   {
     "country": "Andorra",
     "latitude": 42.5063,
-    "longitude": 1.5218
+    "longitude": 1.5218,
+    "capital": "Andorra la Vella",
+    "population": 77265,
+    "currency": "Euro"
   },
   {
     "country": "Angola",
     "latitude": -11.2027,
-    "longitude": 17.8739
+    "longitude": 17.8739,
+    "capital": "Luanda",
+    "population": 32866272,
+    "currency": "Angolan kwanza"
   },
   {
     "country": "Antigua and Barbuda",
     "latitude": 17.0608,
-    "longitude": -61.7964
+    "longitude": -61.7964,
+    "capital": "Saint John's",
+    "population": 97928,
+    "currency": "East Caribbean dollar"
   },
   {
     "country": "Argentina",
     "latitude": -38.4161,
-    "longitude": -63.6167
+    "longitude": -63.6167,
+    "capital": "Buenos Aires",
+    "population": 45195777,
+    "currency": "Argentine peso"
   },
   {
     "country": "Armenia",
     "latitude": 40.0691,
-    "longitude": 45.0382
+    "longitude": 45.0382,
+    "capital": "Yerevan",
+    "population": 2963243,
+    "currency": "Armenian dram"
   },
   {
     "country": "Australia",
     "latitude": -25.2744,
-    "longitude": 133.7751
+    "longitude": 133.7751,
+    "capital": "Canberra",
+    "population": 25687041,
+    "currency": "Australian dollar"
   },
   {
     "country": "Austria",
     "latitude": 47.5162,
-    "longitude": 14.5501
+    "longitude": 14.5501,
+    "capital": "Vienna",
+    "population": 8917205,
+    "currency": "Euro"
+
   },
   {
     "country": "Azerbaijan",
     "latitude": 40.1431,
-    "longitude": 47.5769
+    "longitude": 47.5769,
+    "capital": "Baku",
+    "population": 10139177,
+    "currency": "Azerbaijani manat"
   },
   {
     "country": "Bahamas",
     "latitude": 25.0343,
-    "longitude": -77.3963
+    "longitude": -77.3963,
+    "capital": "Nassau",
+    "population": 393248,
+    "currency": "Bahamian dollar"
   },
   {
     "country": "Bahrain",
     "latitude": 26.0667,
-    "longitude": 50.5577
+    "longitude": 50.5577,
+    "capital": "Manama",
+    "population": 1701575,
+    "currency": "Bahraini dinar"
   },
   {
     "country": "Bangladesh",
     "latitude": 23.685,
-    "longitude": 90.3563
+    "longitude": 90.3563,
+    "capital": "Dhaka",
+    "population": 166303498,
+    "currency": "Bangladeshi taka"
   },
   {
     "country": "Barbados",
     "latitude": 13.1939,
-    "longitude": -59.5432
+    "longitude": -59.5432,
+    "capital": "Bridgetown",
+    "population": 287375,
+    "currency": "Barbadian dollar"
   },
   {
     "country": "Belarus",
     "latitude": 53.7098,
-    "longitude": 27.9534
+    "longitude": 27.9534,
+    "capital": "Minsk",
+    "population": 9449323,
+    "currency": "Belarusian ruble"
   },
   {
     "country": "Belgium",
     "latitude": 50.5039,
-    "longitude": 4.4699
+    "longitude": 4.4699,
+    "capital": "Brussels",
+    "population": 11589623,
+    "currency": "Euro"
   },
   {
     "country": "Belize",
     "latitude": 17.1899,
-    "longitude": -88.4976
+    "longitude": -88.4976,
+    "capital": "Belmopan",
+    "population": 397621,
+    "currency": "Belize dollar"
   },
   {
     "country": "Benin",
     "latitude": 9.3077,
-    "longitude": 2.3158
+    "longitude": 2.3158,
+    "capital": "Porto-Novo",
+    "population": 12123200,
+    "currency": "West African CFA franc"
   },
   {
     "country": "Bhutan",
     "latitude": 27.5142,
-    "longitude": 90.4336
+    "longitude": 90.4336,
+    "capital": "Thimphu",
+    "population": 771612,
+    "currency": "Bhutanese ngultrum"
   },
   {
     "country": "Bolivia",
     "latitude": -16.2902,
-    "longitude": -63.5887
+    "longitude": -63.5887,
+    "capital": "Sucre",
+    "population": 11673029,
+    "currency": "Bolivian boliviano"
   },
   {
     "country": "Bosnia and Herzegovina",
     "latitude": 43.9159,
-    "longitude": 17.6791
+    "longitude": 17.6791,
+    "capital": "Sarajevo",
+    "population": 3280819,
+    "currency": "Bosnia and Herzegovina convertible mark"
   },
   {
     "country": "Botswana",
     "latitude": -22.3285,
-    "longitude": 24.6849
+    "longitude": 24.6849,
+    "capital": "Gaborone",
+    "population": 2141206,
+    "currency": "Botswana pula"
   },
   {
     "country": "Brazil",
     "latitude": -14.235,
-    "longitude": -51.9253
+    "longitude": -51.9253,
+    "capital": "Brasília",
+    "population": 213993437,
+    "currency": "Brazilian real"
+
   },
   {
     "country": "Brunei",
     "latitude": 4.5353,
-    "longitude": 114.7277
+    "longitude": 114.7277,
+    "capital": "Bandar Seri Begawan",
+    "population": 453562,
+    "currency": "Brunei dollar"
   },
   {
     "country": "Bulgaria",
     "latitude": 42.7339,
-    "longitude": 25.4858
+    "longitude": 25.4858,
+    "capital": "Sofia",
+    "population": 6951482,
+    "currency": "Bulgarian lev"
   },
   {
     "country": "Burkina Faso",
     "latitude": 12.2383,
-    "longitude": -1.5616
+    "longitude": -1.5616,
+    "capital": "Ouagadougou",
+    "population": 20511649,
+    "currency": "West African CFA franc"
   },
   {
     "country": "Burundi",
     "latitude": -3.3731,
-    "longitude": 29.9189
+    "longitude": 29.9189,
+    "capital": "Gitega",
+    "population": 12114505,
+    "currency": "Burundian franc"
   },
   {
     "country": "Cabo Verde",
     "latitude": 16.5388,
-    "longitude": -23.0418
+    "longitude": -23.0418,
+    "capital": "Praia",
+    "population": 549911,
+    "currency": "Cape Verdean escudo"
   },
   {
     "country": "Cambodia",
     "latitude": 12.5657,
-    "longitude": 104.991
+    "longitude": 104.991,
+    "capital": "Phnom Penh",
+    "population": 16845872,
+    "currency": "Cambodian riel"
   },
   {
     "country": "Cameroon",
     "latitude": 7.3697,
-    "longitude": 12.3547
+    "longitude": 12.3547,
+    "capital": "Yaoundé",
+    "population": 22709892,
+    "currency": "Central African CFA franc"
   },
   {
     "country": "Canada",
     "latitude": 56.1304,
-    "longitude": -106.3468
+    "longitude": -106.3468,
+    "capital": "Ottawa",
+    "population": 38005238,
+    "currency": "Canadian dollar"
   },
   {
     "country": "Central African Republic",
     "latitude": 6.6111,
-    "longitude": 20.9394
+    "longitude": 20.9394,
+    "capital": "Bangui",
+    "population": 5496064,
+    "currency": "Central African CFA franc"
   },
   {
     "country": "Chad",
     "latitude": 15.4542,
-    "longitude": 18.7322
+    "longitude": 18.7322,
+    "capital": "N'Djamena",
+    "population": 16615859,
+    "currency": "Central African CFA franc"
   },
   {
     "country": "Chile",
     "latitude": -35.6751,
-    "longitude": -71.543
+    "longitude": -71.543,
+    "capital": "Santiago",
+    "population": 19116209,
+    "currency": "Chilean peso"
   },
   {
     "country": "China",
     "latitude": 35.8617,
-    "longitude": 104.1954
+    "longitude": 104.1954,
+    "capital": "Beijing",
+    "population": 1444216107,
+    "currency": "Renminbi"
   },
   {
     "country": "Colombia",
     "latitude": 4.5709,
-    "longitude": -74.2973
+    "longitude": -74.2973,
+    "capital": "Bogotá",
+    "population": 50882891,
+    "currency": "Colombian peso"
   },
   {
     "country": "Comoros",
     "latitude": -11.6455,
-    "longitude": 43.3333
+    "longitude": 43.3333,
+    "capital": "Moroni",
+    "population": 806153,
+    "currency": "Comorian franc"
   },
   {
     "country": "Congo (Brazzaville)",
     "latitude": -0.228,
-    "longitude": 15.8277
+    "longitude": 15.8277,
+    "capital": "Brazzaville",
+    "population": 5509191,
+    "currency": "Central African CFA franc"
   },
   {
     "country": "Congo (Kinshasa)",
     "latitude": -4.0383,
-    "longitude": 21.7587
+    "longitude": 21.7587,
+    "capital": "Kinshasa",
+    "population": 89561403,
+    "currency": "Congolese franc"
   },
   {
     "country": "Costa Rica",
     "latitude": 9.7489,
-    "longitude": -83.7534
+    "longitude": -83.7534,
+    "capital": "San José",
+    "population": 5094118,
+    "currency": "Costa Rican colón"
   },
   {
     "country": "Croatia",
     "latitude": 45.1,
-    "longitude": 15.2
+    "longitude": 15.2,
+    "capital": "Zagreb",
+    "population": 4105267,
+    "currency": "Croatian kuna"
   },
   {
     "country": "Cuba",
     "latitude": 21.5218,
-    "longitude": -77.7812
+    "longitude": -77.7812,
+    "capital": "Havana",
+    "population": 11326616,
+    "currency": "Cuban peso"
   },
   {
     "country": "Cyprus",
     "latitude": 35.1264,
-    "longitude": 33.4299
+    "longitude": 33.4299,
+    "capital": "Nicosia",
+    "population": 1207359,
+    "currency": "Euro"
   },
   {
     "country": "Czech Republic",
     "latitude": 49.8175,
-    "longitude": 15.473
+    "longitude": 15.473,
+    "capital": "Prague",
+    "population": 10708981,
+    "currency": "Czech koruna"
   },
   {
     "country": "Denmark",
     "latitude": 56.2639,
-    "longitude": 9.5018
+    "longitude": 9.5018,
+    "capital": "Copenhagen",
+    "population": 5818553,
+    "currency": "Danish krone"
   },
   {
     "country": "Djibouti",
     "latitude": 11.8251,
-    "longitude": 42.5903
+    "longitude": 42.5903,
+    "capital": "Djibouti",
+    "population": 883560,
+    "currency": "Djiboutian franc"
   },
   {
     "country": "Dominica",
     "latitude": 15.415,
-    "longitude": -61.371
+    "longitude": -61.371,
+    "capital": "Roseau",
+    "population": 71986,
+    "currency": "East Caribbean dollar"
   },
   {
     "country": "Dominican Republic",
     "latitude": 18.7357,
-    "longitude": -70.1627
+    "longitude": -70.1627,
+    "capital": "Santo Domingo",
+    "population": 10847904,
+    "currency": "Dominican peso"
   },
   {
     "country": "East Timor",
     "latitude": -8.8742,
-    "longitude": 125.7275
+    "longitude": 125.7275,
+    "capital": "Dili",
+    "population": 1318445,
+    "currency": "United States dollar"
   },
   {
     "country": "Ecuador",
     "latitude": -1.8312,
-    "longitude": -78.1834
+    "longitude": -78.1834,
+    "capital": "Quito",
+    "population": 17643060,
+    "currency": "United States dollar"
   },
   {
     "country": "Egypt",
     "latitude": 26.8206,
-    "longitude": 30.8025
+    "longitude": 30.8025,
+    "capital": "Cairo",
+    "population": 104124440,
+    "currency": "Egyptian pound"
   },
   {
     "country": "El Salvador",
     "latitude": 13.7942,
-    "longitude": -88.8965
+    "longitude": -88.8965,
+    "capital": "San Salvador",
+    "population": 6486201,
+    "currency": "United States dollar"
   },
   {
     "country": "Equatorial Guinea",
     "latitude": 1.6508,
-    "longitude": 10.2679
+    "longitude": 10.2679,
+    "capital": "Malabo",
+    "population": 1402985,
+    "currency": "Central African CFA franc"
   },
   {
     "country": "Eritrea",
     "latitude": 15.1794,
-    "longitude": 39.7823
+    "longitude": 39.7823,
+    "capital": "Asmara",
+    "population": 3546064,
+    "currency": "Eritrean nakfa"
   },
   {
     "country": "Estonia",
     "latitude": 58.5953,
-    "longitude": 25.0136
+    "longitude": 25.0136,
+    "capital": "Tallinn",
+    "population": 1326535,
+    "currency": "Euro"
   },
   {
     "country": "Eswatini",
     "latitude": -26.5225,
-    "longitude": 31.4659
+    "longitude": 31.4659,
+    "capital": "Mbabane",
+    "population": 1160164,
+    "currency": "Swazi lilangeni"
   },
   {
     "country": "Ethiopia",
     "latitude": 9.145,
-    "longitude": 40.4897
+    "longitude": 40.4897,
+    "capital": "Addis Ababa",
+    "population": 11811484,
+    "currency": "Ethiopian birr"
   },
   {
     "country": "Fiji",
     "latitude": -17.7134,
-    "longitude": 178.065
+    "longitude": 178.065,
+    "capital": "Suva",
+    "population": 896445,
+    "currency": "Fijian dollar"
   },
   {
     "country": "Finland",
     "latitude": 61.9241,
-    "longitude": 25.7482
+    "longitude": 25.7482,
+    "capital": "Helsinki",
+    "population": 5540720,
+    "currency": "Euro"
   },
   {
     "country": "France",
     "latitude": 46.6034,
-    "longitude": 1.8883
+    "longitude": 1.8883,
+    "capital": "Paris",
+    "population": 65273511,
+    "currency": "Euro"
   },
   {
     "country": "Gabon",
     "latitude": -0.8037,
-    "longitude": 11.6094
+    "longitude": 11.6094,
+    "capital": "Libreville",
+    "population": 2225734,
+    "currency": "Central African CFA franc"
   },
   {
     "country": "Gambia",
     "latitude": 13.4432,
-    "longitude": -15.3101
+    "longitude": -15.3101,
+    "capital": "Banjul",
+    "population": 2416661,
+    "currency": "Gambian dalasi"
   },
   {
     "country": "Georgia",
     "latitude": 42.3154,
-    "longitude": 43.3569
+    "longitude": 43.3569,
+    "capital": "Tbilisi",
+    "population": 3989167,
+    "currency": "Georgian lari"
   },
   {
     "country": "Germany",
     "latitude": 51.1657,
-    "longitude": 10.4515
+    "longitude": 10.4515,
+    "capital": "Berlin",
+    "population": 83783942,
+    "currency": "Euro"
   },
   {
     "country": "Ghana",
     "latitude": 7.9465,
-    "longitude": -1.0232
+    "longitude": -1.0232,
+    "capital": "Accra",
+    "population": 31072940,
+    "currency": "Ghanaian cedi"
   },
   {
     "country": "Greece",
     "latitude": 39.0742,
-    "longitude": 21.8243
+    "longitude": 21.8243,
+    "capital": "Athens",
+    "population": 10423054,
+    "currency": "Euro"
   },
   {
     "country": "Grenada",
     "latitude": 12.1165,
-    "longitude": -61.679
+    "longitude": -61.679,
+    "capital": "Saint George's",
+    "population": 112523,
+    "currency": "East Caribbean dollar"
   },
   {
     "country": "Guatemala",
     "latitude": 15.7835,
-    "longitude": -90.2308
+    "longitude": -90.2308,
+    "capital": "Guatemala City",
+    "population": 17915568,
+    "currency": "Guatemalan quetzal"
   },
   {
     "country": "Guinea",
     "latitude": 9.9456,
-    "longitude": -9.6966
+    "longitude": -9.6966,
+    "capital": "Conakry",
+    "population": 13132795,
+    "currency": "Guinean franc"
   },
   {
     "country": "Guinea-Bissau",
     "latitude": 11.8037,
-    "longitude": -15.1804
+    "longitude": -15.1804,
+    "capital": "Bissau",
+    "population": 1968001,
+    "currency": "West African CFA franc"
   },
   {
     "country": "Guyana",
     "latitude": 4.8604,
-    "longitude": -58.9302
+    "longitude": -58.9302,
+    "capital": "Georgetown",
+    "population": 786559,
+    "currency": "Guyanese dollar"
   },
   {
     "country": "Haiti",
     "latitude": 18.9712,
-    "longitude": -72.2852
+    "longitude": -72.2852,
+    "capital": "Port-au-Prince",
+    "population": 11402528,
+    "currency": "Haitian gourde"
   },
   {
     "country": "Honduras",
     "latitude": 13.7942,
-    "longitude": -88.8965
+    "longitude": -88.8965,
+    "capital": "Tegucigalpa",
+    "population": 9904607,
+    "currency": "Honduran lempira"
   },
   {
     "country": "Hungary",
     "latitude": 47.1625,
-    "longitude": 19.5033
+    "longitude": 19.5033,
+    "capital": "Budapest",
+    "population": 9660351,
+    "currency": "Hungarian forint"
   },
   {
     "country": "Iceland",
     "latitude": 64.9631,
-    "longitude": -19.0208
+    "longitude": -19.0208,
+    "capital": "Reykjavik",
+    "population": 343599,
+    "currency": "Icelandic króna"
   },
   {
     "country": "India",
     "latitude": 20.5937,
-    "longitude": 78.9629
+    "longitude": 78.9629,
+    "capital": "New Delhi",
+    "population": 1380004385,
+    "currency": "Indian rupee"
   },
   {
     "country": "Indonesia",
     "latitude": -0.7893,
-    "longitude": 113.9213
+    "longitude": 113.9213,
+    "capital": "Jakarta",
+    "population": 273523615,
+    "currency": "Indonesian rupiah"
   },
   {
     "country": "Iran",
     "latitude": 32.4279,
-    "longitude": 53.688
+    "longitude": 53.688,
+    "capital": "Tehran",
+    "population": 83992949,
+    "currency": "Iranian rial"
   },
   {
     "country": "Iraq",
     "latitude": 33.2232,
-    "longitude": 43.6793
+    "longitude": 43.6793,
+    "capital": "Baghdad",
+    "population": 40222493,
+    "currency": "Iraqi dinar"
   },
   {
     "country": "Ireland",
     "latitude": 53.1424,
-    "longitude": -7.6921
+    "longitude": -7.6921,
+    "capital": "Dublin",
+    "population": 4937786,
+    "currency": "Euro"
   },
   {
     "country": "Israel",
     "latitude": 31.0461,
-    "longitude": 34.8516
+    "longitude": 34.8516,
+    "capital": "Jerusalem",
+    "population": 8655535,
+    "currency": "Israeli new shekel"
   },
   {
     "country": "Italy",
     "latitude": 41.8719,
-    "longitude": 12.5674
+    "longitude": 12.5674,
+    "capital": "Rome",
+    "population": 60244639,
+    "currency": "Euro"
   },
   {
     "country": "Jamaica",
     "latitude": 18.1096,
-    "longitude": -77.2975
+    "longitude": -77.2975,
+    "capital": "Kingston",
+    "population": 2961167,
+    "currency": "Jamaican dollar"
   },
   {
     "country": "Japan",
     "latitude": 36.2048,
-    "longitude": 138.2529
+    "longitude": 138.2529,
+    "capital": "Tokyo",
+    "population": 126476461,
+    "currency": "Japanese yen"
   },
   {
     "country": "Jordan",
     "latitude": 30.5852,
-    "longitude": 36.2384
+    "longitude": 36.2384,
+    "capital": "Amman",
+    "population": 10203134,
+    "currency": "Jordanian dinar"
   },
   {
     "country": "Kazakhstan",
     "latitude": 48.0196,
-    "longitude": 66.9237
+    "longitude": 66.9237,
+    "capital": "Nur-Sultan",
+    "population": 18776707,
+    "currency": "Kazakhstani tenge"
   },
   {
     "country": "Kenya",
     "latitude": -1.2921,
-    "longitude": 36.8219
+    "longitude": 36.8219,
+    "capital": "Nairobi",
+    "population": 53771296,
+    "currency": "Kenyan shilling"
   },
   {
     "country": "Kiribati",
     "latitude": 1.8709,
-    "longitude": -157.363
+    "longitude": -157.363,
+    "capital": "Tarawa",
+    "population": 119446,
+    "currency": "Australian dollar"
   },
   {
     "country": "Kuwait",
     "latitude": 29.3759,
-    "longitude": 47.9774
+    "longitude": 47.9774,
+    "capital": "Kuwait City",
+    "population": 4270571,
+    "currency": "Kuwaiti dinar"
   },
   {
     "country": "Kyrgyzstan",
     "latitude": 41.2044,
-    "longitude": 74.7661
+    "longitude": 74.7661,
+    "capital": "Bishkek",
+    "population": 6591600,
+    "currency": "Kyrgyzstani som"
   },
   {
     "country": "Laos",
     "latitude": 19.8563,
-    "longitude": 102.4955
+    "longitude": 102.4955,
+    "capital": "Vientiane",
+    "population": 7275560,
+    "currency": "Lao kip"
   },
   {
     "country": "Latvia",
     "latitude": 56.8796,
-    "longitude": 24.6032
+    "longitude": 24.6032,
+    "capital": "Riga",
+    "population": 1886198,
+    "currency": "Euro"
   },
   {
     "country": "Lebanon",
     "latitude": 33.8547,
-    "longitude": 35.8623
+    "longitude": 35.8623,
+    "capital": "Beirut",
+    "population": 6825445,
+    "currency": "Lebanese pound"
   },
   {
     "country": "Lesotho",
     "latitude": -29.61,
-    "longitude": 28.2336
+    "longitude": 28.2336,
+    "capital": "Maseru",
+    "population": 2142249,
+    "currency": "Lesotho loti"
   },
   {
     "country": "Liberia",
     "latitude": 6.4281,
-    "longitude": -9.4295
+    "longitude": -9.4295,
+    "capital": "Monrovia",
+    "population": 5057681,
+    "currency": "Liberian dollar"
   },
   {
     "country": "Libya",
     "latitude": 26.3351,
-    "longitude": 17.2283
+    "longitude": 17.2283,
+    "capital": "Tripoli",
+    "population": 6871292,
+    "currency": "Libyan dinar"
   },
   {
     "country": "Liechtenstein",
     "latitude": 47.166,
-    "longitude": 9.5554
+    "longitude": 9.5554,
+    "capital": "Vaduz",
+    "population": 38128,
+    "currency": "Swiss franc"
   },
   {
     "country": "Lithuania",
     "latitude": 55.1694,
-    "longitude": 23.8813
+    "longitude": 23.8813,
+    "capital": "Vilnius",
+    "population": 2722289,
+    "currency": "Euro"
   },
   {
     "country": "Luxembourg",
     "latitude": 49.8153,
-    "longitude": 6.1296
+    "longitude": 6.1296,
+    "capital": "Luxembourg City",
+    "population": 634814,
+    "currency": "Euro"
   },
   {
     "country": "Madagascar",
     "latitude": -18.7669,
-    "longitude": 46.8691
+    "longitude": 46.8691,
+    "capital": "Antananarivo",
+    "population": 27691018,
+    "currency": "Malagasy ariary"
   },
   {
     "country": "Malawi",
     "latitude": -13.2543,
-    "longitude": 34.3015
+    "longitude": 34.3015,
+    "capital": "Lilongwe",
+    "population": 19129952,
+    "currency": "Malawian kwacha"
   },
   {
     "country": "Malaysia",
     "latitude": 4.2105,
-    "longitude": 101.9758
+    "longitude": 101.9758,
+    "capital": "Kuala Lumpur",
+    "population": 32365999,
+    "currency": "Malaysian ringgit"
   },
   {
     "country": "Maldives",
     "latitude": 3.2028,
-    "longitude": 73.2207
+    "longitude": 73.2207,
+    "capital": "Male",
+    "population": 515696,
+    "currency": "Maldivian rufiyaa"
   },
   {
     "country": "Mali",
     "latitude": 17.5707,
-    "longitude": -3.9962
+    "longitude": -3.9962,
+    "capital": "Bamako",
+    "population": 20250833,
+    "currency": "West African CFA franc"
   },
   {
     "country": "Malta",
     "latitude": 35.9375,
-    "longitude": 14.3754
+    "longitude": 14.3754,
+    "capital": "Valletta",
+    "population": 514999,
+    "currency": "Euro"
   },
   {
     "country": "Marshall Islands",
     "latitude": 7.1315,
-    "longitude": 171.1845
+    "longitude": 171.1845,
+    "capital": "Majuro",
+    "population": 59194,
+    "currency": "United States dollar"
   },
   {
     "country": "Mauritania",
     "latitude": 21.0079,
-    "longitude": -10.9408
+    "longitude": -10.9408,
+    "capital": "Nouakchott",
+    "population": 4649658,
+    "currency": "Mauritanian ouguiya"
   },
   {
     "country": "Mauritius",
     "latitude": -20.3484,
-    "longitude": 57.5522
+    "longitude": 57.5522,
+    "capital": "Port Louis",
+    "population": 1271768,
+    "currency": "Mauritian rupee"
   },
   {
     "country": "Mexico",
     "latitude": 23.6345,
-    "longitude": -102.5528
+    "longitude": -102.5528,
+    "capital": "Mexico City",
+    "population": 130262216,
+    "currency": "Mexican peso"
   },
   {
     "country": "Micronesia",
     "latitude": 7.4256,
-    "longitude": 150.5508
+    "longitude": 150.5508,
+    "capital": "Palikir",
+    "population": 104000,
+    "currency": "United States dollar"
   },
   {
     "country": "Moldova",
     "latitude": 47.4116,
-    "longitude": 28.3699
+    "longitude": 28.3699,
+    "capital": "Chișinău",
+    "population": 2657637,
+    "currency": "Moldovan leu"
   },
   {
     "country": "Monaco",
     "latitude": 43.7384,
-    "longitude": 7.4246
+    "longitude": 7.4246,
+    "capital": "Monaco",
+    "population": 39242,
+    "currency": "Euro"
   },
   {
     "country": "Mongolia",
     "latitude": 46.8625,
-    "longitude": 103.8467
+    "longitude": 103.8467,
+    "capital": "Ulaanbaatar",
+    "population": 3278290,
+    "currency": "Mongolian tögrög"
   },
   {
     "country": "Montenegro",
     "latitude": 42.7087,
-    "longitude": 19.3744
+    "longitude": 19.3744,
+    "capital": "Podgorica",
+    "population": 622359,
+    "currency": "Euro"
   },
   {
     "country": "Morocco",
     "latitude": 31.7917,
-    "longitude": -7.0926
+    "longitude": -7.0926,
+    "capital": "Rabat",
+    "population": 36910560,
+    "currency": "Moroccan dirham"
   },
   {
     "country": "Mozambique",
     "latitude": -18.6657,
-    "longitude": 35.5296
+    "longitude": 35.5296,
+    "capital": "Maputo",
+    "population": 31255435,
+    "currency": "Mozambican metical"
   },
   {
     "country": "Myanmar",
     "latitude": 21.9162,
-    "longitude": 95.956
+    "longitude": 95.956,
+    "capital": "Naypyidaw",
+    "population": 54409794,
+    "currency": "Burmese kyat"
   },
   {
     "country": "Namibia",
     "latitude": -22.9576,
-    "longitude": 18.4904
+    "longitude": 18.4904,
+    "capital": "Windhoek",
+    "population": 2540905,
+    "currency": "Namibian dollar"
   },
   {
     "country": "Nauru",
     "latitude": -0.5228,
-    "longitude": 166.9315
+    "longitude": 166.9315,
+    "capital": "Yaren District",
+    "population": 10834,
+    "currency": "Australian dollar"
   },
   {
     "country": "Nepal",
     "latitude": 28.3949,
-    "longitude": 84.124
+    "longitude": 84.124,
+    "capital": "Kathmandu",
+    "population": 29136808,
+    "currency": "Nepalese rupee"
   },
   {
     "country": "Netherlands",
     "latitude": 52.1326,
-    "longitude": 5.2913
+    "longitude": 5.2913,
+    "capital": "Amsterdam",
+    "population": 17134872,
+    "currency": "Euro"
   },
   {
     "country": "New Zealand",
     "latitude": -40.9006,
-    "longitude": 174.886
+    "longitude": 174.886,
+    "capital": "Wellington",
+    "population": 4822233,
+    "currency": "New Zealand dollar"
   },
   {
     "country": "Nicaragua",
     "latitude": 12.8654,
-    "longitude": -85.2072
+    "longitude": -85.2072,
+    "capital": "Managua",
+    "population": 6624554,
+    "currency": "Nicaraguan córdoba"
   },
   {
     "country": "Niger",
     "latitude": 17.6078,
-    "longitude": 8.0817
+    "longitude": 8.0817,
+    "capital": "Niamey",
+    "population": 24206644,
+    "currency": "West African CFA franc"
   },
   {
     "country": "Nigeria",
     "latitude": 9.082,
-    "longitude": 8.6753
+    "longitude": 8.6753,
+    "capital": "Abuja",
+    "population": 206139589,
+    "currency": "Nigerian naira"
   },
   {
     "country": "North Korea",
     "latitude": 40.3399,
-    "longitude": 127.5101
+    "longitude": 127.5101,
+    "capital": "Pyongyang",
+    "population": 25778816,
+    "currency": "North Korean won"
   },
   {
     "country": "North Macedonia",
     "latitude": 41.9981,
-    "longitude": 21.4254
+    "longitude": 21.4254,
+    "capital": "Skopje",
+    "population": 2083459,
+    "currency": "Macedonian denar"
   },
   {
     "country": "Norway",
     "latitude": 60.472,
-    "longitude": 8.4689
+    "longitude": 8.4689,
+    "capital": "Oslo",
+    "population": 5421241,
+    "currency": "Norwegian krone"
   },
   {
     "country": "Oman",
     "latitude": 21.4735,
-    "longitude": 55.9754
+    "longitude": 55.9754,
+    "capital": "Muscat",
+    "population": 5106622,
+    "currency": "Omani rial"
   },
   {
     "country": "Pakistan",
     "latitude": 30.3753,
-    "longitude": 69.3451
+    "longitude": 69.3451,
+    "capital": "Islamabad",
+    "population": 225199937,
+    "currency": "Pakistani rupee"
   },
   {
     "country": "Palau",
     "latitude": 7.5149,
-    "longitude": 134.5825
+    "longitude": 134.5825,
+    "capital": "Ngerulmud",
+    "population": 18000,
+    "currency": "United States dollar"
   },
   {
     "country": "Panama",
     "latitude": 8.5379,
-    "longitude": -80.7821
+    "longitude": -80.7821,
+    "capital": "Panama City",
+    "population": 4314767,
+    "currency": "Panamanian balboa"
   },
   {
     "country": "Papua New Guinea",
     "latitude": -6.315,
-    "longitude": 143.9555
+    "longitude": 143.9555,
+    "capital": "Port Moresby",
+    "population": 8947024,
+    "currency": "Papua New Guinean kina"
   },
   {
     "country": "Paraguay",
     "latitude": -23.4425,
-    "longitude": -58.4438
+    "longitude": -58.4438,
+    "capital": "Asunción",
+    "population": 7132538,
+    "currency": "Paraguayan guaraní"
   },
   {
     "country": "Peru",
     "latitude": -9.19,
-    "longitude": -75.0152
+    "longitude": -75.0152,
+    "capital": "Lima",
+    "population": 32971854,
+    "currency": "Peruvian sol"
   },
   {
     "country": "Philippines",
     "latitude": 13.4125,
-    "longitude": 122.5603
+    "longitude": 122.5603,
+    "capital": "Manila",
+    "population": 109581078,
+    "currency": "Philippine peso"
   },
   {
     "country": "Poland",
     "latitude": 51.9194,
-    "longitude": 19.1451
+    "longitude": 19.1451,
+    "capital": "Warsaw",
+    "population": 38386000,
+    "currency": "Polish złoty"
   },
   {
     "country": "Portugal",
     "latitude": 39.3999,
-    "longitude": -8.2245
+    "longitude": -8.2245,
+    "capital": "Lisbon",
+    "population": 10196709,
+    "currency": "Euro"
   },
   {
     "country": "Qatar",
     "latitude": 25.276987,
-    "longitude": 51.520008
+    "longitude": 51.520008,
+    "capital": "Doha",
+    "population": 2881053,
+    "currency": "Qatari riyal"
   },
   {
     "country": "Romania",
     "latitude": 45.9432,
-    "longitude": 24.9668
+    "longitude": 24.9668,
+    "capital": "Bucharest",
+    "population": 19237691,
+    "currency": "Romanian leu"
   },
   {
     "country": "Russia",
     "latitude": 61.524,
-    "longitude": 105.3188
+    "longitude": 105.3188,
+    "capital": "Moscow",
+    "population": 145912025,
+    "currency": "Russian ruble"
   },
   {
     "country": "Rwanda",
     "latitude": -1.9403,
-    "longitude": 29.8739
+    "longitude": 29.8739,
+    "capital": "Kigali",
+    "population": 12952218,
+    "currency": "Rwandan franc"
   },
   {
     "country": "Saint Kitts and Nevis",
     "latitude": 17.3578,
-    "longitude": -62.782998
+    "longitude": -62.782998,
+    "capital": "Basseterre",
+    "population": 53192,
+    "currency": "East Caribbean dollar"
   },
   {
     "country": "Saint Lucia",
     "latitude": 13.9094,
-    "longitude": -60.9789
+    "longitude": -60.9789,
+    "capital": "Castries",
+    "population": 183627,
+    "currency": "East Caribbean dollar"
   },
   {
     "country": "Saint Vincent and the Grenadines",
     "latitude": 13.2528,
-    "longitude": -61.1971
+    "longitude": -61.1971,
+    "capital": "Kingstown",
+    "population": 110589,
+    "currency": "East Caribbean dollar"
   },
   {
     "country": "Samoa",
     "latitude": -13.759,
-    "longitude": -172.1046
+    "longitude": -172.1046,
+    "capital": "Apia",
+    "population": 198410,
+    "currency": "Samoan tālā"
   },
   {
     "country": "San Marino",
     "latitude": 43.9333,
-    "longitude": 12.45
+    "longitude": 12.45,
+    "capital": "San Marino",
+    "population": 33931,
+    "currency": "Euro"
   },
   {
     "country": "Sao Tome and Principe",
     "latitude": 0.1864,
-    "longitude": 6.6131
+    "longitude": 6.6131,
+    "capital": "São Tomé",
+    "population": 219159,
+    "currency": "São Tomé and Príncipe dobra"
   },
   {
     "country": "Saudi Arabia",
     "latitude": 23.8859,
-    "longitude": 45.0792
+    "longitude": 45.0792,
+    "capital": "Riyadh",
+    "population": 34813871,
+    "currency": "Saudi riyal"
   },
   {
     "country": "Senegal",
     "latitude": 14.4974,
-    "longitude": -14.4524
+    "longitude": -14.4524,
+    "capital": "Dakar",
+    "population": 16425864,
+    "currency": "West African CFA franc"
   },
   {
     "country": "Serbia",
     "latitude": 44.0165,
-    "longitude": 21.0059
+    "longitude": 21.0059,
+    "capital": "Belgrade",
+    "population": 8772235,
+    "currency": "Serbian dinar"
   },
   {
     "country": "Seychelles",
     "latitude": -4.6796,
-    "longitude": 55.492
+    "longitude": 55.492,
+    "capital": "Victoria",
+    "population": 98347,
+    "currency": "Seychellois rupee"
   },
   {
     "country": "Sierra Leone",
     "latitude": 8.4606,
-    "longitude": -11.7799
+    "longitude": -11.7799,
+    "capital": "Freetown",
+    "population": 7976985,
+    "currency": "Sierra Leonean leone"
   },
   {
     "country": "Singapore",
     "latitude": 1.3521,
-    "longitude": 103.8198
+    "longitude": 103.8198,
+    "capital": "Singapore",
+    "population": 5850342,
+    "currency": "Singapore dollar"
   },
   {
     "country": "Slovakia",
     "latitude": 48.669,
-    "longitude": 19.699
+    "longitude": 19.699,
+    "capital": "Bratislava",
+    "population": 5456362,
+    "currency": "Euro"
   },
   {
     "country": "Slovenia",
     "latitude": 46.1512,
-    "longitude": 14.9955
+    "longitude": 14.9955,
+    "capital": "Ljubljana",
+    "population": 2078654,
+    "currency": "Euro"
   },
   {
     "country": "Solomon Islands",
     "latitude": -9.6457,
-    "longitude": 160.1562
+    "longitude": 160.1562,
+    "capital": "Honiara",
+    "population": 686884,
+    "currency": "Solomon Islands dollar"
   },
   {
     "country": "Somalia",
     "latitude": 5.1521,
-    "longitude": 46.1996
+    "longitude": 46.1996,
+    "capital": "Mogadishu",
+    "population": 15893222,
+    "currency": "Somali shilling"
   },
   {
     "country": "South Africa",
     "latitude": -30.5595,
-    "longitude": 22.9375
+    "longitude": 22.9375,
+    "capital": "Pretoria",
+    "population": 59308690,
+    "currency": "South African rand"
   },
   {
     "country": "South Korea",
     "latitude": 35.9078,
-    "longitude": 127.7669
+    "longitude": 127.7669,
+    "capital": "Seoul",
+    "population": 51269185,
+    "currency": "South Korean won"
   },
   {
     "country": "South Sudan",
     "latitude": 6.877,
-    "longitude": 31.307
+    "longitude": 31.307,
+    "capital": "Juba",
+    "population": 10975920,
+    "currency": "South Sudanese pound"
   },
   {
     "country": "Spain",
     "latitude": 40.4637,
-    "longitude": -3.7492
+    "longitude": -3.7492,
+    "capital": "Madrid",
+    "population": 46754778,
+    "currency": "Euro"
   },
   {
     "country": "Sri Lanka",
     "latitude": 7.8731,
-    "longitude": 80.7718
+    "longitude": 80.7718,
+    "capital": "Sri Jayawardenepura Kotte",
+    "population": 21413249,
+    "currency": "Sri Lankan rupee"
   },
   {
     "country": "Sudan",
     "latitude": 12.8628,
-    "longitude": 30.2176
+    "longitude": 30.2176,
+    "capital": "Khartoum",
+    "population": 43849260,
+    "currency": "Sudanese pound"
   },
   {
     "country": "Suriname",
     "latitude": 3.9193,
-    "longitude": -56.0278
+    "longitude": -56.0278,
+    "capital": "Paramaribo",
+    "population": 586634,
+    "currency": "Surinamese dollar"
   },
   {
     "country": "Sweden",
     "latitude": 60.1282,
-    "longitude": 18.6435
+    "longitude": 18.6435,
+    "capital": "Stockholm",
+    "population": 10099265,
+    "currency": "Swedish krona"
   },
   {
     "country": "Switzerland",
     "latitude": 46.8182,
-    "longitude": 8.2275
+    "longitude": 8.2275,
+    "capital": "Bern",
+    "population": 8654622,
+    "currency": "Swiss franc"
   },
   {
     "country": "Syria",
     "latitude": 34.8021,
-    "longitude": 38.9968
+    "longitude": 38.9968,
+    "capital": "Damascus",
+    "population": 17500657,
+    "currency": "Syrian pound"
   },
   {
     "country": "Tajikistan",
     "latitude": 38.861,
-    "longitude": 71.2761
+    "longitude": 71.2761,
+    "capital": "Dushanbe",
+    "population": 9537645,
+    "currency": "Tajikistani somoni"
   },
   {
     "country": "Tanzania",
     "latitude": -6.369,
-    "longitude": 34.8888
+    "longitude": 34.8888,
+    "capital": "Dodoma",
+    "population": 59734218,
+    "currency": "Tanzanian shilling"
   },
   {
     "country": "Thailand",
     "latitude": 15.87,
-    "longitude": 100.9925
+    "longitude": 100.9925,
+    "capital": "Bangkok",
+    "population": 69799978,
+    "currency": "Thai baht"
   },
   {
     "country": "Togo",
     "latitude": 8.6195,
-    "longitude": 0.8248
+    "longitude": 0.8248,
+    "capital": "Lomé",
+    "population": 8278724,
+    "currency": "West African CFA franc"
   },
   {
     "country": "Tonga",
     "latitude": -21.179,
-    "longitude": -175.1982
+    "longitude": -175.1982,
+    "capital": "Nuku'alofa",
+    "population": 105697,
+    "currency": "Tongan paʻanga"
   },
   {
     "country": "Trinidad and Tobago",
     "latitude": 10.6918,
-    "longitude": -61.2225
+    "longitude": -61.2225,
+    "capital": "Port of Spain",
+    "population": 1399491,
+    "currency": "Trinidad and Tobago dollar"
   },
   {
     "country": "Tunisia",
     "latitude": 33.8869,
-    "longitude": 9.5375
+    "longitude": 9.5375,
+    "capital": "Tunis",
+    "population": 11818619,
+    "currency": "Tunisian dinar"
   },
   {
     "country": "Turkey",
     "latitude": 38.9637,
-    "longitude": 35.2433
+    "longitude": 35.2433,
+    "capital": "Ankara",
+    "population": 84339067,
+    "currency": "Turkish lira"
   },
   {
     "country": "Turkmenistan",
     "latitude": 38.9697,
-    "longitude": 59.5563
+    "longitude": 59.5563,
+    "capital": "Ashgabat",
+    "population": 5942094,
+    "currency": "Turkmenistani manat"
   },
   {
     "country": "Tuvalu",
     "latitude": -7.1095,
-    "longitude": 177.6493
+    "longitude": 177.6493,
+    "capital": "Funafuti",
+    "population": 11700,
+    "currency": "Australian dollar"
   },
   {
     "country": "Uganda",
     "latitude": 1.3733,
-    "longitude": 32.2903
+    "longitude": 32.2903,
+    "capital": "Kampala",
+    "population": 45741007,
+    "currency": "Ugandan shilling"
   },
   {
     "country": "Ukraine",
     "latitude": 48.3794,
-    "longitude": 31.1656
+    "longitude": 31.1656,
+    "capital": "Kyiv",
+    "population": 43733762,
+    "currency": "Ukrainian hryvnia"
   },
   {
     "country": "United Arab Emirates",
     "latitude": 23.4241,
-    "longitude": 53.8478
+    "longitude": 53.8478,
+    "capital": "Abu Dhabi",
+    "population": 9890400,
+    "currency": "United Arab Emirates dirham"
   },
   {
     "country": "United Kingdom",
     "latitude": 55.3781,
-    "longitude": -3.436
+    "longitude": -3.436,
+    "capital": "London",
+    "population": 67886011,
+    "currency": "Pound sterling"
   },
   {
     "country": "United States",
     "latitude": 37.0902,
-    "longitude": -95.7129
+    "longitude": -95.7129,
+    "capital": "Washington, D.C.",
+    "population": 331002651,
+    "currency": "United States dollar"
   },
   {
     "country": "Uruguay",
     "latitude": -32.5228,
-    "longitude": -55.7658
+    "longitude": -55.7658,
+    "capital": "Montevideo",
+    "population": 3473730,
+    "currency": "Uruguayan peso"
   },
   {
     "country": "Uzbekistan",
     "latitude": 41.3775,
-    "longitude": 64.5853
+    "longitude": 64.5853,
+    "capital": "Tashkent",
+    "population": 33469199,
+    "currency": "Uzbekistani som"
   },
   {
     "country": "Vanuatu",
     "latitude": -15.3767,
-    "longitude": 166.9592
+    "longitude": 166.9592,
+    "capital": "Port Vila",
+    "population": 307145,
+    "currency": "Vanuatu vatu"
   },
   {
     "country": "Vatican City",
     "latitude": 41.9029,
-    "longitude": 12.4534
+    "longitude": 12.4534,
+    "capital": "Vatican City",
+    "population": 801,
+    "currency": "Euro"
   },
   {
     "country": "Venezuela",
     "latitude": 6.4238,
-    "longitude": -66.5897
+    "longitude": -66.5897,
+    "capital": "Caracas",
+    "population": 28435943,
+    "currency": "Venezuelan bolívar"
   },
   {
     "country": "Vietnam",
     "latitude": 14.0583,
-    "longitude": 108.2772
+    "longitude": 108.2772,
+    "capital": "Hanoi",
+    "population": 97338579,
+    "currency": "Vietnamese đồng"
   },
   {
     "country": "Yemen",
     "latitude": 15.5527,
-    "longitude": 48.5164
+    "longitude": 48.5164,
+    "capital": "Sana'a",
+    "population": 29825968,
+    "currency": "Yemeni rial"
   },
   {
     "country": "Zambia",
     "latitude": -13.1339,
-    "longitude": 27.8493
+    "longitude": 27.8493,
+    "capital": "Lusaka",
+    "population": 18355638,
+    "currency": "Zambian kwacha"
   },
   {
     "country": "Zimbabwe",
     "latitude": -19.0154,
-    "longitude": 29.1549
+    "longitude": 29.1549,
+    "capital": "Harare",
+    "population": 14862924,
+    "currency": "United States dollar"
   }
 ]

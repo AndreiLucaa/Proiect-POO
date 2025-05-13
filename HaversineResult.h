@@ -10,8 +10,9 @@
 class HaversineResult : public Country {
 public:
     HaversineResult(const std::string &name,
-                    const std::vector<std::pair<std::string, std::pair<double, double>>> &validCountries,
-                    double latitude, double longitude);
+                    const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> &validCountries,
+                    double latitude, double longitude,
+                    const std::string &capital, long population, const std::string &currency);
 
     void displayHaversineResult(double lat1, double lon1, double lat2, double lon2) const override;
 

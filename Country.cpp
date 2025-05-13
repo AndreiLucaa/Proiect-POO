@@ -3,17 +3,28 @@
 //
 
 #include "Country.h"
+#include "CountryExceptions.h"
 #include <fstream>
 #include <iostream>
 #include <vector>
 #include <string>
-
+#include <algorithm>
 #include <utility>
 
+#include "CountryNotFoundException.h"
+#include "InvalidCoordinatesException.h"
+#include "InvalidCountryNameException.h"
 
 Country::Country(const std::string &name,
-    const std::vector<std::pair<std::string, std::pair<double, double>>> &validCountries, double latitude,
-    double longitude): name(name), validCountries(validCountries), latitude(latitude), longitude(longitude) {
+                 const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> &validCountries,
+                 double latitude, double longitude, const std::string &capital, long population, const std::string &currency)
+    : name(name), validCountries(validCountries), latitude(latitude), longitude(longitude), capital(capital), population(population), currency(currency) {
+    if (name.empty()) {
+        throw InvalidCountryNameException(name);
+    }
+    if (latitude < -90.0 || latitude > 90.0 || longitude < -180.0 || longitude > 180.0) {
+        throw InvalidCoordinatesException(latitude, longitude);
+    }
     std::cout << "constructor Country\n";
 }
 
@@ -25,7 +36,8 @@ std::string const& Country::getName() const {
     return name;
 }
 
-std::vector<std::pair<std::string, std::pair<double, double>>> const& Country::getValidCountries() const {
+std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> Country::
+getValidCountries() const {
     return validCountries;
 }
 
@@ -37,64 +49,48 @@ double Country::getLongitude() const {
     return longitude;
 }
 
-bool Country::isValidCountry(const std::string &countryName) const {
-    std::string upperCountryName = countryName;
-    std::transform(upperCountryName.begin(), upperCountryName.end(), upperCountryName.begin(), ::toupper);
-
-    return std::any_of(validCountries.begin(), validCountries.end(),
-                       [&upperCountryName](const std::pair<std::string, std::pair<double, double>> &entry) {
-                           std::string upperEntryName = entry.first;
-                           std::transform(upperEntryName.begin(), upperEntryName.end(), upperEntryName.begin(), ::toupper);
-                           return upperEntryName == upperCountryName;
-                       });
-}
-bool Country::isCorrectCountry(const std::string &guessCountry) const {
-    std::string upperGuessCountry = guessCountry;
-    std::transform(upperGuessCountry.begin(), upperGuessCountry.end(), upperGuessCountry.begin(), ::toupper);
-    return name == upperGuessCountry;
+std::string Country::getCapital() const {
+    return capital;
 }
 
-std::pair<double, double> Country::getCoordinates(const std::string &countryName) const {
-    std::string upperCountryName = countryName;
-    std::transform(upperCountryName.begin(), upperCountryName.end(), upperCountryName.begin(), ::toupper);
-    auto it = std::find_if(validCountries.begin(), validCountries.end(),
-                           [&upperCountryName](const std::pair<std::string, std::pair<double, double>> &entry) {
-                               std::string upperEntryName = entry.first;
-                               std::transform(upperEntryName.begin(), upperEntryName.end(), upperEntryName.begin(), ::toupper);
-                               return upperEntryName == upperCountryName;
-                           });
-    if (it != validCountries.end()) {
-        return it->second;
+long Country::getPopulation() const {
+    return population;
+}
+
+std::string Country::getCurrency() const {
+    return currency;
+}
+
+bool Country::isValidCountry(const std::string &guess1) const {
+    std::string upperGuess1 = guess1;
+    std::transform(upperGuess1.begin(), upperGuess1.end(), upperGuess1.begin(), ::toupper);
+    for (const auto &entry : validCountries) {
+        std::string validCountryName = std::get<0>(entry);
+        std::transform(validCountryName.begin(), validCountryName.end(), validCountryName.begin(), ::toupper);
+        if (validCountryName == upperGuess1) {
+            return true;
+        }
     }
-    return {0.0, 0.0}; // Return default coordinates if the country is not found
+    return false;
 }
 
-// std::pair<double, double> Country::haversine(double lat1, double lon1, double lat2, double lon2) {
-//     // Convert degrees to radians
-//     lat1 *= DEG_TO_RAD;
-//     lon1 *= DEG_TO_RAD;
-//     lat2 *= DEG_TO_RAD;
-//     lon2 *= DEG_TO_RAD;
-//
-//     // Haversine distance formula
-//     double dlat = lat2 - lat1;
-//     double dlon = lon2 - lon1;
-//
-//     double a = std::pow(std::sin(dlat / 2), 2) +
-//                std::cos(lat1) * std::cos(lat2) *
-//                std::pow(std::sin(dlon / 2), 2);
-//
-//     double c = 2 * std::asin(std::sqrt(a));
-//     double distance = EARTH_RADIUS_KM * c;
-//
-//     // Bearing formula (initial heading)
-//     double y = std::sin(dlon) * std::cos(lat2);
-//     double x = std::cos(lat1) * std::sin(lat2) -
-//                std::sin(lat1) * std::cos(lat2) * std::cos(dlon);
-//     double bearing = std::atan2(y, x) * RAD_TO_DEG;
-//
-//     // Normalize bearing to 0-360
-//     bearing = std::fmod((bearing + 360.0), 360.0);
-//
-//     return {distance, bearing};
-// }
+bool Country::isCorrectCountry(const std::string &guess2) const {
+    std::string upperGuess2 = guess2;
+    std::transform(upperGuess2.begin(), upperGuess2.end(), upperGuess2.begin(), ::toupper);
+    std::string upperName = name;
+    std::transform(upperName.begin(), upperName.end(), upperName.begin(), ::toupper);
+    return upperGuess2 == upperName;
+}
+
+std::pair<double, double> Country::getCoordinates(const std::string &guess3) const {
+    std::string upperGuess3 = guess3;
+    std::transform(upperGuess3.begin(), upperGuess3.end(), upperGuess3.begin(), ::toupper);
+    for (const auto &entry : validCountries) {
+        std::string validCountryName = std::get<0>(entry);
+        std::transform(validCountryName.begin(), validCountryName.end(), validCountryName.begin(), ::toupper);
+        if (validCountryName == upperGuess3) {
+            return std::get<1>(entry);
+        }
+    }
+    throw CountryNotFoundException(guess3);
+}

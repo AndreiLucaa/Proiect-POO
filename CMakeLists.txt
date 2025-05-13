@@ -74,6 +74,28 @@ add_executable(${MAIN_EXECUTABLE_NAME}
         Country.h
         HaversineResult.cpp
         HaversineResult.h
+        capitalGame.cpp
+        capitalGame.h
+        Capital.cpp
+        Capital.h
+        FileReadException.cpp
+        FileReadException.h
+        WordExceptions.cpp
+        WordExceptions.h
+        InvalidWordLengthException.cpp
+        InvalidWordLengthException.h
+        InvalidCharacterException.cpp
+        InvalidCharacterException.h
+        InvalidGuessException.cpp
+        InvalidGuessException.h
+        CountryExceptions.cpp
+        CountryExceptions.h
+        InvalidCountryNameException.cpp
+        InvalidCountryNameException.h
+        InvalidCoordinatesException.cpp
+        InvalidCoordinatesException.h
+        CountryNotFoundException.cpp
+        CountryNotFoundException.h
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )

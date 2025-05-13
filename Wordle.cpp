@@ -12,6 +12,10 @@
 #include <thread>
 #include <utility>
 
+#include "WordExceptions.h"
+
+class WordException;
+
 Wordle::Wordle(const std::string &word, const std::vector<std::string> &validWords, Player &player): word(word, validWords), attempts(6), player(player) {
     std::cout << "====================================\n";
     std::cout << "       Welcome to Wordle++!        \n";
@@ -37,12 +41,17 @@ void Wordle::play() {
         std::cin >> guess;
         std::transform(guess.begin(), guess.end(), guess.begin(), ::toupper);
         player.addAttempt();
-        if (!word.isValid(guess)) {
-            std::cout << "Oops! That word doesn’t exist. Give it another shot!" << std::endl;
-            continue;
-        }
-        if (!word.correctLength(guess)) {
-            std::cout << "Invalid guess! The word has " << word.getWord().size() << " letters." << std::endl;
+        try {
+            if (!word.isValid(guess)) {
+                std::cout << "Oops! That word doesn’t exist. Give it another shot!" << std::endl;
+                continue;
+            }
+            if (!word.correctLength(guess)) {
+                std::cout << "Invalid guess! The word has " << word.getWord().size() << " letters." << std::endl;
+                continue;
+            }
+        } catch (const WordException &e) {
+            std::cout << "Error: " << e.what() << std::endl;
             continue;
         }
         if (word.isCorrect(guess)) {
@@ -50,11 +59,10 @@ void Wordle::play() {
             player.incrementStreak();
             player.incrementGamesWon();
             std::cout << player << std::endl;
-
             break;
         } else {
             std::pair<std::string, std::string> result = word.verifyLetters(guess);
-            std::cout << result << std::endl;            // std::cout << "Hint: " << word.getHint(guess) << std::endl;
+            std::cout << result << std::endl;
             --attempts;
             std::cout << "Attempts remaining: " << attempts << std::endl;
             std::cout << "Used letters are: " << word.getLetters(guess) << "\n";
