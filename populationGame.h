@@ -14,7 +14,7 @@ public:
         Player &player, double latitude, double longitude, const std::string &capital, long population,
         const std::string &currency);
 
-    virtual void play();
+    virtual void play() override;
 
     static std::string formatNumber(long number);
 };

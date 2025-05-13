@@ -9,17 +9,13 @@
 
 
 class FileReadException : public std::exception {
-public:
-    explicit FileReadException(const std::string &filename);
-
-    const char *what() const noexcept override;
-
-    // const std::string &getFilename() const;
-
 private:
     std::string filename;
+    std::string message; // Added to store the error message
+public:
+    explicit FileReadException(const std::string &filename);
+    const char *what() const noexcept override;
 };
-
 
 
 #endif //FILEREADEXCEPTION_H

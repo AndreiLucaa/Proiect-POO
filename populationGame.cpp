@@ -5,7 +5,6 @@
 #include "populationGame.h"
 
 #include <random>
-#include <__random/random_device.h>
 
 populationGame::populationGame(const std::string &country,
                                const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> &

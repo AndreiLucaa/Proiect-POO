@@ -34,17 +34,17 @@ public:
 
     std::string const& getName() const;
 
-    std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> getValidCountries() const;
+    std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> const& getValidCountries() const;
 
     double getLatitude() const;
 
     double getLongitude() const;
 
-    std::string getCapital() const;
+    std::string const& getCapital() const;
 
     long getPopulation() const;
 
-    std::string getCurrency() const;
+    std::string const& getCurrency() const;
 
     bool isValidCountry(const std::string &countryName) const;
 

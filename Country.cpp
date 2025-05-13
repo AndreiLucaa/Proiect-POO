@@ -36,8 +36,7 @@ std::string const& Country::getName() const {
     return name;
 }
 
-std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> Country::
-getValidCountries() const {
+std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> const& Country::getValidCountries() const {
     return validCountries;
 }
 
@@ -49,7 +48,7 @@ double Country::getLongitude() const {
     return longitude;
 }
 
-std::string Country::getCapital() const {
+std::string const& Country::getCapital() const {
     return capital;
 }
 
@@ -57,7 +56,7 @@ long Country::getPopulation() const {
     return population;
 }
 
-std::string Country::getCurrency() const {
+std::string const& Country::getCurrency() const {
     return currency;
 }
 
