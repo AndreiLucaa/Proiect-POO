@@ -17,6 +17,7 @@
 
 #include "capitalGame.h"
 #include "FileReadException.h"
+#include "populationGame.h"
 #include "Wordle.h"
 
 void Game::displayMenu() const {
@@ -65,19 +66,19 @@ void Game::playGloble(const std::string &country,
                       double latitude, double longitude,
                       const std::string &capital, long population,
                       const std::string &currency) {
-    // Play the Globle game
     Globle globleGame(country, validCountries, player, latitude, longitude, capital, population, currency);
     globleGame.play();
 
-    // After Globle, ask if the user wants to play the Capital Game
     char choice;
-    std::cout << "Do you want to continue with the Capital Game? (y/n): ";
+    std::cout << "Do you want to continue with the extra questions? (y/n): ";
     std::cin >> choice;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear input buffer
 
     if (choice == 'y' || choice == 'Y') {
-        capitalGame secondaryGame(country, validCountries, player, latitude, longitude, capital, population, currency);
-        secondaryGame.play();
+        capitalGame capGame(country, validCountries, player, latitude, longitude, capital, population, currency);
+        capGame.play();
+        populationGame popGame(country, validCountries, player, latitude, longitude, capital, population, currency);
+        popGame.play();
     }
 }
 
@@ -87,7 +88,7 @@ void Game::playOption3() {
 
 
 void Game::privateChoice() {
-    displayMenu(); // Display the menu again before taking input
+    displayMenu();
     std::string choice;
     std::cout << "Enter your choice: ";
     std::cin >> choice;
@@ -219,5 +220,3 @@ std::ostream & operator<<(std::ostream &os,
     }
     return os;
 }
-
-

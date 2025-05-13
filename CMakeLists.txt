@@ -96,6 +96,8 @@ add_executable(${MAIN_EXECUTABLE_NAME}
         InvalidCoordinatesException.h
         CountryNotFoundException.cpp
         CountryNotFoundException.h
+        populationGame.cpp
+        populationGame.h
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )
