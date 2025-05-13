@@ -6,7 +6,6 @@
 #define FILEREADEXCEPTION_H
 #include <exception>
 #include <string>
-#include <__fwd/string.h>
 
 
 class FileReadException : public std::exception {
@@ -15,7 +14,7 @@ public:
 
     const char *what() const noexcept override;
 
-    const std::string &getFilename() const;
+    // const std::string &getFilename() const;
 
 private:
     std::string filename;

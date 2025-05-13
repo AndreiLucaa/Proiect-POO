@@ -10,6 +10,6 @@ const char * FileReadException::what() const noexcept {
     return ("Error reading file: " + filename).c_str();
 }
 
-const std::string & FileReadException::getFilename() const {
-    return filename;
-}
+// const std::string & FileReadException::getFilename() const {
+//     return filename;
+// }
