@@ -60,9 +60,6 @@ void Wordle::play() {
         } catch (const InvalidWordLengthException &e) {
             std::cout << "Error: " << e.what() << std::endl;
             continue;
-        } catch (const WordException &e) {
-            std::cout << "Error: " << e.what() << std::endl;
-            continue;
         } catch (const InvalidWordList &e) {
             std::cout<< "Error: " << e.what() << std::endl;
             continue;

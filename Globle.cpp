@@ -110,3 +110,7 @@ Globle & Globle::operator=(Globle &&other) noexcept {
     attempts = other.attempts;
     return *this;
 }
+
+Globle::~Globle() {
+    std::cout << "Globle game ended. But we have something interesting for you" << std::endl;
+}

@@ -28,6 +28,8 @@ public:
 
     Globle & operator=(Globle &&other) noexcept;
 
+    virtual ~Globle();
+
 protected:
 
     Country country;
