@@ -23,7 +23,7 @@ public:
 
     virtual void play() override;
 
-    virtual ~capitalGame();
+    virtual ~capitalGame() override;
 };
 
 #endif //CAPITALGAME_H
