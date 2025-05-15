@@ -64,8 +64,9 @@ void Globle::play() {
             // std::cout << "Your guess: " << guessCountry << " (Lat: " << guessLat << ", Lon: " << guessLon << ")" << std::endl;
             // std::cout << "Target country: " << country.getName() << " (Lat: " << targetLat << ", Lon: " << targetLon << ")" << std::endl;
 
-            HaversineResult haversineResult(country.getName(), country.getValidCountries(), targetLat, targetLon, country.getCapital(), country.getPopulation(), country.getCurrency());
-            haversineResult.displayHaversineResult(guessLat, guessLon, targetLat, targetLon);
+            HaversineResult* haversineResult = new HaversineResult(country.getName(), country.getValidCountries(), targetLat, targetLon, country.getCapital(), country.getPopulation(), country.getCurrency());
+            haversineResult->displayHaversineResult(guessLat, guessLon, targetLat, targetLon);
+            delete haversineResult;
             player.addAttempt();
             --attempts;
             std::cout << "Attempts remaining: " << attempts << std::endl;
@@ -80,4 +81,32 @@ void Globle::play() {
     auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     player.addTime(elapsed);
 
+}
+
+Globle::Globle(const Globle &other): country(other.country),
+                                     player(other.player),
+                                     attempts(other.attempts) {
+}
+
+Globle::Globle(Globle &&other) noexcept: country(std::move(other.country)),
+                                         player(other.player),
+                                         attempts(other.attempts) {
+}
+
+Globle & Globle::operator=(const Globle &other) {
+    if (this == &other)
+        return *this;
+    country = other.country;
+    player = other.player;
+    attempts = other.attempts;
+    return *this;
+}
+
+Globle & Globle::operator=(Globle &&other) noexcept {
+    if (this == &other)
+        return *this;
+    country = std::move(other.country);
+    player = other.player;
+    attempts = other.attempts;
+    return *this;
 }

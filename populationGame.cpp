@@ -56,6 +56,10 @@ void populationGame::play() {
     }
 }
 
+populationGame::~populationGame() {
+    std::cout << "Destructor populationGame\n";
+}
+
 std::string populationGame::formatNumber(long number) {
     std::ostringstream oss;
     if (number >= 1000000) {

@@ -9,8 +9,7 @@
 
 class InvalidCoordinatesException : public CountryException {
 public:
-    InvalidCoordinatesException(double latitude, double longitude)
-        : CountryException("Invalid coordinates: (" + std::to_string(latitude) + ", " + std::to_string(longitude) + ")") {}
+    InvalidCoordinatesException(double latitude, double longitude);
 };
 
 

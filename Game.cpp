@@ -57,8 +57,9 @@ Game & Game::operator=(Game &&other) noexcept {
 }
 
 void Game::playWordle(const std::string &word, const std::vector<std::string> &validWords) {
-    Wordle wordleGame(word, validWords, player);
-    wordleGame.play();
+    Wordle* wordleGame = new Wordle(word, validWords, player);
+    wordleGame->play();
+    delete wordleGame;
 }
 
 void Game::playGloble(const std::string &country,
@@ -66,8 +67,9 @@ void Game::playGloble(const std::string &country,
                       double latitude, double longitude,
                       const std::string &capital, long population,
                       const std::string &currency) {
-    Globle globleGame(country, validCountries, player, latitude, longitude, capital, population, currency);
-    globleGame.play();
+    Globle* globleGame = new Globle(country, validCountries, player, latitude, longitude, capital, population, currency);
+    globleGame->play();
+    delete globleGame;
 
     char choice;
     std::cout << "Do you want to continue with the extra questions? (y/n): ";
@@ -75,10 +77,12 @@ void Game::playGloble(const std::string &country,
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear input buffer
 
     if (choice == 'y' || choice == 'Y') {
-        capitalGame capGame(country, validCountries, player, latitude, longitude, capital, population, currency);
-        capGame.play();
-        populationGame popGame(country, validCountries, player, latitude, longitude, capital, population, currency);
-        popGame.play();
+        capitalGame* capGame = new capitalGame(country, validCountries, player, latitude, longitude, capital, population, currency);
+        capGame->play();
+        delete capGame;
+        populationGame* popGame = new populationGame(country, validCountries, player, latitude, longitude, capital, population, currency);
+        popGame->play();
+        delete popGame;
     }
 }
 
@@ -109,8 +113,8 @@ void Game::privateChoice() {
             std::cerr << "Failed to load countries from file." << std::endl;
             return;
         }
-        std::cout << "Countries loaded successfully!\n";
-        std::cout << "Total countries loaded: " << countries.size() << "\n";
+        // std::cout << "Countries loaded successfully!\n";
+        // std::cout << "Total countries loaded: " << countries.size() << "\n";
         // for (const auto &country : countries) {
         //     std::string name = std::get<0>(country);
         //     double latitude = std::get<1>(country).first;
@@ -161,9 +165,11 @@ int Game::getUserChoice() {
     std::cout << "🔺 6-letter words – For the pros!\n";
     std::cout << "Enter the word length you want to play with: ";
     std::cin >> choice;
-    while (choice < 4 || choice > 6) {
+    while (std::cin.fail() || choice < 4 || choice > 6) {
+        std::cin.clear(); // Clear the error flag
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Discard invalid input
         std::cout << "🚫 Oops! That’s not a valid option.\n";
-        std::cout<<"You can only choose 4, 5, or 6 letter words. Try again!\n";
+        std::cout << "You can only choose 4, 5, or 6 letter words. Try again!\n";
         std::cin >> choice;
     }
     return choice;

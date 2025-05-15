@@ -9,8 +9,7 @@
 
 class CountryNotFoundException : public CountryException {
 public:
-    explicit CountryNotFoundException(const std::string &countryName)
-        : CountryException("Country not found: " + countryName) {}
+    explicit CountryNotFoundException(const std::string &countryName);
 };
 
 

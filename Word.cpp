@@ -14,6 +14,7 @@
 #include "InvalidCharacterException.h"
 #include "InvalidGuessException.h"
 #include "InvalidWordLengthException.h"
+#include "InvalidWordList.h"
 #include "WordExceptions.h"
 
 Word::Word(const std::string &word, const std::vector<std::string> &validWords): word(word), validWords(validWords), litere("ABCDEFGHIJKLMNOPQRSTUVWXYZ") {
@@ -50,9 +51,11 @@ Word & Word::operator=(Word &&other) noexcept {
 
 const std::string & Word::getWord() const { return word; }
 
-bool Word::isValid(const std::string &guess) const { return privateIsValid(guess); }
+bool Word::isValid(const std::string &guess) { return privateIsValid(guess); }
 
 bool Word::correctLength(const std::string &guess) const { return privateCorrectLength(guess); }
+
+bool Word::isValidWordList(const std::string &guess) { return privateIsValidWordList(guess); }
 
 bool Word::isCorrect(const std::string &guess) const { return privateIsCorrect(guess); }
 
@@ -64,14 +67,20 @@ std::string Word::getLetters(const std::string &guess) { return privateGetLetter
 
 Word::~Word() = default;
 
-bool Word::privateIsValid(const std::string &guess) const {
-    if (std::find(validWords.begin(), validWords.end(), guess) == validWords.end()) {
-        throw InvalidGuessException("The word '" + guess + "' is not in the valid words list.");
-    }
+bool Word::privateIsValid(const std::string &guess) {
+
     for (char c : guess) {
         if (!std::isalpha(c)) {
             throw InvalidCharacterException("The word '" + guess + "' contains non-alphabetic characters.");
         }
+    }
+
+    return true;
+}
+
+bool Word::privateIsValidWordList(const std::string &guess) {
+    if (std::find(validWords.begin(), validWords.end(), guess) == validWords.end()) {
+        throw InvalidWordList("The word '" + guess + "' is not in the valid words list.");
     }
     return true;
 }

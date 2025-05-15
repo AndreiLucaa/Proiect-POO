@@ -12,6 +12,26 @@ void HaversineResult::displayHaversineResult(double lat1, double lon1, double la
     std::cout << "Bearing: " << bearingToCompass(bearing) << "\n";
 }
 
+HaversineResult::HaversineResult(const HaversineResult &other): Country(other) {
+}
+
+HaversineResult::HaversineResult(HaversineResult &&other) noexcept: Country(std::move(other)) {
+}
+
+HaversineResult & HaversineResult::operator=(const HaversineResult &other) {
+    if (this == &other)
+        return *this;
+    Country::operator =(other);
+    return *this;
+}
+
+HaversineResult & HaversineResult::operator=(HaversineResult &&other) noexcept {
+    if (this == &other)
+        return *this;
+    Country::operator =(std::move(other));
+    return *this;
+}
+
 std::pair<double, double> HaversineResult::haversine(double lat1, double lon1, double lat2, double lon2) const {
     lat1 *= DEG_TO_RAD;
     lon1 *= DEG_TO_RAD;

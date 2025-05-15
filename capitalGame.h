@@ -8,7 +8,6 @@
 
 
 #include "capitalGame.h"
-#include "Capital.h"
 #include "Country.h"
 #include <iostream>
 #include <vector>
@@ -22,7 +21,9 @@ public:
                 Player &player, double latitude, double longitude, const std::string &capital, long population,
                 const std::string &currency);
 
-    void play() override;
+    virtual void play() override;
+
+    virtual ~capitalGame();
 };
 
 #endif //CAPITALGAME_H

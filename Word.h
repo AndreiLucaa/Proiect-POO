@@ -20,9 +20,11 @@ public:
 
     const std::string& getWord() const;
 
-    bool isValid(const std::string& guess) const;
+    static bool isValid(const std::string& guess);
 
     bool correctLength(const std::string& guess) const;
+
+    bool isValidWordList(const std::string &guess);
 
     bool isCorrect(const std::string& guess) const;
 
@@ -39,7 +41,9 @@ private:
     std::vector<std::string> validWords;
     std::string litere;
 
-    bool privateIsValid(const std::string& guess) const;
+    static bool privateIsValid(const std::string& guess);
+
+    bool privateIsValidWordList(const std::string &guess);
 
     bool privateCorrectLength(const std::string& guess) const;
 

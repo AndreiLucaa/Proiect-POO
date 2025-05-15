@@ -16,6 +16,16 @@ public:
 
     void displayHaversineResult(double lat1, double lon1, double lat2, double lon2) const override;
 
+    ~HaversineResult() override = default;
+
+    HaversineResult(const HaversineResult &other);
+
+    HaversineResult(HaversineResult &&other) noexcept;
+
+    HaversineResult & operator=(const HaversineResult &other);
+
+    HaversineResult & operator=(HaversineResult &&other) noexcept;
+
 private:
     std::pair<double, double> haversine(double lat1, double lon1, double lat2, double lon2) const;
     std::string bearingToCompass(double bearing) const;

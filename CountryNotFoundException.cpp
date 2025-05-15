@@ -3,3 +3,5 @@
 //
 
 #include "CountryNotFoundException.h"
+
+CountryNotFoundException::CountryNotFoundException(const std::string &countryName): CountryException("Country not found: " + countryName) {}

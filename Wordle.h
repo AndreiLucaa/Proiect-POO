@@ -28,12 +28,7 @@ public:
 
     Wordle & operator=(Wordle &&other) noexcept;
 
-    friend std::ostream& operator<<(std::ostream& os, const Wordle& game) {
-        os << "Wordle Game\n" << game.word << "\n"
-        << "Attempts: " << game.attempts << "\n"
-        << "Player:" << game.player << "\n";
-        return os;
-    }
+    friend std::ostream& operator<<(std::ostream& os, const Wordle& game);
 
 
     ~Wordle();

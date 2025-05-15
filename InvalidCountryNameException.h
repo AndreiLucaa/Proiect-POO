@@ -9,8 +9,7 @@
 
 class InvalidCountryNameException : public CountryException {
 public:
-    explicit InvalidCountryNameException(const std::string &countryName)
-        : CountryException("Invalid country name: " + countryName) {}
+    explicit InvalidCountryNameException(const std::string &countryName);
 };
 
 

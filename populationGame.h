@@ -16,6 +16,8 @@ public:
 
     virtual void play() override;
 
+    virtual ~populationGame();
+
     static std::string formatNumber(long number);
 };
 

@@ -12,6 +12,9 @@
 #include <thread>
 #include <utility>
 
+#include "InvalidCharacterException.h"
+#include "InvalidWordLengthException.h"
+#include "InvalidWordList.h"
 #include "WordExceptions.h"
 
 class WordException;
@@ -43,15 +46,25 @@ void Wordle::play() {
         player.addAttempt();
         try {
             if (!word.isValid(guess)) {
-                std::cout << "Oops! That word doesn’t exist. Give it another shot!" << std::endl;
-                continue;
+                throw InvalidCharacterException("The word contains invalid characters.");
             }
             if (!word.correctLength(guess)) {
-                std::cout << "Invalid guess! The word has " << word.getWord().size() << " letters." << std::endl;
-                continue;
+                throw InvalidWordLengthException("The word has an incorrect length.");
             }
+            if (!word.isValidWordList(guess)) {
+                throw InvalidWordList("The word is not in the valid words list.");
+            }
+        } catch (const InvalidCharacterException &e) {
+            std::cout << "Error: " << e.what() << std::endl;
+            continue;
+        } catch (const InvalidWordLengthException &e) {
+            std::cout << "Error: " << e.what() << std::endl;
+            continue;
         } catch (const WordException &e) {
             std::cout << "Error: " << e.what() << std::endl;
+            continue;
+        } catch (const InvalidWordList &e) {
+            std::cout<< "Error: " << e.what() << std::endl;
             continue;
         }
         if (word.isCorrect(guess)) {
@@ -111,5 +124,12 @@ Wordle::~Wordle() = default;
 
 std::ostream & operator<<(std::ostream &os, const std::pair<std::string, std::string> &p) {
     os << "Hint: "<<" "<< p.first << "\n" << p.second;
+    return os;
+}
+
+std::ostream & operator<<(std::ostream &os, const Wordle &game) {
+    os << "Wordle Game\n" << game.word << "\n"
+            << "Attempts: " << game.attempts << "\n"
+            << "Player:" << game.player << "\n";
     return os;
 }

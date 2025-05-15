@@ -11,7 +11,7 @@
 class FileReadException : public std::exception {
 private:
     std::string filename;
-    std::string message; // Added to store the error message
+    std::string message;
 public:
     explicit FileReadException(const std::string &filename);
     const char *what() const noexcept override;

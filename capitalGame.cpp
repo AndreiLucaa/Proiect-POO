@@ -47,3 +47,7 @@ void capitalGame::play() {
         std::cout << "Wrong! The correct capital was: " << correctCapital << "\n";
     }
 }
+
+capitalGame::~capitalGame() {
+    std::cout << "Destructor capitalGame\n";
+}

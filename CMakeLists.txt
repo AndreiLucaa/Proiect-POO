@@ -76,8 +76,6 @@ add_executable(${MAIN_EXECUTABLE_NAME}
         HaversineResult.h
         capitalGame.cpp
         capitalGame.h
-        Capital.cpp
-        Capital.h
         FileReadException.cpp
         FileReadException.h
         WordExceptions.cpp
@@ -98,6 +96,8 @@ add_executable(${MAIN_EXECUTABLE_NAME}
         CountryNotFoundException.h
         populationGame.cpp
         populationGame.h
+        InvalidWordList.cpp
+        InvalidWordList.h
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )

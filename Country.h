@@ -61,14 +61,7 @@ public:
         return os;
     }
 
-    friend bool operator==(const Country &lhs, const Country &rhs) {
-        return lhs.name == rhs.name &&
-               lhs.latitude == rhs.latitude &&
-               lhs.longitude == rhs.longitude &&
-               lhs.capital == rhs.capital &&
-               lhs.population == rhs.population &&
-               lhs.currency == rhs.currency;
-    }
+    friend bool operator==(const Country &lhs, const Country &rhs);
 
 private:
     std::string name;

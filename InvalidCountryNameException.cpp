@@ -3,3 +3,5 @@
 //
 
 #include "InvalidCountryNameException.h"
+
+InvalidCountryNameException::InvalidCountryNameException(const std::string &countryName): CountryException("Invalid country name: " + countryName) {}

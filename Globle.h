@@ -20,6 +20,14 @@ public:
 
     virtual void play();
 
+    Globle(const Globle &other);
+
+    Globle(Globle &&other) noexcept;
+
+    Globle & operator=(const Globle &other);
+
+    Globle & operator=(Globle &&other) noexcept;
+
 protected:
 
     Country country;
