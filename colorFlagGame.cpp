@@ -37,19 +37,19 @@ void colorFlagGame::play() {
                        std::transform(colorCopy.begin(), colorCopy.end(), colorCopy.begin(), ::tolower);
                        return colorCopy;
                    });
-    int attempts = flagColors.size() + 3;
+    int attempts_ = flagColors.size() + 3;
 
     std::cout << "Guess the colors of the flag for: " << country.getName() << "\n";
     std::cout << country.getName() << " has " << country.getFlagColors().size() << " colors in its flag.\n";
-    std::cout << "You have " << attempts << " attempts to guess the colors.\n";
+    std::cout << "You have " << attempts_ << " attempts to guess the colors.\n";
     std::cout << "Available colors: ";
     for (const auto &color : allColors) {
         std::cout << color << " ";
     }
     std::cout << "\n";
 
-    while (attempts > 0 && !remainingColors.empty()) {
-        std::cout << "You have " << attempts << " attempts remaining.\n";
+    while (attempts_ > 0 && !remainingColors.empty()) {
+        std::cout << "You have " << attempts_ << " attempts remaining.\n";
         std::cout << "Enter a color: ";
         std::string guessedColor;
         std::cin >> guessedColor;
@@ -63,7 +63,7 @@ void colorFlagGame::play() {
             std::cout << "Wrong guess! Try again.\n";
         }
 
-        --attempts;
+        --attempts_;
     }
 
     if (remainingColors.empty()) {
