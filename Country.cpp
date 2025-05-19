@@ -38,8 +38,7 @@ std::string const& Country::getName() const {
     return name;
 }
 
-const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>>
-Country::getValidCountries() const {
+const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &Country::getValidCountries() const {
     return validCountries;
 }
 
@@ -63,8 +62,8 @@ std::string const& Country::getCurrency() const {
     return currency;
 }
 
-const std::vector<std::string> Country ::getFlagColors() const {
-    return flagColors;
+const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &Country::getValidCountries() const {
+    return validCountries;
 }
 
 bool Country::isValidCountry(const std::string &guess1) const {

@@ -38,8 +38,8 @@ public:
 
     std::string const& getName() const;
 
-    const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::
-    string>>> getValidCountries() const;
+    const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &getValidCountries() const;
+
 
     double getLatitude() const;
 
@@ -51,7 +51,7 @@ public:
 
     std::string const& getCurrency() const;
 
-    const std::vector<std::string> getFlagColors() const;
+    const std::vector<std::string> &getFlagColors() const;
 
     bool isValidCountry(const std::string &countryName) const;
 
