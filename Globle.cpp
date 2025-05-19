@@ -120,5 +120,4 @@ Globle & Globle::operator=(Globle &&other) noexcept {
 }
 
 Globle::~Globle() {
-    std::cout << "Globle game ended. Do you want to keep playing?" << std::endl;
 }

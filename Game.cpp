@@ -14,11 +14,12 @@
 #include "Country.h"
 #include "Globle.h"
 #include <json.hpp>
-
 #include "capitalGame.h"
 #include "FileReadException.h"
 #include "populationGame.h"
 #include "Wordle.h"
+#include "Player.h"
+#include "colorFlagGame.h"
 
 void Game::displayMenu() const {
     std::cout << "Choose a game mode:\n";
@@ -89,6 +90,11 @@ void Game::playGloble(const std::string &country,
             derivedPopGame->play();
         }
         delete popGame;
+        Globle* colFlagGame = new colorFlagGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
+        if (auto* derivedColorFlagGame = dynamic_cast<colorFlagGame*>(colFlagGame)) {
+            derivedColorFlagGame->play();
+        }
+        delete colFlagGame;
     }
 }
 
