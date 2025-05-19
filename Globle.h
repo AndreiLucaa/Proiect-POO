@@ -24,6 +24,8 @@ public:
 
     Globle(Globle &&other) noexcept;
 
+    Globle &operator=(Globle other);
+
     Globle & operator=(const Globle &other);
 
     Globle & operator=(Globle &&other) noexcept;

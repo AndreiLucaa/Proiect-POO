@@ -93,6 +93,14 @@ Globle::Globle(Globle &&other) noexcept: country(std::move(other.country)),
                                          attempts(other.attempts) {
 }
 
+
+Globle& Globle::operator=(Globle other) {
+    std::swap(country, other.country);
+    std::swap(player, other.player);
+    std::swap(attempts, other.attempts);
+    return *this;
+}
+
 Globle & Globle::operator=(const Globle &other) {
     if (this == &other)
         return *this;
@@ -112,5 +120,5 @@ Globle & Globle::operator=(Globle &&other) noexcept {
 }
 
 Globle::~Globle() {
-    std::cout << "Globle game ended. But we have something interesting for you" << std::endl;
+    std::cout << "Globle game ended. Do you want to keep playing?" << std::endl;
 }

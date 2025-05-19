@@ -77,11 +77,16 @@ void Game::playGloble(const std::string &country,
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear input buffer
 
     if (choice == 'y' || choice == 'Y') {
-        capitalGame* capGame = new capitalGame(country, validCountries, player, latitude, longitude, capital, population, currency);
-        capGame->play();
+        Globle* capGame = new capitalGame(country, validCountries, player, latitude, longitude, capital, population, currency);
+        if (capitalGame* derivedCapGame = dynamic_cast<capitalGame*>(capGame)) {
+            derivedCapGame->play();
+        }
         delete capGame;
-        populationGame* popGame = new populationGame(country, validCountries, player, latitude, longitude, capital, population, currency);
-        popGame->play();
+
+        Globle* popGame = new populationGame(country, validCountries, player, latitude, longitude, capital, population, currency);
+        if (populationGame* derivedPopGame = dynamic_cast<populationGame*>(popGame)) {
+            derivedPopGame->play();
+        }
         delete popGame;
     }
 }
