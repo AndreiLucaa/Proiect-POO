@@ -17,8 +17,8 @@
 
 Country::Country(const std::string &name,
                  const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &validCountries,
-                 double latitude, double longitude, const std::string &capital, long population, const std::string &currency)
-    : name(name), validCountries(validCountries), latitude(latitude), longitude(longitude), capital(capital), population(population), currency(currency) {
+                 double latitude, double longitude, const std::string &capital, long population, const std::string &currency, const std::vector<std::string> &flagColors)
+    : name(name), validCountries(validCountries), latitude(latitude), longitude(longitude), capital(capital), population(population), currency(currency), flagColors(flagColors) {
     if (name.empty()) {
         throw InvalidCountryNameException(name);
     }
@@ -28,6 +28,8 @@ Country::Country(const std::string &name,
     std::cout << "constructor Country\n";
 }
 
+
+
 void Country::displayHaversineResult(double /*lat1*/, double /*lon1*/, double /*lat2*/, double /*lon2*/) const {
     std::cout << "here the func from other class will be overridden" << std::endl;
 }
@@ -36,7 +38,7 @@ std::string const& Country::getName() const {
     return name;
 }
 
-std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>>
+const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>>
 Country::getValidCountries() const {
     return validCountries;
 }
@@ -59,6 +61,10 @@ long Country::getPopulation() const {
 
 std::string const& Country::getCurrency() const {
     return currency;
+}
+
+const std::vector<std::string> Country ::getFlagColors() const {
+    return flagColors;
 }
 
 bool Country::isValidCountry(const std::string &guess1) const {

@@ -21,7 +21,8 @@ public:
                 const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std
                 ::
                 vector<std::string>>> &validCountries, Player &player, double latitude, double longitude,
-                const std::string &capital, long population, const std::string &currency);
+                const std::string &capital, long population, const std::string &currency,
+                std::vector<std::string> &flagColors);
 
     virtual void play() override;
 

@@ -15,7 +15,7 @@ public:
                     std
                     ::vector<std::string>>> &validCountries, double latitude, double longitude,
                     const std::string &capital,
-                    long population, const std::string &currency);
+                    long population, const std::string &currency, const std::vector<std::string> &flagColors);
 
     void displayHaversineResult(double lat1, double lon1, double lat2, double lon2) const override;
 

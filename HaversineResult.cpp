@@ -3,8 +3,8 @@
 HaversineResult::HaversineResult(const std::string &name,
                                  const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &validCountries,
                                  double latitude, double longitude,
-                                 const std::string &capital, long population, const std::string &currency)
-    : Country(name, validCountries, latitude, longitude, capital, population, currency) {}
+                                 const std::string &capital, long population, const std::string &currency, const std::vector<std::string> &flagColors)
+    : Country(name, validCountries, latitude, longitude, capital, population, currency, flagColors) {}
 
 void HaversineResult::displayHaversineResult(double lat1, double lon1, double lat2, double lon2) const {
     auto [distance, bearing] = haversine(lat1, lon1, lat2, lon2);

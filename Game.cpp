@@ -63,11 +63,12 @@ void Game::playWordle(const std::string &word, const std::vector<std::string> &v
 }
 
 void Game::playGloble(const std::string &country,
-                      const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &validCountries,
+                      const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std
+                      ::vector<std::string>>> &validCountries,
                       double latitude, double longitude,
                       const std::string &capital, long population,
-                      const std::string &currency) {
-    Globle* globleGame = new Globle(country, validCountries, player, latitude, longitude, capital, population, currency, 1);
+                      const std::string &currency, std::vector<std::string> &flagColors) {
+    Globle* globleGame = new Globle(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors, 1);
     globleGame->play();
     delete globleGame;
 
@@ -77,14 +78,14 @@ void Game::playGloble(const std::string &country,
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear input buffer
 
     if (choice == 'y' || choice == 'Y') {
-        Globle* capGame = new capitalGame(country, validCountries, player, latitude, longitude, capital, population, currency);
-        if (capitalGame* derivedCapGame = dynamic_cast<capitalGame*>(capGame)) {
+        Globle* capGame = new capitalGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
+        if (auto* derivedCapGame = dynamic_cast<capitalGame*>(capGame)) {
             derivedCapGame->play();
         }
         delete capGame;
 
-        Globle* popGame = new populationGame(country, validCountries, player, latitude, longitude, capital, population, currency);
-        if (populationGame* derivedPopGame = dynamic_cast<populationGame*>(popGame)) {
+        Globle* popGame = new populationGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
+        if (auto* derivedPopGame = dynamic_cast<populationGame*>(popGame)) {
             derivedPopGame->play();
         }
         delete popGame;
@@ -141,12 +142,13 @@ void Game::privateChoice() {
         std::string capital = std::get<2>(countries[countryIndex]);
         int population = std::get<3>(countries[countryIndex]);
         std::string currency = std::get<4>(countries[countryIndex]);
+        std::vector<std::string> flagColors = std::get<5>(countries[countryIndex]);
         // std::cout << "Random country selected: " << randomCountry << "\n";
         // std::cout << "Coordinates: (" << latitude << ", " << longitude << ")\n";
         // std::cout << "Capital: " << capital << "\n";
         // std::cout << "Population: " << population << "\n";
         // std::cout << "Currency: " << currency << "\n";
-        playGloble(randomCountry, countries, latitude, longitude, capital, population, currency);
+        playGloble(randomCountry, countries, latitude, longitude, capital, population, currency, flagColors);
     } else if (choice == "3") {
         playOption3();
     } else if (choice == "0") {

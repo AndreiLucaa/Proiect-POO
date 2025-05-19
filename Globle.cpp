@@ -15,8 +15,8 @@
 Globle::Globle(const std::string &country,
                const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &validCountries,
                Player &player, double latitude, double longitude, const std::string &capital, long population,
-               const std::string &currency, bool showMessage)
-    : country(country, validCountries, latitude, longitude, capital, population, currency),
+               const std::string &currency, const std::vector<std::string> &flagColors, bool showMessage)
+    : country(country, validCountries, latitude, longitude, capital, population, currency, flagColors),
       player(player),
       attempts(6) {
     if (showMessage) {
@@ -64,7 +64,7 @@ void Globle::play() {
             // std::cout << "Your guess: " << guessCountry << " (Lat: " << guessLat << ", Lon: " << guessLon << ")" << std::endl;
             // std::cout << "Target country: " << country.getName() << " (Lat: " << targetLat << ", Lon: " << targetLon << ")" << std::endl;
 
-            HaversineResult* haversineResult = new HaversineResult(country.getName(), country.getValidCountries(), targetLat, targetLon, country.getCapital(), country.getPopulation(), country.getCurrency());
+            HaversineResult* haversineResult = new HaversineResult(country.getName(), country.getValidCountries(), targetLat, targetLon, country.getCapital(), country.getPopulation(), country.getCurrency(), country.getFlagColors());
             haversineResult->displayHaversineResult(guessLat, guessLon, targetLat, targetLon);
             delete haversineResult;
             player.addAttempt();

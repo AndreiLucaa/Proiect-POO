@@ -98,6 +98,8 @@ add_executable(${MAIN_EXECUTABLE_NAME}
         populationGame.h
         InvalidWordList.cpp
         InvalidWordList.h
+        colorFlagGame.cpp
+        colorFlagGame.h
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )

@@ -13,12 +13,13 @@ class Globle {
 
 public:
 
+
     Globle(const std::string &country,
            const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::
            vector<
            std::string>>> &validCountries, Player &player, double latitude, double longitude,
            const std::string &capital,
-           long population, const std::string &currency, bool showMessage);
+           long population, const std::string &currency, const std::vector<std::string> &flagColors, bool showMessage);
 
     virtual void play();
 

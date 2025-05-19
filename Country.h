@@ -23,17 +23,14 @@ constexpr double RAD_TO_DEG = 180.0 / M_PI;
 
 class Country {
 public:
-    Country(const std::string &name, const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> &validCountries, double latitude, double longitude, const std::string &capital, long population, const std::string &currency);
-    // [[nodiscard]] std::string getName() const;
 
-    // static std::pair<double, double> haversine(double lat1, double lon1, double lat2, double lon2);
 
     Country(const std::string &name,
             const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::
             vector<
             std::string>>> &validCountries, double latitude, double longitude, const std::string &capital,
             long population,
-            const std::string &currency);
+            const std::string &currency, const std::vector<std::string> &flagColors);
 
     virtual void displayHaversineResult(double lat1, double lon1, double lat2, double lon2) const;
 
@@ -41,7 +38,7 @@ public:
 
     std::string const& getName() const;
 
-    std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::
+    const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::
     string>>> getValidCountries() const;
 
     double getLatitude() const;
@@ -53,6 +50,8 @@ public:
     long getPopulation() const;
 
     std::string const& getCurrency() const;
+
+    const std::vector<std::string> getFlagColors() const;
 
     bool isValidCountry(const std::string &countryName) const;
 
@@ -80,6 +79,7 @@ private:
     std::string capital;
     long population;
     std::string currency;
+    std::vector<std::string> flagColors;
 
 
 };
