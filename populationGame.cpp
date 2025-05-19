@@ -8,7 +8,7 @@
 #include <sstream>
 #include <iomanip>
 populationGame::populationGame(const std::string &country,
-                               const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> &
+                               const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &
                                validCountries, Player &player, double latitude, double longitude, const std::string &capital, long population,
                                const std::string &currency): Globle(country, validCountries, player, latitude, longitude, capital, population, currency, false) {
 }

@@ -28,13 +28,21 @@ public:
 
     // static std::pair<double, double> haversine(double lat1, double lon1, double lat2, double lon2);
 
+    Country(const std::string &name,
+            const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::
+            vector<
+            std::string>>> &validCountries, double latitude, double longitude, const std::string &capital,
+            long population,
+            const std::string &currency);
+
     virtual void displayHaversineResult(double lat1, double lon1, double lat2, double lon2) const;
 
     virtual ~Country() = default;
 
     std::string const& getName() const;
 
-    std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> const& getValidCountries() const;
+    std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::
+    string>>> getValidCountries() const;
 
     double getLatitude() const;
 
@@ -65,7 +73,8 @@ public:
 
 private:
     std::string name;
-    std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> validCountries;
+    std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::
+    string>>> validCountries;
     double latitude;
     double longitude;
     std::string capital;

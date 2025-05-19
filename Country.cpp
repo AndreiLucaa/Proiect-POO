@@ -16,7 +16,7 @@
 #include "InvalidCountryNameException.h"
 
 Country::Country(const std::string &name,
-                 const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> &validCountries,
+                 const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &validCountries,
                  double latitude, double longitude, const std::string &capital, long population, const std::string &currency)
     : name(name), validCountries(validCountries), latitude(latitude), longitude(longitude), capital(capital), population(population), currency(currency) {
     if (name.empty()) {
@@ -36,7 +36,8 @@ std::string const& Country::getName() const {
     return name;
 }
 
-std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> const& Country::getValidCountries() const {
+std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>>
+Country::getValidCountries() const {
     return validCountries;
 }
 

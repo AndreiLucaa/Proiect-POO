@@ -63,11 +63,11 @@ void Game::playWordle(const std::string &word, const std::vector<std::string> &v
 }
 
 void Game::playGloble(const std::string &country,
-                      const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> &validCountries,
+                      const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &validCountries,
                       double latitude, double longitude,
                       const std::string &capital, long population,
                       const std::string &currency) {
-    Globle* globleGame = new Globle(country, validCountries, player, latitude, longitude, capital, population, currency);
+    Globle* globleGame = new Globle(country, validCountries, player, latitude, longitude, capital, population, currency, 1);
     globleGame->play();
     delete globleGame;
 
@@ -113,7 +113,7 @@ void Game::privateChoice() {
         playWordle(randomWord, words);
     } else if (choice == "2") {
         std::cout << "You've chosen Globle++\n";
-        std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> countries = loadCountries();
+        std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> countries = loadCountries();
         if (countries.empty()) {
             std::cerr << "Failed to load countries from file." << std::endl;
             return;
@@ -195,8 +195,9 @@ std::vector<std::string> Game::loadWords(int wordLength) {
     return words;
 }
 
-std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> Game::loadCountries() {
-    std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> countries;
+std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>>
+Game::loadCountries() {
+    std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> countries;
     std::ifstream file("countries.json");
     if (!file.is_open()) {
         throw FileReadException("countries.json");
@@ -213,7 +214,8 @@ std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int,
         std::string capital = item["capital"];
         int population = item["population"];
         std::string currency = item["currency"];
-        countries.emplace_back(country, std::make_pair(latitude, longitude), capital, population, currency);
+        std::vector<std::string> flagColors = item["flagColors"].get<std::vector<std::string>>();
+        countries.emplace_back(country, std::make_pair(latitude, longitude), capital, population, currency, flagColors);
     }
 
     return countries;

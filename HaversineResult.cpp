@@ -1,7 +1,7 @@
 #include "HaversineResult.h"
 
 HaversineResult::HaversineResult(const std::string &name,
-                                 const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string>> &validCountries,
+                                 const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &validCountries,
                                  double latitude, double longitude,
                                  const std::string &capital, long population, const std::string &currency)
     : Country(name, validCountries, latitude, longitude, capital, population, currency) {}

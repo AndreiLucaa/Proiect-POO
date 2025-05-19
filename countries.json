@@ -5,7 +5,12 @@
     "longitude": 67.71,
     "capital": "Kabul",
     "population": 38928346,
-    "currency": "Afghan afghani"
+    "currency": "Afghan afghani",
+    "flagColors": [
+      "black",
+      "red",
+      "green"
+    ]
   },
   {
     "country": "Albania",
@@ -13,7 +18,11 @@
     "longitude": 20.1683,
     "capital": "Tirana",
     "population": 2877797,
-    "currency": "Albanian lek"
+    "currency": "Albanian lek",
+    "flagColors": [
+      "red",
+      "black"
+    ]
   },
   {
     "country": "Algeria",
@@ -21,7 +30,12 @@
     "longitude": 1.6596,
     "capital": "Algiers",
     "population": 43851044,
-    "currency": "Algerian dinar"
+    "currency": "Algerian dinar",
+    "flagColors": [
+      "green",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Andorra",
@@ -29,7 +43,12 @@
     "longitude": 1.5218,
     "capital": "Andorra la Vella",
     "population": 77265,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Angola",
@@ -37,7 +56,12 @@
     "longitude": 17.8739,
     "capital": "Luanda",
     "population": 32866272,
-    "currency": "Angolan kwanza"
+    "currency": "Angolan kwanza",
+    "flagColors": [
+      "red",
+      "black",
+      "yellow"
+    ]
   },
   {
     "country": "Antigua and Barbuda",
@@ -45,7 +69,12 @@
     "longitude": -61.7964,
     "capital": "Saint John's",
     "population": 97928,
-    "currency": "East Caribbean dollar"
+    "currency": "East Caribbean dollar",
+    "flagColors": [
+      "red",
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "Argentina",
@@ -53,7 +82,11 @@
     "longitude": -63.6167,
     "capital": "Buenos Aires",
     "population": 45195777,
-    "currency": "Argentine peso"
+    "currency": "Argentine peso",
+    "flagColors": [
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "Armenia",
@@ -61,7 +94,12 @@
     "longitude": 45.0382,
     "capital": "Yerevan",
     "population": 2963243,
-    "currency": "Armenian dram"
+    "currency": "Armenian dram",
+    "flagColors": [
+      "red",
+      "blue",
+      "orange"
+    ]
   },
   {
     "country": "Australia",
@@ -69,7 +107,12 @@
     "longitude": 133.7751,
     "capital": "Canberra",
     "population": 25687041,
-    "currency": "Australian dollar"
+    "currency": "Australian dollar",
+    "flagColors": [
+      "blue",
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Austria",
@@ -77,7 +120,11 @@
     "longitude": 14.5501,
     "capital": "Vienna",
     "population": 8917205,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "red",
+      "white"
+    ]
 
   },
   {
@@ -86,7 +133,12 @@
     "longitude": 47.5769,
     "capital": "Baku",
     "population": 10139177,
-    "currency": "Azerbaijani manat"
+    "currency": "Azerbaijani manat",
+    "flagColors": [
+      "blue",
+      "red",
+      "green"
+    ]
   },
   {
     "country": "Bahamas",
@@ -94,7 +146,12 @@
     "longitude": -77.3963,
     "capital": "Nassau",
     "population": 393248,
-    "currency": "Bahamian dollar"
+    "currency": "Bahamian dollar",
+    "flagColors": [
+      "black",
+      "blue",
+      "gold"
+    ]
   },
   {
     "country": "Bahrain",
@@ -102,7 +159,11 @@
     "longitude": 50.5577,
     "capital": "Manama",
     "population": 1701575,
-    "currency": "Bahraini dinar"
+    "currency": "Bahraini dinar",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Bangladesh",
@@ -110,7 +171,11 @@
     "longitude": 90.3563,
     "capital": "Dhaka",
     "population": 166303498,
-    "currency": "Bangladeshi taka"
+    "currency": "Bangladeshi taka",
+    "flagColors": [
+      "green",
+      "red"
+    ]
   },
   {
     "country": "Barbados",
@@ -118,7 +183,12 @@
     "longitude": -59.5432,
     "capital": "Bridgetown",
     "population": 287375,
-    "currency": "Barbadian dollar"
+    "currency": "Barbadian dollar",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "black"
+    ]
   },
   {
     "country": "Belarus",
@@ -126,7 +196,12 @@
     "longitude": 27.9534,
     "capital": "Minsk",
     "population": 9449323,
-    "currency": "Belarusian ruble"
+    "currency": "Belarusian ruble",
+    "flagColors": [
+      "red",
+      "green",
+      "white"
+    ]
   },
   {
     "country": "Belgium",
@@ -134,7 +209,12 @@
     "longitude": 4.4699,
     "capital": "Brussels",
     "population": 11589623,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "black",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Belize",
@@ -142,7 +222,12 @@
     "longitude": -88.4976,
     "capital": "Belmopan",
     "population": 397621,
-    "currency": "Belize dollar"
+    "currency": "Belize dollar",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Benin",
@@ -150,7 +235,12 @@
     "longitude": 2.3158,
     "capital": "Porto-Novo",
     "population": 12123200,
-    "currency": "West African CFA franc"
+    "currency": "West African CFA franc",
+    "flagColors": [
+      "green",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Bhutan",
@@ -158,7 +248,12 @@
     "longitude": 90.4336,
     "capital": "Thimphu",
     "population": 771612,
-    "currency": "Bhutanese ngultrum"
+    "currency": "Bhutanese ngultrum",
+    "flagColors": [
+      "orange",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Bolivia",
@@ -166,7 +261,12 @@
     "longitude": -63.5887,
     "capital": "Sucre",
     "population": 11673029,
-    "currency": "Bolivian boliviano"
+    "currency": "Bolivian boliviano",
+    "flagColors": [
+      "red",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Bosnia and Herzegovina",
@@ -174,7 +274,12 @@
     "longitude": 17.6791,
     "capital": "Sarajevo",
     "population": 3280819,
-    "currency": "Bosnia and Herzegovina convertible mark"
+    "currency": "Bosnia and Herzegovina convertible mark",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "white"
+    ]
   },
   {
     "country": "Botswana",
@@ -182,7 +287,12 @@
     "longitude": 24.6849,
     "capital": "Gaborone",
     "population": 2141206,
-    "currency": "Botswana pula"
+    "currency": "Botswana pula",
+    "flagColors": [
+      "blue",
+      "black",
+      "white"
+    ]
   },
   {
     "country": "Brazil",
@@ -190,7 +300,12 @@
     "longitude": -51.9253,
     "capital": "Brasília",
     "population": 213993437,
-    "currency": "Brazilian real"
+    "currency": "Brazilian real",
+    "flagColors": [
+      "green",
+      "yellow",
+      "blue"
+    ]
 
   },
   {
@@ -199,7 +314,12 @@
     "longitude": 114.7277,
     "capital": "Bandar Seri Begawan",
     "population": 453562,
-    "currency": "Brunei dollar"
+    "currency": "Brunei dollar",
+    "flagColors": [
+      "yellow",
+      "black",
+      "white"
+    ]
   },
   {
     "country": "Bulgaria",
@@ -207,7 +327,12 @@
     "longitude": 25.4858,
     "capital": "Sofia",
     "population": 6951482,
-    "currency": "Bulgarian lev"
+    "currency": "Bulgarian lev",
+    "flagColors": [
+      "white",
+      "green",
+      "red"
+    ]
   },
   {
     "country": "Burkina Faso",
@@ -215,7 +340,12 @@
     "longitude": -1.5616,
     "capital": "Ouagadougou",
     "population": 20511649,
-    "currency": "West African CFA franc"
+    "currency": "West African CFA franc",
+    "flagColors": [
+      "red",
+      "green",
+      "yellow"
+    ]
   },
   {
     "country": "Burundi",
@@ -223,7 +353,12 @@
     "longitude": 29.9189,
     "capital": "Gitega",
     "population": 12114505,
-    "currency": "Burundian franc"
+    "currency": "Burundian franc",
+    "flagColors": [
+      "red",
+      "green",
+      "white"
+    ]
   },
   {
     "country": "Cape Verde",
@@ -231,7 +366,12 @@
     "longitude": -23.0418,
     "capital": "Praia",
     "population": 549911,
-    "currency": "Cape Verdean escudo"
+    "currency": "Cape Verdean escudo",
+    "flagColors": [
+      "blue",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Cambodia",
@@ -239,7 +379,12 @@
     "longitude": 104.991,
     "capital": "Phnom Penh",
     "population": 16845872,
-    "currency": "Cambodian riel"
+    "currency": "Cambodian riel",
+    "flagColors": [
+      "blue",
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Cameroon",
@@ -247,7 +392,12 @@
     "longitude": 12.3547,
     "capital": "Yaoundé",
     "population": 22709892,
-    "currency": "Central African CFA franc"
+    "currency": "Central African CFA franc",
+    "flagColors": [
+      "green",
+      "red",
+      "yellow"
+    ]
   },
   {
     "country": "Canada",
@@ -255,7 +405,11 @@
     "longitude": -106.3468,
     "capital": "Ottawa",
     "population": 38005238,
-    "currency": "Canadian dollar"
+    "currency": "Canadian dollar",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Central African Republic",
@@ -263,7 +417,14 @@
     "longitude": 20.9394,
     "capital": "Bangui",
     "population": 5496064,
-    "currency": "Central African CFA franc"
+    "currency": "Central African CFA franc",
+    "flagColors": [
+      "blue",
+      "white",
+      "green",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Chad",
@@ -271,7 +432,12 @@
     "longitude": 18.7322,
     "capital": "N'Djamena",
     "population": 16615859,
-    "currency": "Central African CFA franc"
+    "currency": "Central African CFA franc",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Chile",
@@ -279,7 +445,12 @@
     "longitude": -71.543,
     "capital": "Santiago",
     "population": 19116209,
-    "currency": "Chilean peso"
+    "currency": "Chilean peso",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "China",
@@ -287,7 +458,11 @@
     "longitude": 104.1954,
     "capital": "Beijing",
     "population": 1444216107,
-    "currency": "Renminbi"
+    "currency": "Renminbi",
+    "flagColors": [
+      "red",
+      "yellow"
+    ]
   },
   {
     "country": "Colombia",
@@ -295,7 +470,12 @@
     "longitude": -74.2973,
     "capital": "Bogotá",
     "population": 50882891,
-    "currency": "Colombian peso"
+    "currency": "Colombian peso",
+    "flagColors": [
+      "yellow",
+      "blue",
+      "red"
+    ]
   },
   {
     "country": "Comoros",
@@ -303,7 +483,13 @@
     "longitude": 43.3333,
     "capital": "Moroni",
     "population": 806153,
-    "currency": "Comorian franc"
+    "currency": "Comorian franc",
+    "flagColors": [
+      "green",
+      "white",
+      "red",
+      "blue"
+    ]
   },
   {
     "country": "Congo (Brazzaville)",
@@ -311,7 +497,12 @@
     "longitude": 15.8277,
     "capital": "Brazzaville",
     "population": 5509191,
-    "currency": "Central African CFA franc"
+    "currency": "Central African CFA franc",
+    "flagColors": [
+      "green",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Congo (Kinshasa)",
@@ -319,7 +510,12 @@
     "longitude": 21.7587,
     "capital": "Kinshasa",
     "population": 89561403,
-    "currency": "Congolese franc"
+    "currency": "Congolese franc",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Costa Rica",
@@ -327,7 +523,12 @@
     "longitude": -83.7534,
     "capital": "San José",
     "population": 5094118,
-    "currency": "Costa Rican colón"
+    "currency": "Costa Rican colón",
+    "flagColors": [
+      "blue",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Croatia",
@@ -335,7 +536,12 @@
     "longitude": 15.2,
     "capital": "Zagreb",
     "population": 4105267,
-    "currency": "Croatian kuna"
+    "currency": "Croatian kuna",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Cuba",
@@ -343,7 +549,12 @@
     "longitude": -77.7812,
     "capital": "Havana",
     "population": 11326616,
-    "currency": "Cuban peso"
+    "currency": "Cuban peso",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Cyprus",
@@ -351,7 +562,12 @@
     "longitude": 33.4299,
     "capital": "Nicosia",
     "population": 1207359,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "white",
+      "blue",
+      "yellow"
+    ]
   },
   {
     "country": "Czech Republic",
@@ -359,7 +575,12 @@
     "longitude": 15.473,
     "capital": "Prague",
     "population": 10708981,
-    "currency": "Czech koruna"
+    "currency": "Czech koruna",
+    "flagColors": [
+      "white",
+      "red",
+      "blue"
+    ]
   },
   {
     "country": "Denmark",
@@ -367,7 +588,11 @@
     "longitude": 9.5018,
     "capital": "Copenhagen",
     "population": 5818553,
-    "currency": "Danish krone"
+    "currency": "Danish krone",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Djibouti",
@@ -375,7 +600,13 @@
     "longitude": 42.5903,
     "capital": "Djibouti",
     "population": 883560,
-    "currency": "Djiboutian franc"
+    "currency": "Djiboutian franc",
+    "flagColors": [
+      "blue",
+      "green",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Dominica",
@@ -383,7 +614,12 @@
     "longitude": -61.371,
     "capital": "Roseau",
     "population": 71986,
-    "currency": "East Caribbean dollar"
+    "currency": "East Caribbean dollar",
+    "flagColors": [
+      "green",
+      "yellow",
+      "black"
+    ]
   },
   {
     "country": "Dominican Republic",
@@ -391,7 +627,12 @@
     "longitude": -70.1627,
     "capital": "Santo Domingo",
     "population": 10847904,
-    "currency": "Dominican peso"
+    "currency": "Dominican peso",
+    "flagColors": [
+      "blue",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "East Timor",
@@ -399,7 +640,12 @@
     "longitude": 125.7275,
     "capital": "Dili",
     "population": 1318445,
-    "currency": "United States dollar"
+    "currency": "United States dollar",
+    "flagColors": [
+      "red",
+      "black",
+      "yellow"
+    ]
   },
   {
     "country": "Ecuador",
@@ -407,7 +653,12 @@
     "longitude": -78.1834,
     "capital": "Quito",
     "population": 17643060,
-    "currency": "United States dollar"
+    "currency": "United States dollar",
+    "flagColors": [
+      "yellow",
+      "blue",
+      "red"
+    ]
   },
   {
     "country": "Egypt",
@@ -415,7 +666,12 @@
     "longitude": 30.8025,
     "capital": "Cairo",
     "population": 104124440,
-    "currency": "Egyptian pound"
+    "currency": "Egyptian pound",
+    "flagColors": [
+      "red",
+      "white",
+      "black"
+    ]
   },
   {
     "country": "El Salvador",
@@ -423,7 +679,11 @@
     "longitude": -88.8965,
     "capital": "San Salvador",
     "population": 6486201,
-    "currency": "United States dollar"
+    "currency": "United States dollar",
+    "flagColors": [
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "Equatorial Guinea",
@@ -431,7 +691,13 @@
     "longitude": 10.2679,
     "capital": "Malabo",
     "population": 1402985,
-    "currency": "Central African CFA franc"
+    "currency": "Central African CFA franc",
+    "flagColors": [
+      "green",
+      "white",
+      "red",
+      "blue"
+    ]
   },
   {
     "country": "Eritrea",
@@ -439,7 +705,12 @@
     "longitude": 39.7823,
     "capital": "Asmara",
     "population": 3546064,
-    "currency": "Eritrean nakfa"
+    "currency": "Eritrean nakfa",
+    "flagColors": [
+      "red",
+      "green",
+      "blue"
+    ]
   },
   {
     "country": "Estonia",
@@ -447,7 +718,12 @@
     "longitude": 25.0136,
     "capital": "Tallinn",
     "population": 1326535,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "blue",
+      "black",
+      "white"
+    ]
   },
   {
     "country": "Eswatini",
@@ -455,7 +731,12 @@
     "longitude": 31.4659,
     "capital": "Mbabane",
     "population": 1160164,
-    "currency": "Swazi lilangeni"
+    "currency": "Swazi lilangeni",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Ethiopia",
@@ -463,7 +744,12 @@
     "longitude": 40.4897,
     "capital": "Addis Ababa",
     "population": 11811484,
-    "currency": "Ethiopian birr"
+    "currency": "Ethiopian birr",
+    "flagColors": [
+      "green",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Fiji",
@@ -471,7 +757,12 @@
     "longitude": 178.065,
     "capital": "Suva",
     "population": 896445,
-    "currency": "Fijian dollar"
+    "currency": "Fijian dollar",
+    "flagColors": [
+      "blue",
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Finland",
@@ -479,7 +770,11 @@
     "longitude": 25.7482,
     "capital": "Helsinki",
     "population": 5540720,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "France",
@@ -487,7 +782,13 @@
     "longitude": 1.8883,
     "capital": "Paris",
     "population": 65273511,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "blue",
+      "white",
+      "red"
+    ]
+
   },
   {
     "country": "Gabon",
@@ -495,7 +796,12 @@
     "longitude": 11.6094,
     "capital": "Libreville",
     "population": 2225734,
-    "currency": "Central African CFA franc"
+    "currency": "Central African CFA franc",
+    "flagColors": [
+      "green",
+      "yellow",
+      "blue"
+    ]
   },
   {
     "country": "Gambia",
@@ -503,7 +809,12 @@
     "longitude": -15.3101,
     "capital": "Banjul",
     "population": 2416661,
-    "currency": "Gambian dalasi"
+    "currency": "Gambian dalasi",
+    "flagColors": [
+      "red",
+      "blue",
+      "green"
+    ]
   },
   {
     "country": "Georgia",
@@ -511,7 +822,11 @@
     "longitude": 43.3569,
     "capital": "Tbilisi",
     "population": 3989167,
-    "currency": "Georgian lari"
+    "currency": "Georgian lari",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Germany",
@@ -519,7 +834,12 @@
     "longitude": 10.4515,
     "capital": "Berlin",
     "population": 83783942,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "black",
+      "red",
+      "yellow"
+    ]
   },
   {
     "country": "Ghana",
@@ -527,7 +847,12 @@
     "longitude": -1.0232,
     "capital": "Accra",
     "population": 31072940,
-    "currency": "Ghanaian cedi"
+    "currency": "Ghanaian cedi",
+    "flagColors": [
+      "red",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Greece",
@@ -535,7 +860,11 @@
     "longitude": 21.8243,
     "capital": "Athens",
     "population": 10423054,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "Grenada",
@@ -543,7 +872,12 @@
     "longitude": -61.679,
     "capital": "Saint George's",
     "population": 112523,
-    "currency": "East Caribbean dollar"
+    "currency": "East Caribbean dollar",
+    "flagColors": [
+      "red",
+      "green",
+      "yellow"
+    ]
   },
   {
     "country": "Guatemala",
@@ -551,7 +885,11 @@
     "longitude": -90.2308,
     "capital": "Guatemala City",
     "population": 17915568,
-    "currency": "Guatemalan quetzal"
+    "currency": "Guatemalan quetzal",
+    "flagColors": [
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "Guinea",
@@ -559,7 +897,12 @@
     "longitude": -9.6966,
     "capital": "Conakry",
     "population": 13132795,
-    "currency": "Guinean franc"
+    "currency": "Guinean franc",
+    "flagColors": [
+      "red",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Guinea-Bissau",
@@ -567,7 +910,12 @@
     "longitude": -15.1804,
     "capital": "Bissau",
     "population": 1968001,
-    "currency": "West African CFA franc"
+    "currency": "West African CFA franc",
+    "flagColors": [
+      "red",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Guyana",
@@ -575,7 +923,12 @@
     "longitude": -58.9302,
     "capital": "Georgetown",
     "population": 786559,
-    "currency": "Guyanese dollar"
+    "currency": "Guyanese dollar",
+    "flagColors": [
+      "green",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Haiti",
@@ -583,7 +936,12 @@
     "longitude": -72.2852,
     "capital": "Port-au-Prince",
     "population": 11402528,
-    "currency": "Haitian gourde"
+    "currency": "Haitian gourde",
+    "flagColors": [
+      "blue",
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Honduras",
@@ -591,7 +949,11 @@
     "longitude": -88.8965,
     "capital": "Tegucigalpa",
     "population": 9904607,
-    "currency": "Honduran lempira"
+    "currency": "Honduran lempira",
+    "flagColors": [
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "Hungary",
@@ -599,7 +961,12 @@
     "longitude": 19.5033,
     "capital": "Budapest",
     "population": 9660351,
-    "currency": "Hungarian forint"
+    "currency": "Hungarian forint",
+    "flagColors": [
+      "red",
+      "white",
+      "green"
+    ]
   },
   {
     "country": "Iceland",
@@ -607,7 +974,12 @@
     "longitude": -19.0208,
     "capital": "Reykjavik",
     "population": 343599,
-    "currency": "Icelandic króna"
+    "currency": "Icelandic króna",
+    "flagColors": [
+      "blue",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "India",
@@ -615,7 +987,12 @@
     "longitude": 78.9629,
     "capital": "New Delhi",
     "population": 1380004385,
-    "currency": "Indian rupee"
+    "currency": "Indian rupee",
+    "flagColors": [
+      "saffron",
+      "white",
+      "green"
+    ]
   },
   {
     "country": "Indonesia",
@@ -623,7 +1000,11 @@
     "longitude": 113.9213,
     "capital": "Jakarta",
     "population": 273523615,
-    "currency": "Indonesian rupiah"
+    "currency": "Indonesian rupiah",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Iran",
@@ -631,7 +1012,12 @@
     "longitude": 53.688,
     "capital": "Tehran",
     "population": 83992949,
-    "currency": "Iranian rial"
+    "currency": "Iranian rial",
+    "flagColors": [
+      "green",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Iraq",
@@ -639,7 +1025,12 @@
     "longitude": 43.6793,
     "capital": "Baghdad",
     "population": 40222493,
-    "currency": "Iraqi dinar"
+    "currency": "Iraqi dinar",
+    "flagColors": [
+      "red",
+      "white",
+      "black"
+    ]
   },
   {
     "country": "Ireland",
@@ -647,7 +1038,12 @@
     "longitude": -7.6921,
     "capital": "Dublin",
     "population": 4937786,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "green",
+      "white",
+      "orange"
+    ]
   },
   {
     "country": "Israel",
@@ -655,7 +1051,11 @@
     "longitude": 34.8516,
     "capital": "Jerusalem",
     "population": 8655535,
-    "currency": "Israeli new shekel"
+    "currency": "Israeli new shekel",
+    "flagColors": [
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "Italy",
@@ -663,7 +1063,12 @@
     "longitude": 12.5674,
     "capital": "Rome",
     "population": 60244639,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "green",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Jamaica",
@@ -671,7 +1076,12 @@
     "longitude": -77.2975,
     "capital": "Kingston",
     "population": 2961167,
-    "currency": "Jamaican dollar"
+    "currency": "Jamaican dollar",
+    "flagColors": [
+      "black",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Japan",
@@ -679,7 +1089,11 @@
     "longitude": 138.2529,
     "capital": "Tokyo",
     "population": 126476461,
-    "currency": "Japanese yen"
+    "currency": "Japanese yen",
+    "flagColors": [
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Jordan",
@@ -687,7 +1101,13 @@
     "longitude": 36.2384,
     "capital": "Amman",
     "population": 10203134,
-    "currency": "Jordanian dinar"
+    "currency": "Jordanian dinar",
+    "flagColors": [
+      "black",
+      "white",
+      "green",
+      "red"
+    ]
   },
   {
     "country": "Kazakhstan",
@@ -695,7 +1115,11 @@
     "longitude": 66.9237,
     "capital": "Nur-Sultan",
     "population": 18776707,
-    "currency": "Kazakhstani tenge"
+    "currency": "Kazakhstani tenge",
+    "flagColors": [
+      "blue",
+      "yellow"
+    ]
   },
   {
     "country": "Kenya",
@@ -703,7 +1127,12 @@
     "longitude": 36.8219,
     "capital": "Nairobi",
     "population": 53771296,
-    "currency": "Kenyan shilling"
+    "currency": "Kenyan shilling",
+    "flagColors": [
+      "black",
+      "red",
+      "green"
+    ]
   },
   {
     "country": "Kiribati",
@@ -711,7 +1140,12 @@
     "longitude": -157.363,
     "capital": "Tarawa",
     "population": 119446,
-    "currency": "Australian dollar"
+    "currency": "Australian dollar",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Kuwait",
@@ -719,7 +1153,13 @@
     "longitude": 47.9774,
     "capital": "Kuwait City",
     "population": 4270571,
-    "currency": "Kuwaiti dinar"
+    "currency": "Kuwaiti dinar",
+    "flagColors": [
+      "green",
+      "white",
+      "red",
+      "black"
+    ]
   },
   {
     "country": "Kyrgyzstan",
@@ -727,7 +1167,11 @@
     "longitude": 74.7661,
     "capital": "Bishkek",
     "population": 6591600,
-    "currency": "Kyrgyzstani som"
+    "currency": "Kyrgyzstani som",
+    "flagColors": [
+      "red",
+      "yellow"
+    ]
   },
   {
     "country": "Laos",
@@ -735,7 +1179,12 @@
     "longitude": 102.4955,
     "capital": "Vientiane",
     "population": 7275560,
-    "currency": "Lao kip"
+    "currency": "Lao kip",
+    "flagColors": [
+      "blue",
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Latvia",
@@ -743,7 +1192,11 @@
     "longitude": 24.6032,
     "capital": "Riga",
     "population": 1886198,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Lebanon",
@@ -751,7 +1204,11 @@
     "longitude": 35.8623,
     "capital": "Beirut",
     "population": 6825445,
-    "currency": "Lebanese pound"
+    "currency": "Lebanese pound",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Lesotho",
@@ -759,7 +1216,12 @@
     "longitude": 28.2336,
     "capital": "Maseru",
     "population": 2142249,
-    "currency": "Lesotho loti"
+    "currency": "Lesotho loti",
+    "flagColors": [
+      "blue",
+      "white",
+      "green"
+    ]
   },
   {
     "country": "Liberia",
@@ -767,7 +1229,12 @@
     "longitude": -9.4295,
     "capital": "Monrovia",
     "population": 5057681,
-    "currency": "Liberian dollar"
+    "currency": "Liberian dollar",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Libya",
@@ -775,7 +1242,12 @@
     "longitude": 17.2283,
     "capital": "Tripoli",
     "population": 6871292,
-    "currency": "Libyan dinar"
+    "currency": "Libyan dinar",
+    "flagColors": [
+      "red",
+      "black",
+      "green"
+    ]
   },
   {
     "country": "Liechtenstein",
@@ -783,7 +1255,12 @@
     "longitude": 9.5554,
     "capital": "Vaduz",
     "population": 38128,
-    "currency": "Swiss franc"
+    "currency": "Swiss franc",
+    "flagColors": [
+      "blue",
+      "red",
+      "yellow"
+    ]
   },
   {
     "country": "Lithuania",
@@ -791,7 +1268,12 @@
     "longitude": 23.8813,
     "capital": "Vilnius",
     "population": 2722289,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "yellow",
+      "green",
+      "red"
+    ]
   },
   {
     "country": "Luxembourg",
@@ -799,7 +1281,12 @@
     "longitude": 6.1296,
     "capital": "Luxembourg City",
     "population": 634814,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Madagascar",
@@ -807,7 +1294,12 @@
     "longitude": 46.8691,
     "capital": "Antananarivo",
     "population": 27691018,
-    "currency": "Malagasy ariary"
+    "currency": "Malagasy ariary",
+    "flagColors": [
+      "red",
+      "white",
+      "green"
+    ]
   },
   {
     "country": "Malawi",
@@ -815,7 +1307,12 @@
     "longitude": 34.3015,
     "capital": "Lilongwe",
     "population": 19129952,
-    "currency": "Malawian kwacha"
+    "currency": "Malawian kwacha",
+    "flagColors": [
+      "red",
+      "black",
+      "green"
+    ]
   },
   {
     "country": "Malaysia",
@@ -823,7 +1320,13 @@
     "longitude": 101.9758,
     "capital": "Kuala Lumpur",
     "population": 32365999,
-    "currency": "Malaysian ringgit"
+    "currency": "Malaysian ringgit",
+    "flagColors": [
+      "red",
+      "white",
+      "blue",
+      "yellow"
+    ]
   },
   {
     "country": "Maldives",
@@ -831,7 +1334,12 @@
     "longitude": 73.2207,
     "capital": "Male",
     "population": 515696,
-    "currency": "Maldivian rufiyaa"
+    "currency": "Maldivian rufiyaa",
+    "flagColors": [
+      "green",
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Mali",
@@ -839,7 +1347,12 @@
     "longitude": -3.9962,
     "capital": "Bamako",
     "population": 20250833,
-    "currency": "West African CFA franc"
+    "currency": "West African CFA franc",
+    "flagColors": [
+      "red",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Malta",
@@ -847,7 +1360,11 @@
     "longitude": 14.3754,
     "capital": "Valletta",
     "population": 514999,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Marshall Islands",
@@ -855,7 +1372,12 @@
     "longitude": 171.1845,
     "capital": "Majuro",
     "population": 59194,
-    "currency": "United States dollar"
+    "currency": "United States dollar",
+    "flagColors": [
+      "blue",
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Mauritania",
@@ -863,7 +1385,11 @@
     "longitude": -10.9408,
     "capital": "Nouakchott",
     "population": 4649658,
-    "currency": "Mauritanian ouguiya"
+    "currency": "Mauritanian ouguiya",
+    "flagColors": [
+      "green",
+      "yellow"
+    ]
   },
   {
     "country": "Mauritius",
@@ -871,7 +1397,13 @@
     "longitude": 57.5522,
     "capital": "Port Louis",
     "population": 1271768,
-    "currency": "Mauritian rupee"
+    "currency": "Mauritian rupee",
+    "flagColors": [
+      "red",
+      "blue",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Mexico",
@@ -879,7 +1411,12 @@
     "longitude": -102.5528,
     "capital": "Mexico City",
     "population": 130262216,
-    "currency": "Mexican peso"
+    "currency": "Mexican peso",
+    "flagColors": [
+      "green",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Micronesia",
@@ -887,7 +1424,11 @@
     "longitude": 150.5508,
     "capital": "Palikir",
     "population": 104000,
-    "currency": "United States dollar"
+    "currency": "United States dollar",
+    "flagColors": [
+      "blue",
+      "yellow"
+    ]
   },
   {
     "country": "Moldova",
@@ -895,7 +1436,12 @@
     "longitude": 28.3699,
     "capital": "Chișinău",
     "population": 2657637,
-    "currency": "Moldovan leu"
+    "currency": "Moldovan leu",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Monaco",
@@ -903,7 +1449,11 @@
     "longitude": 7.4246,
     "capital": "Monaco",
     "population": 39242,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Mongolia",
@@ -911,7 +1461,13 @@
     "longitude": 103.8467,
     "capital": "Ulaanbaatar",
     "population": 3278290,
-    "currency": "Mongolian tögrög"
+    "currency": "Mongolian tögrög",
+    "flagColors": [
+      "red",
+      "blue",
+      "yellow"
+    ]
+
   },
   {
     "country": "Montenegro",
@@ -919,7 +1475,12 @@
     "longitude": 19.3744,
     "capital": "Podgorica",
     "population": 622359,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "red",
+      "gold",
+      "green"
+    ]
   },
   {
     "country": "Morocco",
@@ -927,7 +1488,11 @@
     "longitude": -7.0926,
     "capital": "Rabat",
     "population": 36910560,
-    "currency": "Moroccan dirham"
+    "currency": "Moroccan dirham",
+    "flagColors": [
+      "red",
+      "green"
+    ]
   },
   {
     "country": "Mozambique",
@@ -935,7 +1500,13 @@
     "longitude": 35.5296,
     "capital": "Maputo",
     "population": 31255435,
-    "currency": "Mozambican metical"
+    "currency": "Mozambican metical",
+    "flagColors": [
+      "green",
+      "black",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Myanmar",
@@ -943,7 +1514,12 @@
     "longitude": 95.956,
     "capital": "Naypyidaw",
     "population": 54409794,
-    "currency": "Burmese kyat"
+    "currency": "Burmese kyat",
+    "flagColors": [
+      "red",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Namibia",
@@ -951,7 +1527,13 @@
     "longitude": 18.4904,
     "capital": "Windhoek",
     "population": 2540905,
-    "currency": "Namibian dollar"
+    "currency": "Namibian dollar",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "red",
+      "green"
+    ]
   },
   {
     "country": "Nauru",
@@ -959,7 +1541,11 @@
     "longitude": 166.9315,
     "capital": "Yaren District",
     "population": 10834,
-    "currency": "Australian dollar"
+    "currency": "Australian dollar",
+    "flagColors": [
+      "blue",
+      "yellow"
+    ]
   },
   {
     "country": "Nepal",
@@ -967,7 +1553,11 @@
     "longitude": 84.124,
     "capital": "Kathmandu",
     "population": 29136808,
-    "currency": "Nepalese rupee"
+    "currency": "Nepalese rupee",
+    "flagColors": [
+      "red",
+      "blue"
+    ]
   },
   {
     "country": "Netherlands",
@@ -975,7 +1565,12 @@
     "longitude": 5.2913,
     "capital": "Amsterdam",
     "population": 17134872,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "New Zealand",
@@ -983,7 +1578,12 @@
     "longitude": 174.886,
     "capital": "Wellington",
     "population": 4822233,
-    "currency": "New Zealand dollar"
+    "currency": "New Zealand dollar",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Nicaragua",
@@ -991,7 +1591,11 @@
     "longitude": -85.2072,
     "capital": "Managua",
     "population": 6624554,
-    "currency": "Nicaraguan córdoba"
+    "currency": "Nicaraguan córdoba",
+    "flagColors": [
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "Niger",
@@ -999,7 +1603,12 @@
     "longitude": 8.0817,
     "capital": "Niamey",
     "population": 24206644,
-    "currency": "West African CFA franc"
+    "currency": "West African CFA franc",
+    "flagColors": [
+      "orange",
+      "white",
+      "green"
+    ]
   },
   {
     "country": "Nigeria",
@@ -1007,7 +1616,11 @@
     "longitude": 8.6753,
     "capital": "Abuja",
     "population": 206139589,
-    "currency": "Nigerian naira"
+    "currency": "Nigerian naira",
+    "flagColors": [
+      "green",
+      "white"
+    ]
   },
   {
     "country": "North Korea",
@@ -1015,7 +1628,12 @@
     "longitude": 127.5101,
     "capital": "Pyongyang",
     "population": 25778816,
-    "currency": "North Korean won"
+    "currency": "North Korean won",
+    "flagColors": [
+      "red",
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "North Macedonia",
@@ -1023,7 +1641,11 @@
     "longitude": 21.4254,
     "capital": "Skopje",
     "population": 2083459,
-    "currency": "Macedonian denar"
+    "currency": "Macedonian denar",
+    "flagColors": [
+      "red",
+      "yellow"
+    ]
   },
   {
     "country": "Norway",
@@ -1031,7 +1653,12 @@
     "longitude": 8.4689,
     "capital": "Oslo",
     "population": 5421241,
-    "currency": "Norwegian krone"
+    "currency": "Norwegian krone",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Oman",
@@ -1039,7 +1666,12 @@
     "longitude": 55.9754,
     "capital": "Muscat",
     "population": 5106622,
-    "currency": "Omani rial"
+    "currency": "Omani rial",
+    "flagColors": [
+      "red",
+      "white",
+      "green"
+    ]
   },
   {
     "country": "Pakistan",
@@ -1047,7 +1679,11 @@
     "longitude": 69.3451,
     "capital": "Islamabad",
     "population": 225199937,
-    "currency": "Pakistani rupee"
+    "currency": "Pakistani rupee",
+    "flagColors": [
+      "green",
+      "white"
+    ]
   },
   {
     "country": "Palau",
@@ -1055,7 +1691,11 @@
     "longitude": 134.5825,
     "capital": "Ngerulmud",
     "population": 18000,
-    "currency": "United States dollar"
+    "currency": "United States dollar",
+    "flagColors": [
+      "blue",
+      "yellow"
+    ]
   },
   {
     "country": "Panama",
@@ -1063,7 +1703,12 @@
     "longitude": -80.7821,
     "capital": "Panama City",
     "population": 4314767,
-    "currency": "Panamanian balboa"
+    "currency": "Panamanian balboa",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Papua New Guinea",
@@ -1071,7 +1716,12 @@
     "longitude": 143.9555,
     "capital": "Port Moresby",
     "population": 8947024,
-    "currency": "Papua New Guinean kina"
+    "currency": "Papua New Guinean kina",
+    "flagColors": [
+      "red",
+      "black",
+      "yellow"
+    ]
   },
   {
     "country": "Paraguay",
@@ -1079,7 +1729,12 @@
     "longitude": -58.4438,
     "capital": "Asunción",
     "population": 7132538,
-    "currency": "Paraguayan guaraní"
+    "currency": "Paraguayan guaraní",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Peru",
@@ -1087,7 +1742,11 @@
     "longitude": -75.0152,
     "capital": "Lima",
     "population": 32971854,
-    "currency": "Peruvian sol"
+    "currency": "Peruvian sol",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Philippines",
@@ -1095,7 +1754,12 @@
     "longitude": 122.5603,
     "capital": "Manila",
     "population": 109581078,
-    "currency": "Philippine peso"
+    "currency": "Philippine peso",
+    "flagColors": [
+      "blue",
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Poland",
@@ -1103,7 +1767,11 @@
     "longitude": 19.1451,
     "capital": "Warsaw",
     "population": 38386000,
-    "currency": "Polish złoty"
+    "currency": "Polish złoty",
+    "flagColors": [
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Portugal",
@@ -1111,7 +1779,11 @@
     "longitude": -8.2245,
     "capital": "Lisbon",
     "population": 10196709,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "green",
+      "red"
+    ]
   },
   {
     "country": "Qatar",
@@ -1119,7 +1791,11 @@
     "longitude": 51.520008,
     "capital": "Doha",
     "population": 2881053,
-    "currency": "Qatari riyal"
+    "currency": "Qatari riyal",
+    "flagColors": [
+      "maroon",
+      "white"
+    ]
   },
   {
     "country": "Romania",
@@ -1127,7 +1803,12 @@
     "longitude": 24.9668,
     "capital": "Bucharest",
     "population": 19237691,
-    "currency": "Romanian leu"
+    "currency": "Romanian leu",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Russia",
@@ -1135,7 +1816,12 @@
     "longitude": 105.3188,
     "capital": "Moscow",
     "population": 145912025,
-    "currency": "Russian ruble"
+    "currency": "Russian ruble",
+    "flagColors": [
+      "white",
+      "blue",
+      "red"
+    ]
   },
   {
     "country": "Rwanda",
@@ -1143,7 +1829,12 @@
     "longitude": 29.8739,
     "capital": "Kigali",
     "population": 12952218,
-    "currency": "Rwandan franc"
+    "currency": "Rwandan franc",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Saint Kitts and Nevis",
@@ -1151,7 +1842,13 @@
     "longitude": -62.782998,
     "capital": "Basseterre",
     "population": 53192,
-    "currency": "East Caribbean dollar"
+    "currency": "East Caribbean dollar",
+    "flagColors": [
+      "green",
+      "yellow",
+      "black",
+      "red"
+    ]
   },
   {
     "country": "Saint Lucia",
@@ -1159,7 +1856,12 @@
     "longitude": -60.9789,
     "capital": "Castries",
     "population": 183627,
-    "currency": "East Caribbean dollar"
+    "currency": "East Caribbean dollar",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "black"
+    ]
   },
   {
     "country": "Saint Vincent and the Grenadines",
@@ -1167,7 +1869,12 @@
     "longitude": -61.1971,
     "capital": "Kingstown",
     "population": 110589,
-    "currency": "East Caribbean dollar"
+    "currency": "East Caribbean dollar",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "green"
+    ]
   },
   {
     "country": "Samoa",
@@ -1175,7 +1882,12 @@
     "longitude": -172.1046,
     "capital": "Apia",
     "population": 198410,
-    "currency": "Samoan tālā"
+    "currency": "Samoan tālā",
+    "flagColors": [
+      "blue",
+      "red",
+      "white"
+    ]
   },
   {
     "country": "San Marino",
@@ -1183,7 +1895,11 @@
     "longitude": 12.45,
     "capital": "San Marino",
     "population": 33931,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Sao Tome and Principe",
@@ -1191,7 +1907,12 @@
     "longitude": 6.6131,
     "capital": "São Tomé",
     "population": 219159,
-    "currency": "São Tomé and Príncipe dobra"
+    "currency": "São Tomé and Príncipe dobra",
+    "flagColors": [
+      "green",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Saudi Arabia",
@@ -1199,7 +1920,11 @@
     "longitude": 45.0792,
     "capital": "Riyadh",
     "population": 34813871,
-    "currency": "Saudi riyal"
+    "currency": "Saudi riyal",
+    "flagColors": [
+      "green",
+      "white"
+    ]
   },
   {
     "country": "Senegal",
@@ -1207,7 +1932,12 @@
     "longitude": -14.4524,
     "capital": "Dakar",
     "population": 16425864,
-    "currency": "West African CFA franc"
+    "currency": "West African CFA franc",
+    "flagColors": [
+      "green",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Serbia",
@@ -1215,7 +1945,12 @@
     "longitude": 21.0059,
     "capital": "Belgrade",
     "population": 8772235,
-    "currency": "Serbian dinar"
+    "currency": "Serbian dinar",
+    "flagColors": [
+      "red",
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "Seychelles",
@@ -1223,7 +1958,13 @@
     "longitude": 55.492,
     "capital": "Victoria",
     "population": 98347,
-    "currency": "Seychellois rupee"
+    "currency": "Seychellois rupee",
+    "flagColors": [
+      "blue",
+      "yellow",
+      "red",
+      "green"
+    ]
   },
   {
     "country": "Sierra Leone",
@@ -1231,7 +1972,12 @@
     "longitude": -11.7799,
     "capital": "Freetown",
     "population": 7976985,
-    "currency": "Sierra Leonean leone"
+    "currency": "Sierra Leonean leone",
+    "flagColors": [
+      "green",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Singapore",
@@ -1239,7 +1985,11 @@
     "longitude": 103.8198,
     "capital": "Singapore",
     "population": 5850342,
-    "currency": "Singapore dollar"
+    "currency": "Singapore dollar",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Slovakia",
@@ -1247,7 +1997,12 @@
     "longitude": 19.699,
     "capital": "Bratislava",
     "population": 5456362,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "blue",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Slovenia",
@@ -1255,7 +2010,12 @@
     "longitude": 14.9955,
     "capital": "Ljubljana",
     "population": 2078654,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "white",
+      "blue",
+      "red"
+    ]
   },
   {
     "country": "Solomon Islands",
@@ -1263,7 +2023,12 @@
     "longitude": 160.1562,
     "capital": "Honiara",
     "population": 686884,
-    "currency": "Solomon Islands dollar"
+    "currency": "Solomon Islands dollar",
+    "flagColors": [
+      "blue",
+      "green",
+      "yellow"
+    ]
   },
   {
     "country": "Somalia",
@@ -1271,7 +2036,11 @@
     "longitude": 46.1996,
     "capital": "Mogadishu",
     "population": 15893222,
-    "currency": "Somali shilling"
+    "currency": "Somali shilling",
+    "flagColors": [
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "South Africa",
@@ -1279,7 +2048,15 @@
     "longitude": 22.9375,
     "capital": "Pretoria",
     "population": 59308690,
-    "currency": "South African rand"
+    "currency": "South African rand",
+    "flagColors": [
+      "green",
+      "yellow",
+      "black",
+      "white",
+      "red",
+      "blue"
+    ]
   },
   {
     "country": "South Korea",
@@ -1287,7 +2064,13 @@
     "longitude": 127.7669,
     "capital": "Seoul",
     "population": 51269185,
-    "currency": "South Korean won"
+    "currency": "South Korean won",
+    "flagColors": [
+      "white",
+      "black",
+      "red",
+      "blue"
+    ]
   },
   {
     "country": "South Sudan",
@@ -1295,7 +2078,14 @@
     "longitude": 31.307,
     "capital": "Juba",
     "population": 10975920,
-    "currency": "South Sudanese pound"
+    "currency": "South Sudanese pound",
+    "flagColors": [
+      "black",
+      "red",
+      "green",
+      "blue",
+      "yellow"
+    ]
   },
   {
     "country": "Spain",
@@ -1303,7 +2093,11 @@
     "longitude": -3.7492,
     "capital": "Madrid",
     "population": 46754778,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "red",
+      "yellow"
+    ]
   },
   {
     "country": "Sri Lanka",
@@ -1311,7 +2105,12 @@
     "longitude": 80.7718,
     "capital": "Sri Jayawardenepura Kotte",
     "population": 21413249,
-    "currency": "Sri Lankan rupee"
+    "currency": "Sri Lankan rupee",
+    "flagColors": [
+      "green",
+      "orange",
+      "purple"
+    ]
   },
   {
     "country": "Sudan",
@@ -1319,7 +2118,13 @@
     "longitude": 30.2176,
     "capital": "Khartoum",
     "population": 43849260,
-    "currency": "Sudanese pound"
+    "currency": "Sudanese pound",
+    "flagColors": [
+      "red",
+      "white",
+      "black",
+      "green"
+    ]
   },
   {
     "country": "Suriname",
@@ -1327,7 +2132,13 @@
     "longitude": -56.0278,
     "capital": "Paramaribo",
     "population": 586634,
-    "currency": "Surinamese dollar"
+    "currency": "Surinamese dollar",
+    "flagColors": [
+      "green",
+      "white",
+      "red",
+      "yellow"
+    ]
   },
   {
     "country": "Sweden",
@@ -1335,7 +2146,11 @@
     "longitude": 18.6435,
     "capital": "Stockholm",
     "population": 10099265,
-    "currency": "Swedish krona"
+    "currency": "Swedish krona",
+    "flagColors": [
+      "blue",
+      "yellow"
+    ]
   },
   {
     "country": "Switzerland",
@@ -1343,7 +2158,11 @@
     "longitude": 8.2275,
     "capital": "Bern",
     "population": 8654622,
-    "currency": "Swiss franc"
+    "currency": "Swiss franc",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Syria",
@@ -1351,7 +2170,12 @@
     "longitude": 38.9968,
     "capital": "Damascus",
     "population": 17500657,
-    "currency": "Syrian pound"
+    "currency": "Syrian pound",
+    "flagColors": [
+      "red",
+      "white",
+      "black"
+    ]
   },
   {
     "country": "Tajikistan",
@@ -1359,7 +2183,12 @@
     "longitude": 71.2761,
     "capital": "Dushanbe",
     "population": 9537645,
-    "currency": "Tajikistani somoni"
+    "currency": "Tajikistani somoni",
+    "flagColors": [
+      "red",
+      "green",
+      "white"
+    ]
   },
   {
     "country": "Tanzania",
@@ -1367,7 +2196,12 @@
     "longitude": 34.8888,
     "capital": "Dodoma",
     "population": 59734218,
-    "currency": "Tanzanian shilling"
+    "currency": "Tanzanian shilling",
+    "flagColors": [
+      "green",
+      "yellow",
+      "black"
+    ]
   },
   {
     "country": "Thailand",
@@ -1375,7 +2209,12 @@
     "longitude": 100.9925,
     "capital": "Bangkok",
     "population": 69799978,
-    "currency": "Thai baht"
+    "currency": "Thai baht",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Togo",
@@ -1383,7 +2222,12 @@
     "longitude": 0.8248,
     "capital": "Lomé",
     "population": 8278724,
-    "currency": "West African CFA franc"
+    "currency": "West African CFA franc",
+    "flagColors": [
+      "green",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Tonga",
@@ -1391,7 +2235,11 @@
     "longitude": -175.1982,
     "capital": "Nuku'alofa",
     "population": 105697,
-    "currency": "Tongan paʻanga"
+    "currency": "Tongan paʻanga",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Trinidad and Tobago",
@@ -1399,7 +2247,12 @@
     "longitude": -61.2225,
     "capital": "Port of Spain",
     "population": 1399491,
-    "currency": "Trinidad and Tobago dollar"
+    "currency": "Trinidad and Tobago dollar",
+    "flagColors": [
+      "red",
+      "black",
+      "white"
+    ]
   },
   {
     "country": "Tunisia",
@@ -1407,7 +2260,11 @@
     "longitude": 9.5375,
     "capital": "Tunis",
     "population": 11818619,
-    "currency": "Tunisian dinar"
+    "currency": "Tunisian dinar",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Turkey",
@@ -1415,7 +2272,11 @@
     "longitude": 35.2433,
     "capital": "Ankara",
     "population": 84339067,
-    "currency": "Turkish lira"
+    "currency": "Turkish lira",
+    "flagColors": [
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Turkmenistan",
@@ -1423,7 +2284,12 @@
     "longitude": 59.5563,
     "capital": "Ashgabat",
     "population": 5942094,
-    "currency": "Turkmenistani manat"
+    "currency": "Turkmenistani manat",
+    "flagColors": [
+      "green",
+      "red",
+      "white"
+    ]
   },
   {
     "country": "Tuvalu",
@@ -1431,7 +2297,12 @@
     "longitude": 177.6493,
     "capital": "Funafuti",
     "population": 11700,
-    "currency": "Australian dollar"
+    "currency": "Australian dollar",
+    "flagColors": [
+      "blue",
+      "white",
+      "red"
+    ]
   },
   {
     "country": "Uganda",
@@ -1439,7 +2310,12 @@
     "longitude": 32.2903,
     "capital": "Kampala",
     "population": 45741007,
-    "currency": "Ugandan shilling"
+    "currency": "Ugandan shilling",
+    "flagColors": [
+      "black",
+      "yellow",
+      "red"
+    ]
   },
   {
     "country": "Ukraine",
@@ -1447,7 +2323,11 @@
     "longitude": 31.1656,
     "capital": "Kyiv",
     "population": 43733762,
-    "currency": "Ukrainian hryvnia"
+    "currency": "Ukrainian hryvnia",
+    "flagColors": [
+      "blue",
+      "yellow"
+    ]
   },
   {
     "country": "United Arab Emirates",
@@ -1455,7 +2335,13 @@
     "longitude": 53.8478,
     "capital": "Abu Dhabi",
     "population": 9890400,
-    "currency": "United Arab Emirates dirham"
+    "currency": "United Arab Emirates dirham",
+    "flagColors": [
+      "red",
+      "green",
+      "white",
+      "black"
+    ]
   },
   {
     "country": "United Kingdom",
@@ -1463,7 +2349,12 @@
     "longitude": -3.436,
     "capital": "London",
     "population": 67886011,
-    "currency": "Pound sterling"
+    "currency": "Pound sterling",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "United States",
@@ -1471,7 +2362,12 @@
     "longitude": -95.7129,
     "capital": "Washington, D.C.",
     "population": 331002651,
-    "currency": "United States dollar"
+    "currency": "United States dollar",
+    "flagColors": [
+      "red",
+      "white",
+      "blue"
+    ]
   },
   {
     "country": "Uruguay",
@@ -1479,7 +2375,11 @@
     "longitude": -55.7658,
     "capital": "Montevideo",
     "population": 3473730,
-    "currency": "Uruguayan peso"
+    "currency": "Uruguayan peso",
+    "flagColors": [
+      "blue",
+      "white"
+    ]
   },
   {
     "country": "Uzbekistan",
@@ -1487,7 +2387,13 @@
     "longitude": 64.5853,
     "capital": "Tashkent",
     "population": 33469199,
-    "currency": "Uzbekistani som"
+    "currency": "Uzbekistani som",
+    "flagColors": [
+      "blue",
+      "white",
+      "green",
+      "red"
+    ]
   },
   {
     "country": "Vanuatu",
@@ -1495,7 +2401,13 @@
     "longitude": 166.9592,
     "capital": "Port Vila",
     "population": 307145,
-    "currency": "Vanuatu vatu"
+    "currency": "Vanuatu vatu",
+    "flagColors": [
+      "green",
+      "red",
+      "black",
+      "yellow"
+    ]
   },
   {
     "country": "Vatican City",
@@ -1503,7 +2415,11 @@
     "longitude": 12.4534,
     "capital": "Vatican City",
     "population": 801,
-    "currency": "Euro"
+    "currency": "Euro",
+    "flagColors": [
+      "yellow",
+      "white"
+    ]
   },
   {
     "country": "Venezuela",
@@ -1511,7 +2427,12 @@
     "longitude": -66.5897,
     "capital": "Caracas",
     "population": 28435943,
-    "currency": "Venezuelan bolívar"
+    "currency": "Venezuelan bolívar",
+    "flagColors": [
+      "yellow",
+      "blue",
+      "red"
+    ]
   },
   {
     "country": "Vietnam",
@@ -1519,7 +2440,11 @@
     "longitude": 108.2772,
     "capital": "Hanoi",
     "population": 97338579,
-    "currency": "Vietnamese đồng"
+    "currency": "Vietnamese đồng",
+    "flagColors": [
+      "red",
+      "yellow"
+    ]
   },
   {
     "country": "Yemen",
@@ -1527,7 +2452,12 @@
     "longitude": 48.5164,
     "capital": "Sana'a",
     "population": 29825968,
-    "currency": "Yemeni rial"
+    "currency": "Yemeni rial",
+    "flagColors": [
+      "red",
+      "white",
+      "black"
+    ]
   },
   {
     "country": "Zambia",
@@ -1535,7 +2465,12 @@
     "longitude": 27.8493,
     "capital": "Lusaka",
     "population": 18355638,
-    "currency": "Zambian kwacha"
+    "currency": "Zambian kwacha",
+    "flagColors": [
+      "green",
+      "orange",
+      "black"
+    ]
   },
   {
     "country": "Zimbabwe",
@@ -1543,6 +2478,12 @@
     "longitude": 29.1549,
     "capital": "Harare",
     "population": 14862924,
-    "currency": "United States dollar"
+    "currency": "United States dollar",
+    "flagColors": [
+      "green",
+      "yellow",
+      "red",
+      "black"
+    ]
   }
 ]
