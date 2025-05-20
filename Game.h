@@ -7,11 +7,25 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "Globle.h"
 #include "Player.h"
+#include <memory>
+#include "capitalGame.h"
+#include "populationGame.h"
+#include "colorFlagGame.h"
+#include "currencyGame.h"
 
 class Game {
 public:
-    void displayMenu() const;
+
+    Globle* generateGame(const ::std::__1::string &country,
+                         const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::
+                         string, std::vector<std::string>>> & validCountries,
+                         Player &player, double latitude, double longitude, const std::string &capital, long population,
+                         const std::string &currency, std::vector<std::string> &flagColors);
+
+
+    static void displayMenu();
 
     explicit Game(Player& player);
 
@@ -31,8 +45,6 @@ public:
                     const std::string &capital,
                     long population, const std::string &currency, std::vector<std::string> &flagColors);
 
-
-    void playOption3();
 
     void privateChoice();
 

@@ -9,23 +9,44 @@
 #include <vector>
 #include <algorithm>
 #include <cctype>
+#include <iosfwd>
 #include <string>
 #include <thread>
 #include "Country.h"
 #include "Globle.h"
 #include <json.hpp>
+#include <tuple>
 #include "capitalGame.h"
 #include "FileReadException.h"
 #include "populationGame.h"
 #include "Wordle.h"
 #include "Player.h"
 #include "colorFlagGame.h"
+#include "currencyGame.h"
 
-void Game::displayMenu() const {
+Globle* Game::generateGame(const ::std::__1::string &country,
+                           const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::
+                           string, std::vector<std::string>>> & validCountries,
+                           Player &player, double latitude, double longitude, const std::string &capital, long population,
+                           const std::string &currency, std::vector<std::string> &flagColors) {
+    int randomGame = std::rand() % 4;
+    switch (randomGame) {
+        case 0:
+            return new capitalGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
+        case 1:
+            return new populationGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
+        case 2:
+            return new colorFlagGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
+        case 3:
+        default:
+            return new currencyGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
+    }
+}
+
+void Game::displayMenu() {
     std::cout << "Choose a game mode:\n";
     std::cout << "1. Wordle++\n";
     std::cout << "2. Globle++\n";
-    std::cout << "3. Option 3 (coming soon...)\n";
     std::cout << "0. Exit :(\n";
 }
 
@@ -76,32 +97,27 @@ void Game::playGloble(const std::string &country,
     char choice;
     std::cout << "Do you want to continue with the extra questions? (y/n): ";
     std::cin >> choice;
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Clear input buffer
-
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     if (choice == 'y' || choice == 'Y') {
-        Globle* capGame = new capitalGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
-        if (auto* derivedCapGame = dynamic_cast<capitalGame*>(capGame)) {
-            derivedCapGame->play();
-        }
-        delete capGame;
+        Globle* randomGame = generateGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
 
-        Globle* popGame = new populationGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
-        if (auto* derivedPopGame = dynamic_cast<populationGame*>(popGame)) {
-            derivedPopGame->play();
+        if (auto* capGame = dynamic_cast<capitalGame*>(randomGame)) {
+            std::cout << "Random game: Capital Game\n";
+            capGame->play();
+        } else if (auto* popGame = dynamic_cast<populationGame*>(randomGame)) {
+            std::cout << "Random game: Population Game\n";
+            popGame->play();
+        } else if (auto* colGame = dynamic_cast<colorFlagGame*>(randomGame)) {
+            std::cout << "Random game: Color Flag Game\n";
+            colGame->play();
+        } else if (auto* curGame = dynamic_cast<currencyGame*>(randomGame)) {
+            std::cout << "Random game: Currency Game\n";
+            curGame->play();
         }
-        delete popGame;
-        Globle* colFlagGame = new colorFlagGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
-        if (auto* derivedColorFlagGame = dynamic_cast<colorFlagGame*>(colFlagGame)) {
-            derivedColorFlagGame->play();
-        }
-        delete colFlagGame;
+        delete randomGame;
     }
-}
 
-void Game::playOption3() {
-    std::cout << "Option 3 is coming soon...\n";
 }
-
 
 void Game::privateChoice() {
     displayMenu();
@@ -155,8 +171,6 @@ void Game::privateChoice() {
         // std::cout << "Population: " << population << "\n";
         // std::cout << "Currency: " << currency << "\n";
         playGloble(randomCountry, countries, latitude, longitude, capital, population, currency, flagColors);
-    } else if (choice == "3") {
-        playOption3();
     } else if (choice == "0") {
         std::cout << "Goodbye!\n";
         exit(0);
