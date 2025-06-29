@@ -31,7 +31,7 @@ void populationGame::play() {
 
         // skip overlapping or duplicate intervals
         bool duplicate = false;
-        for (auto &p : intervals) {
+        for (const auto &p : intervals) {
             if (p.first == start && p.second == end) { duplicate = true; break; }
         }
         if (!duplicate && (start > correctPopulation + 500000 || end < correctPopulation - 500000)) {
