@@ -40,6 +40,9 @@ void Game::displayMenu() {
     std::cout << "Choose a game mode:\n";
     std::cout << "1. Wordle++\n";
     std::cout << "2. Globle++\n";
+    std::cout << "3. Currency Game\n";
+    std::cout << "4. Population Game\n";
+    std::cout << "5. Flag Color Game\n";
     std::cout << "0. Exit :(\n";
 }
 
@@ -121,6 +124,7 @@ void Game::privateChoice() {
     std::cout << "Enter your choice: ";
     std::cin >> choice;
     Logger::getInstance().log("User chose: " + choice);
+
     if (choice == "1") {
         std::cout << "You've chosen Wordle++\n";
         int wordLength = getUserChoice();
@@ -168,9 +172,66 @@ void Game::privateChoice() {
         // std::cout << "Population: " << population << "\n";
         // std::cout << "Currency: " << currency << "\n";
         playGloble(randomCountry, countries, latitude, longitude, capital, population, currency, flagColors);
+    } else if (choice == "3") {
+        std::cout << "You've chosen Currency Game\n";
+        auto countries = loadCountries();
+        if (countries.empty()) return;
+        int idx = std::rand() % countries.size();
+        auto& t = countries[idx];
+        std::string name = std::get<0>(t);
+        double lat = std::get<1>(t).first, lon = std::get<1>(t).second;
+        std::string cap = std::get<2>(t);
+        int pop = std::get<3>(t);
+        std::string curr = std::get<4>(t);
+        std::vector<std::string> colors = std::get<5>(t);
+
+        currencyGame* cg = new currencyGame(name, countries, player, lat, lon, cap, pop, curr, colors);
+        cg->play();
+        int rem = cg->getRemainingAttempts();
+        delete cg;
+        int score = (rem > 0 ? rem * 10 : -10);
+        player.addScore(score);
+    } else if (choice == "4") {
+        std::cout << "You've chosen Population Game\n";
+        auto countries = loadCountries();
+        if (countries.empty()) return;
+        int idx = std::rand() % countries.size();
+        auto& t = countries[idx];
+        std::string name = std::get<0>(t);
+        double lat = std::get<1>(t).first, lon = std::get<1>(t).second;
+        std::string cap = std::get<2>(t);
+        int pop = std::get<3>(t);
+        std::string curr = std::get<4>(t);
+        std::vector<std::string> colors = std::get<5>(t);
+
+        populationGame* pg = new populationGame(name, countries, player, lat, lon, cap, pop, curr, colors);
+        pg->play();
+        int rem = pg->getRemainingAttempts();
+        delete pg;
+        int score = (rem > 0 ? rem * 10 : -10);
+        player.addScore(score);
+    } else if (choice == "5") {
+        std::cout << "You've chosen Flag Color Game\n";
+        auto countries = loadCountries();
+        if (countries.empty()) return;
+        int idx = std::rand() % countries.size();
+        auto& t = countries[idx];
+        std::string name = std::get<0>(t);
+        double lat = std::get<1>(t).first, lon = std::get<1>(t).second;
+        std::string cap = std::get<2>(t);
+        int pop = std::get<3>(t);
+        std::string curr = std::get<4>(t);
+        std::vector<std::string> colors = std::get<5>(t);
+
+        colorFlagGame* fg = new colorFlagGame(name, countries, player, lat, lon, cap, pop, curr, colors);
+        fg->play();
+        int rem = fg->getRemainingAttempts();
+        delete fg;
+        int score = (rem > 0 ? rem * 10 : -10);
+        player.addScore(score);
     } else if (choice == "0") {
         std::cout << "Goodbye!\n";
-        // exit(0);
+        // return to trigger destructor
     } else {
         std::cout << "Invalid choice! Please enter a valid choice.\n";
     }

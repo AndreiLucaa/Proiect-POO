@@ -8,6 +8,7 @@
 #include <chrono>
 #include <string>
 #include <thread>
+#include <limits>
 
 #include "capitalGame.h"
 #include "HaversineResult.h"
@@ -41,7 +42,12 @@ Globle::Globle(const std::string &country,
 
 void Globle::play() {
     std::string guessCountry;
-    auto start = std::chrono::high_resolution_clock::now();    while (attempts > 0) {
+    auto start = std::chrono::high_resolution_clock::now();
+
+    // flush pending '\n' from previous >> reads
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    while (attempts > 0) {
         std::cout << "Enter your guess: ";
         std::getline(std::cin, guessCountry);
 
@@ -61,8 +67,8 @@ void Globle::play() {
             auto [guessLat, guessLon] = country.getCoordinates(guessCountry);
             double targetLat = country.getLatitude();
             double targetLon = country.getLongitude();
-            std::cout << "Your guess: " << guessCountry << " (Lat: " << guessLat << ", Lon: " << guessLon << ")" << std::endl;
-            std::cout << "Target country: " << country.getName() << " (Lat: " << targetLat << ", Lon: " << targetLon << ")" << std::endl;
+            // std::cout << "Your guess: " << guessCountry << " (Lat: " << guessLat << ", Lon: " << guessLon << ")" << std::endl;
+            // std::cout << "Target country: " << country.getName() << " (Lat: " << targetLat << ", Lon: " << targetLon << ")" << std::endl;
 
             HaversineResult* haversineResult = new HaversineResult(country.getName(), country.getValidCountries(), targetLat, targetLon, country.getCapital(), country.getPopulation(), country.getCurrency(), country.getFlagColors());
             haversineResult->displayHaversineResult(guessLat, guessLon, targetLat, targetLon);

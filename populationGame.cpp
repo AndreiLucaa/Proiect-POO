@@ -29,7 +29,12 @@ void populationGame::play() {
         long start = correctPopulation + offset * (gen() % 2 == 0 ? -1 : 1);
         long end = start + 500000;
 
-        if (start > correctPopulation + 500000 || end < correctPopulation - 500000) {
+        // skip overlapping or duplicate intervals
+        bool duplicate = false;
+        for (auto &p : intervals) {
+            if (p.first == start && p.second == end) { duplicate = true; break; }
+        }
+        if (!duplicate && (start > correctPopulation + 500000 || end < correctPopulation - 500000)) {
             intervals.emplace_back(start, end);
         }
     }
