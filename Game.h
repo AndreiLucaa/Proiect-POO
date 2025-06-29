@@ -18,18 +18,9 @@
 class Game {
 public:
 
-
-    Globle* generateGame(const std::string &country,
-                           const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> & validCountries,
-                           Player &gamePlayer, double latitude, double longitude, const std::string &capital, long population,
-                           const std::string &currency, std::vector<std::string> &flagColors);
-
-
-
+    explicit Game(Player& player);
 
     static void displayMenu();
-
-    explicit Game(Player& player);
 
     Game(const Game &other);
 

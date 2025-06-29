@@ -13,23 +13,9 @@ template<typename T>
 class Container {
 public:
     explicit Container(const T& v) : value(v) {}
-    T getValue() const { return value; }
 private:
     T value;
 };
-
-template<typename T>
-T maxValue(const T& a, const T& b) {
-    return (a > b) ? a : b;
-}
-
-
-template<typename T>
-void printVector(const std::vector<T>& vec, const std::string& name = "") {
-    std::cout << name << ": ";
-    for(const auto& e : vec) std::cout << e << " ";
-    std::cout << std::endl;
-}
 
 
 template<typename T>

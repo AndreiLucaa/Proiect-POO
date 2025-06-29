@@ -61,8 +61,8 @@ void Globle::play() {
             auto [guessLat, guessLon] = country.getCoordinates(guessCountry);
             double targetLat = country.getLatitude();
             double targetLon = country.getLongitude();
-            // std::cout << "Your guess: " << guessCountry << " (Lat: " << guessLat << ", Lon: " << guessLon << ")" << std::endl;
-            // std::cout << "Target country: " << country.getName() << " (Lat: " << targetLat << ", Lon: " << targetLon << ")" << std::endl;
+            std::cout << "Your guess: " << guessCountry << " (Lat: " << guessLat << ", Lon: " << guessLon << ")" << std::endl;
+            std::cout << "Target country: " << country.getName() << " (Lat: " << targetLat << ", Lon: " << targetLon << ")" << std::endl;
 
             HaversineResult* haversineResult = new HaversineResult(country.getName(), country.getValidCountries(), targetLat, targetLon, country.getCapital(), country.getPopulation(), country.getCurrency(), country.getFlagColors());
             haversineResult->displayHaversineResult(guessLat, guessLon, targetLat, targetLon);

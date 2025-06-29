@@ -28,22 +28,11 @@
 #include "currencyGame.h"
 
 
-Globle* Game::generateGame(const std::string &country,
-                           const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> & validCountries,
-                           Player &gamePlayer, double latitude, double longitude, const std::string &capital, long population,
-                           const std::string &currency, std::vector<std::string> &flagColors) {
-    int randomGame = std::rand() % 4;
-    switch (randomGame) {
-        case 0:
-            return new capitalGame(country, validCountries, gamePlayer, latitude, longitude, capital, population, currency, flagColors);
-        case 1:
-            return new populationGame(country, validCountries, gamePlayer, latitude, longitude, capital, population, currency, flagColors);
-        case 2:
-            return new colorFlagGame(country, validCountries, gamePlayer, latitude, longitude, capital, population, currency, flagColors);
-        case 3:
-        default:
-            return new currencyGame(country, validCountries, gamePlayer, latitude, longitude, capital, population, currency, flagColors);
-    }
+Game::Game(Player &player): player(player) {
+    std::cout << "constructor Game\n";
+    std::cout << "====================================\n";
+    std::cout << "       Welcome to Offline Games     \n";
+    std::cout << "====================================\n";
 }
 
 void Game::displayMenu() {
@@ -54,12 +43,6 @@ void Game::displayMenu() {
     std::cout << "0. Exit :(\n";
 }
 
-Game::Game(Player &player): player(player) {
-    std::cout << "constructor Game\n";
-    std::cout << "====================================\n";
-    std::cout << "       Welcome to Offline Games     \n";
-    std::cout << "====================================\n";
-}
 
 
 Game::Game(const Game &other): player(other.player) {
@@ -90,7 +73,14 @@ void Game::playWordle(const std::string &word, const std::vector<std::string> &v
 
     // accumulate score for Wordle
     {
-        int score = (rem > 0 ? rem * 10 : -10);
+        int score;
+        if (rem > 0) {;
+            score = rem * 10;
+            player.incrementStreak();
+        } else {
+            score = -10;
+            player.resetStreak();
+        }
         player.addScore(score);
     }
 }
@@ -109,7 +99,14 @@ void Game::playGloble(const std::string &country,
 
     // accumulate score for Globle
     {
-        int score = (rem > 0 ? rem * 10 : -10);
+        int score;
+        if (rem > 0) {
+            score = rem * 10;
+            player.incrementStreak();
+        } else {
+            score = -10;
+            player.resetStreak();
+        }
         player.addScore(score);
     }
 
@@ -189,21 +186,22 @@ void Game::privateChoice() {
         playGloble(randomCountry, countries, latitude, longitude, capital, population, currency, flagColors);
     } else if (choice == "0") {
         std::cout << "Goodbye!\n";
-        exit(0);
+        // exit(0);
     } else {
         std::cout << "Invalid choice! Please enter a valid choice.\n";
     }
 }
 
 Game::~Game() {
-    // compare final player score vs high score
     int finalScore = player.getScore();
-    int high = 0;
-    std::ifstream in("highscore.txt");
+    int high;
+    std::ifstream in("highscore.in");
     if (in >> high) in.close();
-    std::ofstream out("highscore.txt", std::ios::trunc);
+
+    std::ofstream out("highscore.in", std::ios::trunc);
     out << std::max(finalScore, high);
     out.close();
+
     compareScores(finalScore, high);
 
     std::cout << "Thank you for playing!\n";
