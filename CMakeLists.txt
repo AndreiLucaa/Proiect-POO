@@ -102,6 +102,12 @@ add_executable(${MAIN_EXECUTABLE_NAME}
         colorFlagGame.h
         currencyGame.cpp
         currencyGame.h
+        TemplateUtils.cpp
+        TemplateUtils.h
+        GameFactory.cpp
+        GameFactory.h
+        Logger.cpp
+        Logger.h
 )
 
 # NOTE: Add all defined targets (e.g. executables, libraries, etc. )
@@ -157,6 +163,8 @@ copy_files(FILES words4.txt COPY_TO_DESTINATION TARGET_NAME ${MAIN_EXECUTABLE_NA
 copy_files(FILES words5.txt COPY_TO_DESTINATION TARGET_NAME ${MAIN_EXECUTABLE_NAME})
 copy_files(FILES words6.txt COPY_TO_DESTINATION TARGET_NAME ${MAIN_EXECUTABLE_NAME})
 copy_files(FILES countries.json COPY_TO_DESTINATION TARGET_NAME ${MAIN_EXECUTABLE_NAME})
+copy_files(FILES highscore.txt COPY_TO_DESTINATION TARGET_NAME ${MAIN_EXECUTABLE_NAME})
+
 #copy_files(FILES ext/include/json/json.hpp COPY_TO_DESTINATION TARGET_NAME ${MAIN_EXECUTABLE_NAME})
 
 #copy_files(FILES tastatura.txt config.json DIRECTORY images sounds COPY_TO_DESTINATION TARGET_NAME ${MAIN_EXECUTABLE_NAME})

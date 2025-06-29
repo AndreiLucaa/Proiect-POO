@@ -75,7 +75,7 @@ void Wordle::play() {
             std::cout << result << std::endl;
             --attempts;
             std::cout << "Attempts remaining: " << attempts << std::endl;
-            std::cout << "Used letters are: " << word.getLetters(guess) << "\n";
+            std::cout << "Remaining letters are: " << word.getLetters(guess) << "\n";
         }
     }
     if (attempts == 0) {
@@ -129,4 +129,8 @@ std::ostream & operator<<(std::ostream &os, const Wordle &game) {
             << "Attempts: " << game.attempts << "\n"
             << "Player:" << game.player << "\n";
     return os;
+}
+
+int Wordle::getRemainingAttempts() const {
+    return attempts;
 }

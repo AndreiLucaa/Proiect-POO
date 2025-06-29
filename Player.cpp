@@ -4,7 +4,7 @@
 
 #include "Player.h"
 
-Player::Player(const std::string &name): name(name), streak(0), attempts(0), totalTime(0), gamesPlayed(0), gamesWon(0) {
+Player::Player(const std::string &name): name(name), streak(0), attempts(0), totalTime(0), gamesPlayed(0), gamesWon(0), score(0) {
     std::cout << "constructor Player\n";
 }
 
@@ -13,7 +13,8 @@ Player::Player(const Player &other): name(other.name),
                                      attempts(other.attempts),
                                      totalTime(other.totalTime),
                                      gamesPlayed(other.gamesPlayed),
-                                     gamesWon(other.gamesWon) {
+                                     gamesWon(other.gamesWon),
+                                     score(other.score) {
 }
 
 Player::Player(Player &&other) noexcept: name(std::move(other.name)),
@@ -21,7 +22,8 @@ Player::Player(Player &&other) noexcept: name(std::move(other.name)),
                                          attempts(other.attempts),
                                          totalTime(other.totalTime),
                                          gamesPlayed(other.gamesPlayed),
-                                         gamesWon(other.gamesWon) {
+                                         gamesWon(other.gamesWon),
+                                         score(other.score) {
 }
 
 Player & Player::operator=(const Player &other) {
@@ -33,6 +35,7 @@ Player & Player::operator=(const Player &other) {
     totalTime = other.totalTime;
     gamesPlayed = other.gamesPlayed;
     gamesWon = other.gamesWon;
+    score = other.score;
     return *this;
 }
 
@@ -45,6 +48,7 @@ Player & Player::operator=(Player &&other) noexcept {
     totalTime = other.totalTime;
     gamesPlayed = other.gamesPlayed;
     gamesWon = other.gamesWon;
+    score = other.score;
     return *this;
 }
 
@@ -60,6 +64,10 @@ void Player::incrementGamesPlayed() { privateIncrementGamesPlayed(); }
 
 void Player::incrementGamesWon() { privateIncrementGamesWon(); }
 
+void Player::addScore(int s) {
+    score += s;
+}
+
 const std::string & Player::getName() const { return name; }
 
 int Player::getStreak() const { return streak; }
@@ -71,6 +79,10 @@ double Player::getTotalTime() const { return totalTime; }
 int Player::getGamesPlayed() const { return gamesPlayed; }
 
 int Player::getGamesWon() const { return gamesWon; }
+
+int Player::getScore() const {
+    return score;
+}
 
 double Player::getWinRate() const { return gamesPlayed > 0 ? static_cast<double>(gamesWon) / gamesPlayed * 100.0 : 0.0; }
 

@@ -3,6 +3,9 @@
 //
 
 #include "Game.h"
+#include "TemplateUtils.h"
+#include "Logger.h"
+#include "GameFactory.h"
 
 #include <fstream>
 #include <iostream>
@@ -44,6 +47,7 @@ Globle* Game::generateGame(const std::string &country,
 }
 
 void Game::displayMenu() {
+    Logger::getInstance().log("About to show main menu");
     std::cout << "Choose a game mode:\n";
     std::cout << "1. Wordle++\n";
     std::cout << "2. Globle++\n";
@@ -81,40 +85,51 @@ Game & Game::operator=(Game &&other) noexcept {
 void Game::playWordle(const std::string &word, const std::vector<std::string> &validWords) {
     Wordle* wordleGame = new Wordle(word, validWords, player);
     wordleGame->play();
+    int rem = wordleGame->getRemainingAttempts();
     delete wordleGame;
+
+    // accumulate score for Wordle
+    {
+        int score = (rem > 0 ? rem * 10 : -10);
+        player.addScore(score);
+    }
 }
 
 void Game::playGloble(const std::string &country,
-                      const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std
-                      ::vector<std::string>>> &validCountries,
+                      const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &validCountries,
                       double latitude, double longitude,
                       const std::string &capital, long population,
                       const std::string &currency, std::vector<std::string> &flagColors) {
-    Globle* globleGame = new Globle(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors, 1);
+    Globle* globleGame = new Globle(country, validCountries, player,
+                                    latitude, longitude, capital,
+                                    population, currency, flagColors, 1);
     globleGame->play();
+    int rem = globleGame->getRemainingAttempts();
     delete globleGame;
+
+    // accumulate score for Globle
+    {
+        int score = (rem > 0 ? rem * 10 : -10);
+        player.addScore(score);
+    }
 
     char choice;
     std::cout << "Do you want to continue with the extra questions? (y/n): ";
     std::cin >> choice;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     if (choice == 'y' || choice == 'Y') {
-        Globle* randomGame = generateGame(country, validCountries, player, latitude, longitude, capital, population, currency, flagColors);
+        Globle* randomGame = GameFactory::createRandomGame(
+            country, validCountries, player,
+            latitude, longitude, capital, population, currency, flagColors);
+        randomGame->play();
 
-        if (auto* capGame = dynamic_cast<capitalGame*>(randomGame)) {
-            std::cout << "Random game: Capital Game\n";
-            capGame->play();
-        } else if (auto* popGame = dynamic_cast<populationGame*>(randomGame)) {
-            std::cout << "Random game: Population Game\n";
-            popGame->play();
-        } else if (auto* colGame = dynamic_cast<colorFlagGame*>(randomGame)) {
-            std::cout << "Random game: Color Flag Game\n";
-            colGame->play();
-        } else if (auto* curGame = dynamic_cast<currencyGame*>(randomGame)) {
-            std::cout << "Random game: Currency Game\n";
-            curGame->play();
-        }
+        // accumulate score for extra (random) game
+        int remExtra = randomGame->getRemainingAttempts();
         delete randomGame;
+        {
+            int scoreExtra = (remExtra > 0 ? remExtra * 10 : -10);
+            player.addScore(scoreExtra);
+        }
     }
 
 }
@@ -124,6 +139,7 @@ void Game::privateChoice() {
     std::string choice;
     std::cout << "Enter your choice: ";
     std::cin >> choice;
+    Logger::getInstance().log("User chose: " + choice);
     if (choice == "1") {
         std::cout << "You've chosen Wordle++\n";
         int wordLength = getUserChoice();
@@ -180,7 +196,17 @@ void Game::privateChoice() {
 }
 
 Game::~Game() {
-    std::cout<<"Thank you for playing!\n";
+    // compare final player score vs high score
+    int finalScore = player.getScore();
+    int high = 0;
+    std::ifstream in("highscore.txt");
+    if (in >> high) in.close();
+    std::ofstream out("highscore.txt", std::ios::trunc);
+    out << std::max(finalScore, high);
+    out.close();
+    compareScores(finalScore, high);
+
+    std::cout << "Thank you for playing!\n";
 }
 
 int Game::getUserChoice() {

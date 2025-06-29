@@ -35,6 +35,8 @@ public:
 
     virtual ~Globle();
 
+    int getRemainingAttempts() const;
+
 protected:
 
     Country country;

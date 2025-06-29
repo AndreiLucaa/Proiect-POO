@@ -33,6 +33,8 @@ public:
 
     ~Wordle();
 
+    int getRemainingAttempts() const;   // <— add this
+
 private:
     Word word;
     int attempts;

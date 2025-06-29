@@ -121,3 +121,7 @@ Globle & Globle::operator=(Globle &&other) noexcept {
 
 Globle::~Globle() {
 }
+
+int Globle::getRemainingAttempts() const {
+    return attempts;
+}

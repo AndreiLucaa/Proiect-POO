@@ -28,6 +28,8 @@ public:
 
     void incrementGamesWon();
 
+    void addScore(int s);      // <— add this
+
     const std::string& getName() const;
 
     int getStreak() const;
@@ -42,6 +44,8 @@ public:
 
     double getWinRate() const;
 
+    int getScore() const;
+
     ~Player();
 
 private:
@@ -51,6 +55,7 @@ private:
     double totalTime;
     int gamesPlayed;
     int gamesWon;
+    int score = 0;
 
     void privateIncrementStreak();
 
