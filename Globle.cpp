@@ -9,6 +9,7 @@
 #include <string>
 #include <thread>
 #include <limits>
+#include <utility>
 
 #include "capitalGame.h"
 #include "HaversineResult.h"
@@ -100,28 +101,11 @@ Globle::Globle(Globle &&other) noexcept: country(std::move(other.country)),
 }
 
 
-Globle& Globle::operator=(Globle other) {
-    std::swap(country, other.country);
-    std::swap(player, other.player);
-    std::swap(attempts, other.attempts);
-    return *this;
-}
-
-Globle & Globle::operator=(const Globle &other) {
-    if (this == &other)
-        return *this;
-    country = other.country;
-    player = other.player;
-    attempts = other.attempts;
-    return *this;
-}
-
-Globle & Globle::operator=(Globle &&other) noexcept {
-    if (this == &other)
-        return *this;
-    country = std::move(other.country);
-    player = other.player;
-    attempts = other.attempts;
+Globle & Globle::operator=(Globle other) {
+    using std::swap;
+    swap(country, other.country);
+    swap(player, other.player);
+    swap(attempts, other.attempts);
     return *this;
 }
 

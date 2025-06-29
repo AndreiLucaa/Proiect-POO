@@ -1,4 +1,3 @@
-
 #ifndef GLOBLE_H
 #define GLOBLE_H
 
@@ -27,11 +26,8 @@ public:
 
     Globle(Globle &&other) noexcept;
 
-    Globle &operator=(Globle other);
 
-    Globle & operator=(const Globle &other);
-
-    Globle & operator=(Globle &&other) noexcept;
+    Globle & operator=(Globle other);    // copy-and-swap
 
     virtual ~Globle();
 
