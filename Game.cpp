@@ -68,19 +68,12 @@ Game & Game::operator=(Game &&other) noexcept {
 void Game::playWordle(const std::string &word, const std::vector<std::string> &validWords) {
     Wordle* wordleGame = new Wordle(word, validWords, player);
     wordleGame->play();
-    int rem = wordleGame->getRemainingAttempts();
-    delete wordleGame;
-
-    // accumulate score for Wordle
     {
-        int score;
-        if (rem > 0) {;
-            score = rem * 10;
-            player.incrementStreak();
-        } else {
-            score = -10;
-            player.resetStreak();
-        }
+        int rem = wordleGame->getRemainingAttempts();
+        delete wordleGame;
+        int score = (rem > 0 ? rem * 10 : -10);
+        if (rem > 0) player.incrementStreak();
+        else         player.resetStreak();
         player.addScore(score);
     }
 }
@@ -94,19 +87,12 @@ void Game::playGloble(const std::string &country,
                                     latitude, longitude, capital,
                                     population, currency, flagColors, 1);
     globleGame->play();
-    int rem = globleGame->getRemainingAttempts();
-    delete globleGame;
-
-    // accumulate score for Globle
     {
-        int score;
-        if (rem > 0) {
-            score = rem * 10;
-            player.incrementStreak();
-        } else {
-            score = -10;
-            player.resetStreak();
-        }
+        int rem = globleGame->getRemainingAttempts();
+        delete globleGame;
+        int score = (rem > 0 ? rem * 10 : -10);
+        if (rem > 0) player.incrementStreak();
+        else         player.resetStreak();
         player.addScore(score);
     }
 
@@ -119,11 +105,9 @@ void Game::playGloble(const std::string &country,
             country, validCountries, player,
             latitude, longitude, capital, population, currency, flagColors);
         randomGame->play();
-
-        // accumulate score for extra (random) game
-        int remExtra = randomGame->getRemainingAttempts();
-        delete randomGame;
         {
+            int remExtra = randomGame->getRemainingAttempts();
+            delete randomGame;
             int scoreExtra = (remExtra > 0 ? remExtra * 10 : -10);
             player.addScore(scoreExtra);
         }
