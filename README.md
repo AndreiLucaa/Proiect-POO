@@ -11,6 +11,10 @@ Offline Games is a C++ project for the Object-Oriented Programming course. It in
 
 -Population Game – A mini-game of Globle where players guess the population of a given country.
 
+-Flag Color Game – A mini-game of Globle where players guess the flag colors of a given country.
+
+-Currency Game – A mini-game of Globle where players guess the currency of a given country.
+
 
 ## 📂 File Sources
 
