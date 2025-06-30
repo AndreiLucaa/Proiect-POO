@@ -43,6 +43,7 @@ void Game::displayMenu() {
     std::cout << "3. Currency Game\n";
     std::cout << "4. Population Game\n";
     std::cout << "5. Flag Color Game\n";
+    std::cout << "6. Capital Game\n";                  // added
     std::cout << "0. Exit :(\n";
 }
 
@@ -229,9 +230,28 @@ void Game::privateChoice() {
         delete fg;
         int score = (rem > 0 ? rem * 10 : -10);
         player.addScore(score);
+    } else if (choice == "6") {                           // added
+        std::cout << "You've chosen Capital Game\n";
+        auto countries = loadCountries();
+        if (countries.empty()) return;
+        int idx = std::rand() % countries.size();
+        auto& t = countries[idx];
+        std::string name       = std::get<0>(t);
+        double lat             = std::get<1>(t).first;
+        double lon             = std::get<1>(t).second;
+        std::string cap        = std::get<2>(t);
+        int pop                = std::get<3>(t);
+        std::string curr       = std::get<4>(t);
+        std::vector<std::string> colors = std::get<5>(t);
+
+        capitalGame* cg = new capitalGame(name, countries, player, lat, lon, cap, pop, curr, colors);
+        cg->play();
+        int rem = cg->getRemainingAttempts();
+        delete cg;
+        int score = (rem > 0 ? rem * 10 : -10);
+        player.addScore(score);
     } else if (choice == "0") {
         std::cout << "Goodbye!\n";
-        // return to trigger destructor
     } else {
         std::cout << "Invalid choice! Please enter a valid choice.\n";
     }
