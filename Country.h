@@ -16,6 +16,7 @@
 #include <thread>
 #include <cmath>
 #include <utility>
+#include <tuple>
 
 constexpr double EARTH_RADIUS_KM = 6371.0;
 constexpr double DEG_TO_RAD = M_PI / 180.0;
@@ -70,6 +71,8 @@ public:
 
     friend bool operator==(const Country &lhs, const Country &rhs);
 
+    std::vector<std::string> getValidCountryNames() const;
+
 private:
     std::string name;
     std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::
@@ -83,6 +86,16 @@ private:
 
 
 };
+
+// inline definition to avoid missing symbol at link time
+inline std::vector<std::string> Country::getValidCountryNames() const {
+    std::vector<std::string> names;
+    names.reserve(validCountries.size());
+    for (const auto &entry : validCountries) {
+        names.push_back(std::get<0>(entry));
+    }
+    return names;
+}
 
 
 #endif //COUNTRY_H

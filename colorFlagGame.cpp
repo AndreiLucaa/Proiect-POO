@@ -3,6 +3,7 @@
 //
 
 #include "colorFlagGame.h"
+#include "TemplateUtils.h"
 #include <random>
 #include <iostream>
 #include <algorithm>
@@ -27,7 +28,11 @@ colorFlagGame::~colorFlagGame() {
 }
 
 void colorFlagGame::play() {
-    std::vector<std::string> allColors = {"Red", "Blue", "Green", "Yellow", "Black", "White", "Orange", "Purple", "Brown", "Pink"};
+    std::vector<std::string> allColors = {"Red","Blue","Green","Yellow","Black","White","Orange","Purple","Brown","Pink"};
+    // prepare lowercase palette for validation
+    std::vector<std::string> allColorsLower = allColors;
+    for (auto &c : allColorsLower)
+        std::transform(c.begin(), c.end(), c.begin(), ::tolower);
 
     std::vector<std::string> flagColors = country.getFlagColors();
     std::vector<std::string> remainingColors = flagColors;
@@ -59,11 +64,17 @@ void colorFlagGame::play() {
         if (it != remainingColors.end()) {
             remainingColors.erase(it);
             std::cout << "Correct! You have " << remainingColors.size() << " colors remaining.\n";
+            --attempts_;
         } else {
-            std::cout << "Wrong guess! Try again.\n";
+            if (std::find(allColorsLower.begin(), allColorsLower.end(), guessedColor) != allColorsLower.end()) {
+                std::cout << "Wrong guess! That color is not in the flag. Try again.\n";
+                --attempts_;
+            } else {
+                auto suggestion = findClosest(guessedColor, allColors);
+                std::cout << "Maybe you meant \"" << suggestion << "\"?\n";
+                continue;
+            }
         }
-
-        --attempts_;
     }
 
     if (remainingColors.empty()) {

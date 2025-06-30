@@ -20,6 +20,8 @@ public:
 
     const std::string& getWord() const;
 
+    const std::vector<std::string>& getValidWords() const;
+
     static bool isValid(const std::string& guess);
 
     bool correctLength(const std::string& guess) const;

@@ -16,6 +16,7 @@
 #include "InvalidWordLengthException.h"
 #include "InvalidWordList.h"
 #include "WordExceptions.h"
+#include "TemplateUtils.h"
 
 class WordException;
 
@@ -62,6 +63,8 @@ void Wordle::play() {
             continue;
         } catch (const InvalidWordList &e) {
             std::cout<< "Error: " << e.what() << std::endl;
+            auto suggestion = findClosest(guess, word.getValidWords());
+            std::cout<< "Maybe you meant \"" << suggestion << "\"?\n";
             continue;
         }
         if (word.isCorrect(guess)) {

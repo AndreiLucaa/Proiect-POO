@@ -65,6 +65,10 @@ std::pair<std::string, std::string> Word::verifyLetters(const std::string &guess
 
 std::string Word::getLetters(const std::string &guess) { return privateGetLetters(guess); }
 
+const std::vector<std::string>& Word::getValidWords() const {
+    return validWords;
+}
+
 Word::~Word() = default;
 
 bool Word::privateIsValid(const std::string &guess) {

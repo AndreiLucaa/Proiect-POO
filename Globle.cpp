@@ -13,6 +13,7 @@
 
 #include "capitalGame.h"
 #include "HaversineResult.h"
+#include "TemplateUtils.h"
 
 Globle::Globle(const std::string &country,
                const std::vector<std::tuple<std::string, std::pair<double, double>, std::string, int, std::string, std::vector<std::string>>> &validCountries,
@@ -49,11 +50,13 @@ void Globle::play() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     while (attempts > 0) {
-        std::cout << "Enter your guess: ";
+        std::cout<< "Enter your guess: ";
         std::getline(std::cin, guessCountry);
-
         if (!country.isValidCountry(guessCountry)) {
-            std::cout << "Oops! That country doesn’t exist. Give it another shot!" << std::endl;
+            std::cout << "Oops! That country doesn’t exist. Give it another shot!\n";
+            auto names = country.getValidCountryNames();
+            auto suggestion = findClosest(guessCountry, names);
+            std::cout << "Maybe you meant \"" << suggestion << "\"?\n";
             continue;
         }
 
